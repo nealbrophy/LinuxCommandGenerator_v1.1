@@ -6,24 +6,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" src="scripts/script.js"></script>
 	<title>Linux Command Generator</title>
 </head>
 
 <body>
 	<h1>Linux Command Generator</h1>
 	<section class="distroSelect">
-		<h2>Pick Your OS:</h2>
+		<h2>Pick your OS:</h2>
 		<ul>
-			<li>Arch</li>
-			<li>Debian</li>
-			<li>Fedora</li>
-			<li>Solus</li>
-			<li>Ubuntu</li>
-			<li>Not Sure</li>
+			<li id="arch" class="distro"><button>Arch</button></li>
+			<li id="debian" class="distro"><button>Debian</button></li>
+			<li id="fedora" class="distro"><button>Fedora</button></li>
+			<li id="solus" class="distro"><button>Solus</button></li>
+			<li id="ubuntu" class="distro"><button>Ubuntu</button></li>
+			<li id="notSure" class="distro"><button>Not Sure</button></li>
 		</ul>
+        <div class="codeOutput"></div>
 	</section>
     <section class="appSelect">
+    <h2>Select an app:</h2>
         <ul>
             <li>App1</li>
             <li>App2</li>
@@ -33,6 +34,7 @@
         </ul>
     </section>
     <section class="iconSelect">
+    <h2>Select an icon-set:</h2>
         <ul>
             <li>Icons1</li>
             <li>Icons2</li>
@@ -42,6 +44,7 @@
         </ul>
     </section>
     <section class="themeSelect">
+    <h2>Select a theme:</h2>
         <ul>
             <li>Theme1</li>
             <li>Theme2</li>
@@ -50,6 +53,7 @@
             <li>Theme5</li>
         </ul>
     </section>
+    <script type="text/javascript" src="scripts/script.js"></script>
 </body>
 
 </html>
