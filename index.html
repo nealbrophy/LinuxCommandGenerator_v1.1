@@ -24,44 +24,59 @@
         <div class="codeOutput"></div>
 	</section>
     <section class="installSelect">
-    <h2>Select an app, theme, or icon-set:</h2>
+    <h2>Select an app:</h2>
         <ul>
             <li id="appImageLauncher" class="select"><button>App Image Launcher</button></li>
-            <li id="firefox" class="select"><button>Firefox</button></li>
-            <li id="chrome" class="select"><button>Chrome</button></li>
-            <li id="standardNotes" class="select"><button>Standard Notes</button></li>
+            <li id="atom" class="select"><button>Atom</button></li>
             <li id="bitWarden" class="select"><button>BitWarden</button></li>
-            <!-- <li id="appImageLauncher" class="select"><button>App Image Launcher</button></li>
-            <li id="firefox" class="select"><button>Firefox</button></li>
             <li id="chrome" class="select"><button>Chrome</button></li>
+            <li id="tweaks" class="select elementaryOnly"><button>Elementary Tweaks</button></li>
+            <li id="firefox" class="select"><button>Firefox</button></li>
+            <li id="git" class="select"><button>Git</button></li>
+            <li id="gitKraken" class="select"><button>GitKraken</button></li>
+            <li id="kdeConnect" class="select"><button>KDE Connect</button></li>
+            <li id="slack" class="select"><button>Slack</button></li>
             <li id="standardNotes" class="select"><button>Standard Notes</button></li>
-            <li id="bitWarden" class="select"><button>BitWarden</button></li> -->
+
         </ul>
     </section>
     <section class="iconSelect">
     <h2>Select an icon-set:</h2>
         <ul>
-            <li id="papirus" class="select"><button>Papirus</button></li>
-            <li id="flatery" class="select"><button>Flatery</button></li>
-            <li id="flatRemix" class="select"><button>Flat Remix</button></li>
-            <li id="vimix" class="select"><button>Vimix</button></li>
-            <li id="uniform" class="select"><button>Uniform</button></li>
+            <li id="papirus" class="select"><button>Papirus Icon Pack</button></li>
+            <li id="flatery" class="select"><button>Flatery Icon Pack</button></li>
+            <li id="flatRemix" class="select"><button>Flat Remix Icon Pack</button></li>
+            <li id="vimix" class="select"><button>Vimix Icon Pack</button></li>
+            <li id="uniform" class="select"><button>Uniform Icon Pack</button></li>
         </ul>
     </section>
     <section class="themeSelect">
     <h2>Select a theme:</h2>
         <ul>
-            <li>Theme1</li>
+            <li id="mcMojave" class="select"><button>McMojave Theme</button></li>
             <li>Theme2</li>
             <li>Theme3</li>
             <li>Theme4</li>
             <li>Theme5</li>
         </ul>
     </section>
-    <div class="outputDump">
-        <textarea name="output" id="textAreaDump" cols="30" rows="10"></textarea>
+    <section class="miscSelect">
+    <h2>Miscellaneous:</h2>
+        <ul>
+            <li id="openAsRoot" class="select elementaryOnly"><button>Add "Open As Root" to Right-Click</button></li>
+            <li>Misc2</li>
+            <li>Misc3</li>
+            <li>Misc4</li>
+            <li>Misc5</li>
+        </ul>
+    </section>
+    <div class="outputDiv">
+        <h2>Command:</h2>
+        <p id="outputIntro"></p>
+        <div id="outputContent"></div>
     </div>
-    <script type="text/javascript" src="scripts/script.js"></script>
+    <script type="text/javascript" src="scripts/distros.js"></script>
+    <script type="text/javascript" src="scripts/commandGenerator.js"></script>
 </body>
 
 </html>
