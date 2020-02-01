@@ -11,6 +11,9 @@ ul {
 
 li  {
     display: inline;
-    width: 60px;
     padding: 0 50px 0 50px;
+}
+
+textarea {
+    margin-top: 8rem;
 }

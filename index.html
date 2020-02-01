@@ -16,31 +16,36 @@
 		<ul>
 			<li id="arch" class="distro"><button>Arch</button></li>
 			<li id="debian" class="distro"><button>Debian</button></li>
-			<li id="fedora" class="distro"><button>Fedora</button></li>
+			<li id="elementary" class="distro"><button>Elementary</button></li>
 			<li id="solus" class="distro"><button>Solus</button></li>
 			<li id="ubuntu" class="distro"><button>Ubuntu</button></li>
 			<li id="notSure" class="distro"><button>Not Sure</button></li>
 		</ul>
         <div class="codeOutput"></div>
 	</section>
-    <section class="appSelect">
-    <h2>Select an app:</h2>
+    <section class="installSelect">
+    <h2>Select an app, theme, or icon-set:</h2>
         <ul>
-            <li id="appImageLauncher" class="applications"><button>App Image Launcher</button></li>
-            <li id="firefox" class="applications"><button>Firefox</button></li>
-            <li id="chrome" class="applications"><button>Chrome</button></li>
-            <li id="standardNotes" class="applications"><button>Standard Notes</button></li>
-            <li>App5</li>
+            <li id="appImageLauncher" class="select"><button>App Image Launcher</button></li>
+            <li id="firefox" class="select"><button>Firefox</button></li>
+            <li id="chrome" class="select"><button>Chrome</button></li>
+            <li id="standardNotes" class="select"><button>Standard Notes</button></li>
+            <li id="bitWarden" class="select"><button>BitWarden</button></li>
+            <!-- <li id="appImageLauncher" class="select"><button>App Image Launcher</button></li>
+            <li id="firefox" class="select"><button>Firefox</button></li>
+            <li id="chrome" class="select"><button>Chrome</button></li>
+            <li id="standardNotes" class="select"><button>Standard Notes</button></li>
+            <li id="bitWarden" class="select"><button>BitWarden</button></li> -->
         </ul>
     </section>
     <section class="iconSelect">
     <h2>Select an icon-set:</h2>
         <ul>
-            <li>Icons1</li>
-            <li>Icons2</li>
-            <li>Icons3</li>
-            <li>Icons4</li>
-            <li>Icons5</li>
+            <li id="papirus" class="select"><button>Papirus</button></li>
+            <li id="flatery" class="select"><button>Flatery</button></li>
+            <li id="flatRemix" class="select"><button>Flat Remix</button></li>
+            <li id="vimix" class="select"><button>Vimix</button></li>
+            <li id="uniform" class="select"><button>Uniform</button></li>
         </ul>
     </section>
     <section class="themeSelect">
@@ -53,7 +58,9 @@
             <li>Theme5</li>
         </ul>
     </section>
-    <div class="outputDump"></div>
+    <div class="outputDump">
+        <textarea name="output" id="textAreaDump" cols="30" rows="10"></textarea>
+    </div>
     <script type="text/javascript" src="scripts/script.js"></script>
 </body>
 
