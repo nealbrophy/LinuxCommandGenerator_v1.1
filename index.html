@@ -10,7 +10,10 @@
 </head>
 
 <body>
-	<h1>Linux Command Generator</h1>
+    <h1>Linux Command Generator</h1>
+    <section class="search">
+        <input type="text" class="searchBox" placeholder="Search...">
+    </section>
 	<section class="distroSelect">
 		<h2>Pick your OS:</h2>
 		<ul>
@@ -74,6 +77,8 @@
         <h2>Command:</h2>
         <p id="outputIntro"></p>
         <div id="outputContent"></div>
+        <button id="copyOutput">Copy to clipboard</button>
+        <button id="saveOutput">Add to my list</button>
     </div>
     <script type="text/javascript" src="scripts/distros.js"></script>
     <script type="text/javascript" src="scripts/commandGenerator.js"></script>

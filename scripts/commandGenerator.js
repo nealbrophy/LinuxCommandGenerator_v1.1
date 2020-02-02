@@ -1,5 +1,7 @@
 // GLOBAL VARs
 let userOS; // to hold user's OS.
+let osObj;
+let osName;
 let selection; // to hold user's app/icon/theme selection.
 let choice; // to hold text name of user's OS
 
@@ -19,25 +21,30 @@ for (i = 0; i < distros.length; i++) {
         // switch statement to populate userOS var with object name
         switch (this.id) {
             case "arch":
-                userOS = arch;
+                osObj = arch;
+                osName = this.id;
                 break;
             case "debian":
-                userOS = debian;
+                osObj = debian;
+                osName = this.id;
                 break;
             case "elementary":
-                userOS = elementary;
+                osObj = elementary;
+                osName = this.id;
                 break;
             case "solus":
-                userOS = solus;
+                osObj = solus;
+                osName = this.id;
                 break;
             case "ubuntu":
-                userOS = ubuntu;
+                osObj = ubuntu;
+                osName = this.id;
                 break;
             case "notSure":
                 document.getElementById("outputIntro").innerText = "Enter the following to find out what OS you\'re using:";
-                document.getElementById("outputContent").innerHTML = "<code>$ cat /etc/issue</code>";
+                document.getElementById("outputContent").innerText = "$ cat /etc/issue";
         }
-        if (userOS && this.id !== "notSure") {
+        if (osObj && this.id !== "notSure") {
             document.getElementById("outputIntro").innerText = `Please select an App, Theme, or Icon pack to install on ${choice}.`;
         }
     });
@@ -54,19 +61,63 @@ for (i = 0; i < toInstall.length; i++) {
             }
 
         // check if valid OS has been selected, if not print message
-        if (!userOS || choice === "Not Sure") {
+        if (!osObj || choice === "Not Sure") {
             document.getElementById("outputIntro").innerText = "Please select an Operating System above.";
             document.getElementById("outputContent").innerText = "";
 
-            // check if var is already populated and if so empty it (and remove from choice arr)
+            // check if var is already populated and if so empty it
         } else {
             selection = (this.id);
-            console.log(userOS[this]);
             document.getElementById("outputIntro").innerHTML = `<p>Enter the following in your terminal (<code>cmd+t</code> or <code>ctrl+shift+t</code> on most Linux systems) to install <span class="installName">${document.getElementById(selection).innerText}</span> on <span class="osName">${choice}</span>:</p>`;
-            document.getElementById("outputContent").innerHTML = userOS[selection];
+            document.getElementById("outputContent").innerHTML = `<code>${osObj[selection]}</code>`;
         }
     });
 }
 
 
+// add click listener to copy button
+document.getElementById("copyOutput").addEventListener("click", function() {
+    console.log(document.getElementById("outputContent").innerText);
+    copyToClipboard(document.getElementById("outputContent").innerText);
+});
 
+// basic copy to clipboard function
+function copyToClipboard(inputText) {
+    let textArea = document.createElement("textarea");
+    textArea.value = inputText;
+    textArea.style.position = "fixed";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+
+    try {
+        let successful = document.execCommand("copy");
+        let msg = successful ? "successful" : "unsuccessful";
+        console.log("Copy text was " + msg);
+    } catch (err) {
+        console.log("Copy failed", err);
+    }
+
+    document.body.removeChild(textArea);
+}
+
+// add click listener to add to list button
+document.getElementById("saveOutput").addEventListener("click", function() {
+    // check if OS has already been added to list object
+    if (userList[osName]) {
+        userList[osName][selection] = osObj[selection];
+    } else {
+        userList[osName] = {};
+        userList[osName][selection] = osObj[selection];
+    }
+    
+    console.log(userList[osName]);
+    copyToClipboard(document.getElementById("outputContent").innerText);
+});
+
+
+
+// object to hold list of users chosen commands
+const userList = {
+
+};
