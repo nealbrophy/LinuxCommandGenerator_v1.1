@@ -6,7 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<title>Linux Command Generator</title>
+    <title>Linux Command Generator</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("user_13DhOIaJga1D7ndnbfmQj");
+        })();
+    </script>
 </head>
 
 <body>
@@ -76,11 +82,14 @@
     <div class="outputDiv">
         <h2>Command:</h2>
         <p id="outputIntro"></p>
-        <div id="outputContent"></div>
         <button id="copyOutput">Copy to clipboard</button>
         <button id="saveOutput">Add to my list</button>
+        <div id="outputContent"></div>
+        <button id="downloadOutput">Download as .TXT</button>
+        <button id="emailOutput">Send via email</button>
     </div>
     <script type="text/javascript" src="scripts/distros.js"></script>
+    <script type="text/javascript" src="scripts/FileSaver.min.js"></script>
     <script type="text/javascript" src="scripts/commandGenerator.js"></script>
 </body>
 
