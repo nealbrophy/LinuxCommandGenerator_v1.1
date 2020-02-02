@@ -1,8 +1,8 @@
 // GLOBAL VARs
-let userOS; // to hold user's OS.
-let osObj;
-let osName;
-let selection; // to hold user's app/icon/theme selection.
+let userOS; 
+let osName; // to hold name of users OS choice
+let osObj; // reference to os object matching user choice name
+let selection; // to hold user app/icon/theme selection.
 let choice; // to hold text name of user's OS
 
 // EVENT LISTENERS
@@ -118,6 +118,4 @@ document.getElementById("saveOutput").addEventListener("click", function() {
 
 
 // object to hold list of users chosen commands
-const userList = {
-
-};
+const userList = {};

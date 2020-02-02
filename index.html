@@ -5,7 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" integrity="sha256-OweaP/Ic6rsV+lysfyS4h+LM6sRwuO3euTYfr6M124g=" crossorigin="anonymous" />
     <title>Linux Command Generator</title>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
     <script type="text/javascript">
@@ -15,71 +16,77 @@
     </script>
 </head>
 
-<body>
+<body class="red accent-2">
+    <div class="container">
     <h1>Linux Command Generator</h1>
-    <section class="search">
+    <section class="search row">
         <input type="text" class="searchBox" placeholder="Search...">
     </section>
-	<section class="distroSelect">
+    <div class="divider"></div>
+	<section class="distroSelect row">
 		<h2>Pick your OS:</h2>
 		<ul>
-			<li id="arch" class="distro"><button>Arch</button></li>
-			<li id="debian" class="distro"><button>Debian</button></li>
-			<li id="elementary" class="distro"><button>Elementary</button></li>
-			<li id="solus" class="distro"><button>Solus</button></li>
-			<li id="ubuntu" class="distro"><button>Ubuntu</button></li>
-			<li id="notSure" class="distro"><button>Not Sure</button></li>
-		</ul>
-        <div class="codeOutput"></div>
-	</section>
-    <section class="installSelect">
+			<li id="arch" class="distro s1 waves-effect waves-light light-blue btn"><a href="#appSelect">Arch</a></li>
+			<li id="debian" class="distro s1 waves-effect waves-light light-blue btn"><a href="#appSelect">Debian</a></li>
+			<li id="elementary" class="distro s1 waves-effect waves-light light-blue btn"><a href="#appSelect">Elementary</a></li>
+			<li id="solus" class="distro s1 waves-effect waves-light light-blue btn"><a href="#appSelect">Solus</a></li>
+			<li id="ubuntu" class="distro s1 waves-effect waves-light light-blue btn"><a href="#appSelect">Ubuntu</a></li>
+			<li id="notSure" class="distro s1 waves-effect waves-light light-blue btn"><a href="#appSelect">Not Sure</a></li>
+        </ul>
+    </section>
+    <div class="divider"></div>
+    <section id="appSelect" class="installSelect row">
     <h2>Select an app:</h2>
         <ul>
-            <li id="appImageLauncher" class="select"><button>App Image Launcher</button></li>
-            <li id="atom" class="select"><button>Atom</button></li>
-            <li id="bitWarden" class="select"><button>BitWarden</button></li>
-            <li id="chrome" class="select"><button>Chrome</button></li>
-            <li id="tweaks" class="select elementaryOnly"><button>Elementary Tweaks</button></li>
-            <li id="firefox" class="select"><button>Firefox</button></li>
-            <li id="git" class="select"><button>Git</button></li>
-            <li id="gitKraken" class="select"><button>GitKraken</button></li>
-            <li id="kdeConnect" class="select"><button>KDE Connect</button></li>
-            <li id="slack" class="select"><button>Slack</button></li>
-            <li id="standardNotes" class="select"><button>Standard Notes</button></li>
+            <li id="appImageLauncher" class="select s1 waves-effect waves-light light-blue btn"><a href="#output">App Image Launcher</a></li>
+            <li id="atom" class="select s1 waves-effect waves-light light-blue btn"><a  href="#output">Atom</a></li>
+            <li id="bitWarden" class="select s1 waves-effect waves-light light-blue btn"><a href="#output">BitWarden</a></li>
+            <li id="chrome" class="select s1 waves-effect waves-light light-blue btn"><a href="#output">Chrome</a></li>
+            <li id="tweaks" class="select elementaryOnly s1 waves-effect waves-light light-blue btn"><a href="#output">Elementary Tweaks</a></li>
+            <li id="firefox" class="select s1 waves-effect waves-light light-blue btn"><a href="#output">Firefox</a></li>
+            <li id="git" class="select s1 waves-effect waves-light light-blue btn"><a href="#output">Git</a></li>
+            <li id="gitKraken" class="select s1 waves-effect waves-light light-blue btn"><a href="#output">GitKraken</a></li>
+            <li id="kdeConnect" class="select s1 waves-effect waves-light light-blue btn"><a href="#output">KDE Connect</a></li>
+            <li id="slack" class="select s1 waves-effect waves-light light-blue btn"><a href="#output">Slack</a></li>
+            <li id="standardNotes" class="select s1 waves-effect waves-light light-blue btn"><a href="#output">Standard Notes</a></li>
 
         </ul>
     </section>
-    <section class="iconSelect">
+    <div class="divider"></div>
+    <section class="iconSelect row">
     <h2>Select an icon-set:</h2>
         <ul>
-            <li id="papirus" class="select"><button>Papirus Icon Pack</button></li>
-            <li id="flatery" class="select"><button>Flatery Icon Pack</button></li>
-            <li id="flatRemix" class="select"><button>Flat Remix Icon Pack</button></li>
-            <li id="vimix" class="select"><button>Vimix Icon Pack</button></li>
-            <li id="uniform" class="select"><button>Uniform Icon Pack</button></li>
+            <li id="papirus" class="select s1 waves-effect waves-light light-blue btn"><a href="#output">Papirus Icon Pack</a></li>
+            <li id="flatery" class="select s1 waves-effect waves-light light-blue btn"><a href="#output">Flatery Icon Pack</a></li>
+            <li id="flatRemix" class="select s1 waves-effect waves-light light-blue btn"><a href="#output">Flat Remix Icon Pack</a></li>
+            <li id="vimix" class="select s1 waves-effect waves-light light-blue btn"><a href="#output">Vimix Icon Pack</a></li>
+            <li id="uniform" class="select s1 waves-effect waves-light light-blue btn"><a href="#output">Uniform Icon Pack</a></li>
         </ul>
     </section>
-    <section class="themeSelect">
+    <div class="divider"></div>
+    <section class="themeSelect row">
     <h2>Select a theme:</h2>
         <ul>
-            <li id="mcMojave" class="select"><button>McMojave Theme</button></li>
+            <li id="mcMojave" class="select s1 waves-effect waves-light light-blue btn"><a href="#output">McMojave Theme</a></li>
             <li>Theme2</li>
             <li>Theme3</li>
             <li>Theme4</li>
             <li>Theme5</li>
         </ul>
     </section>
-    <section class="miscSelect">
+    <div class="divider"></div>
+    <section class="miscSelect row">
     <h2>Miscellaneous:</h2>
         <ul>
-            <li id="openAsRoot" class="select elementaryOnly"><button>Add "Open As Root" to Right-Click</button></li>
+            <li id="openAsRoot" class="select elementaryOnly s1 waves-effect waves-light light-blue btn"><a href="#output">Add "Open As Root" to Right-Click</a></li>
             <li>Misc2</li>
             <li>Misc3</li>
             <li>Misc4</li>
             <li>Misc5</li>
         </ul>
     </section>
-    <div class="outputDiv">
+    <div class="divider"></div>
+    <div id="output" class="outputDiv row">
         <h2>Command:</h2>
         <p id="outputIntro"></p>
         <button id="copyOutput">Copy to clipboard</button>
@@ -88,9 +95,11 @@
         <button id="downloadOutput">Download as .TXT</button>
         <button id="emailOutput">Send via email</button>
     </div>
+</div>
     <script type="text/javascript" src="scripts/distros.js"></script>
     <script type="text/javascript" src="scripts/FileSaver.min.js"></script>
     <script type="text/javascript" src="scripts/commandGenerator.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" integrity="sha256-U/cHDMTIHCeMcvehBv1xQ052bPSbJtbuiw4QA9cTKz0=" crossorigin="anonymous"></script>
 </body>
 
 </html>
