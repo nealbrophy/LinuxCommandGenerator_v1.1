@@ -68,3 +68,11 @@ Dean Taylor's answer on [StackOverflow](https://stackoverflow.com/questions/4002
 
 #### Send via email function uses:
 [EmailJS](https://www.emailjs.com/)
+
+#### OS Logos
+[Arch](https://commons.wikimedia.org/wiki/File:Archlinux-vert-dark.svg)
+[Debian](https://commons.wikimedia.org/wiki/File:Debian_logo.png)
+[Elementary](https://commons.wikimedia.org/wiki/File:Elementary_logo.svg)
+[Solus](https://commons.wikimedia.org/wiki/File:Solus.svg)
+[Ubuntu](https://worldvectorlogo.com/logo/ubuntu-icon)
+[Not Sure](https://commons.wikimedia.org/wiki/File:Question_mark_alternate.png)
