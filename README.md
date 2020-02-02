@@ -77,19 +77,19 @@ McMojave for Elementary [All Techs Tricks](https://alltechstricks.blogspot.com/2
 #### Clipboard implementation from:
 Dean Taylor's answer on [StackOverflow](https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript)
 
-#### Download as TXT file from:
+#### Download as TXT functionality uses:
 [FileSaver.js](https://github.com/eligrey/FileSaver.js/)
 
-#### Send via email function uses:
+#### Send via email functionality uses:
 [EmailJS](https://www.emailjs.com/)
 
 #### OS Logos
-Arch logo based on [this wikimedia image file](https://commons.wikimedia.org/wiki/File:Archlinux-vert-dark.svg)
-Debian logo based on [this wikimedia image file](https://commons.wikimedia.org/wiki/File:Debian_logo.png)
-Elementary logo based on [this wikimedia image file](https://commons.wikimedia.org/wiki/File:Elementary_logo.svg)
-Solus logo based on [this wikimedia image file](https://commons.wikimedia.org/wiki/File:Solus.svg)
-Ubuntu logo based on [this worldvectorlogo image file](https://worldvectorlogo.com/logo/ubuntu-icon)
-Not Sure Mark based on [this wikimedia image file](https://commons.wikimedia.org/wiki/File:Question_mark_alternate.png)
+- Arch logo based on [this wikimedia image file](https://commons.wikimedia.org/wiki/File:Archlinux-vert-dark.svg)
+- Debian logo based on [this wikimedia image file](https://commons.wikimedia.org/wiki/File:Debian_logo.png)
+- Elementary logo based on [this wikimedia image file](https://commons.wikimedia.org/wiki/File:Elementary_logo.svg)
+- Solus logo based on [this wikimedia image file](https://commons.wikimedia.org/wiki/File:Solus.svg)
+- Ubuntu logo based on [this worldvectorlogo image file](https://worldvectorlogo.com/logo/ubuntu-icon)
+- Not Sure Mark based on [this wikimedia image file](https://commons.wikimedia.org/wiki/File:Question_mark_alternate.png)
 
 #### Style inspired by:
 Cake Bar Exercise by [Codecademy](https://www.codecademy.com/courses/learn-javascript-unit-testing/projects/cake-clock)
