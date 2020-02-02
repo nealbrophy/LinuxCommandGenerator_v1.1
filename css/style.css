@@ -35,6 +35,11 @@ li  {
     padding: 0 50px 0 50px;
 }
 
+#outputContent {
+    background-color: black;
+    color: lightcoral;
+}
+
 .distroSelect img {
     width: 60px;
 }
@@ -52,3 +57,8 @@ li  {
 .outputDiv button {
     margin-top: 1.5rem;
 }
+
+.btn {
+    margin: 1rem;
+}
+

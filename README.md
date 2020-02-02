@@ -46,11 +46,25 @@ To run the site locally you can clone it using the following instructions:
 #### Technologies used
 - [EmailJS](https://www.emailjs.com/)
 - [FileSaver.js](https://github.com/eligrey/FileSaver.js/)
+- [FontAwesome](https://fontawesome.com/)
 
 ---
 ### How did you test it?
 ---
 ### Anything else you want to tell me?
+#### To be implemented 
+- Side-bar to hold pinned/saved commands
+- Send via Email functionality
+- Download as .txt functionality
+- Toast to confirm when text has been copied to clipboard
+- Add more apps/themes/icons/misc
+- Add more commands to OS objects
+- Hover/active effect on OS icons
+
+#### Maybe?
+- Recommended distros
+
+
 ---
 ### Credits/Acknowledgements
 
@@ -70,9 +84,12 @@ Dean Taylor's answer on [StackOverflow](https://stackoverflow.com/questions/4002
 [EmailJS](https://www.emailjs.com/)
 
 #### OS Logos
-[Arch](https://commons.wikimedia.org/wiki/File:Archlinux-vert-dark.svg)
-[Debian](https://commons.wikimedia.org/wiki/File:Debian_logo.png)
-[Elementary](https://commons.wikimedia.org/wiki/File:Elementary_logo.svg)
-[Solus](https://commons.wikimedia.org/wiki/File:Solus.svg)
-[Ubuntu](https://worldvectorlogo.com/logo/ubuntu-icon)
-[Not Sure](https://commons.wikimedia.org/wiki/File:Question_mark_alternate.png)
+Arch logo based on [this wikimedia image file](https://commons.wikimedia.org/wiki/File:Archlinux-vert-dark.svg)
+Debian logo based on [this wikimedia image file](https://commons.wikimedia.org/wiki/File:Debian_logo.png)
+Elementary logo based on [this wikimedia image file](https://commons.wikimedia.org/wiki/File:Elementary_logo.svg)
+Solus logo based on [this wikimedia image file](https://commons.wikimedia.org/wiki/File:Solus.svg)
+Ubuntu logo based on [this worldvectorlogo image file](https://worldvectorlogo.com/logo/ubuntu-icon)
+Not Sure Mark based on [this wikimedia image file](https://commons.wikimedia.org/wiki/File:Question_mark_alternate.png)
+
+#### Style inspired by:
+Cake Bar Exercise by [Codecademy](https://www.codecademy.com/courses/learn-javascript-unit-testing/projects/cake-clock)
