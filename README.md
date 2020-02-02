@@ -2,11 +2,11 @@
 ## Code Institute Milestone Project 2: Interactive Front End Development
 
 ### What is it?
-#### 
+#### Summary
 A web app where users can get app, theme, and icon-pack installation commands for a variety of Linux distributions. The current selection of Linux distros is limited to distros I personally use regularly but I would like to expand in the future.
 ---
 ### Where is it?
-#### 
+#### TBA
 +++ add GitHub pages link
 ---
 ### How do I get it?
@@ -34,9 +34,9 @@ To run the site locally you can clone it using the following instructions:
 ---
 ### How did you do it?
 #### Wireframes
-<img src="images/Desktop-1.png" alt="desktop-wireframe-1" width="300px">
-<img src="images/Desktop-2.png" alt="desktop-wireframe-2" width="300px">
-<img src="images/Mobile.png" alt="mobile-wireframe" width="150px">
+<img src="images/Desktop-1.png" alt="desktop-wireframe-1" width="500px">
+<img src="images/Desktop-2.png" alt="desktop-wireframe-2" width="500px">
+<img src="images/Mobile.png" alt="mobile-wireframe" width="200px">
 - wireframes created using [Balsamiq](https://balsamiq.com/)
 
 #### Technologies used
