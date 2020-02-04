@@ -44,9 +44,18 @@ li  {
     width: 60px;
 }
 
-.fa-question {
-    font-size: 4rem;
-    color: white;
+.fa-archlinux,
+.fa-debian,
+.icofont-sail-boat,
+.fa-ubuntu,
+.fa-question-circle {
+    font-size: 4rem !important;
+}
+
+.elementaryLogo {
+    font-size: 9rem;
+    font-family: 'Parisienne', cursive;
+    
 }
 
 .outputDiv {

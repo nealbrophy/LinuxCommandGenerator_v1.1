@@ -53,9 +53,6 @@ const arch = {
     get slack() {
         return this._slack;
     },
-    get tweaks() {
-        return this._tweaks;
-    },
     get papirus() {
         return this._papirus;
     },
@@ -128,9 +125,6 @@ const debian = {
     },
     get slack() {
         return this._slack;
-    },
-    get tweaks() {
-        return this._tweaks;
     },
     get papirus() {
         return this._papirus;
@@ -283,9 +277,6 @@ const solus = {
     get slack() {
         return this._slack;
     },
-    get tweaks() {
-        return this._tweaks;
-    },
     get papirus() {
         return this._papirus;
     },
@@ -357,9 +348,6 @@ const ubuntu = {
     },
     get slack() {
         return this._slack;
-    },
-    get tweaks() {
-        return this._tweaks;
     },
     get papirus() {
         return this._papirus;
