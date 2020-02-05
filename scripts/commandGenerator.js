@@ -52,6 +52,7 @@ for (let i = 0; i < distros.length; i++) {
         let availableApps = document.getElementsByClassName("select");
         for (let j = 0; j < availableApps.length; j++) {
             let currentID = availableApps[j].id;
+            console.log(availableApps[j].id);
             if (osObj.hasOwnProperty(currentID)) {
                 document.getElementById(currentID).removeAttribute("disabled");
             } else {
