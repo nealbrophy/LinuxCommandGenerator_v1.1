@@ -5,6 +5,7 @@ let osObj; // reference to os object matching user choice name
 let selection; // to hold user app/icon/theme selection.
 let choice; // to hold text name of user's OS
 
+
 // EVENT LISTENERS
 // add click listener to OS buttons.
 let distros = document.getElementsByClassName("distro");

@@ -47,6 +47,7 @@ To run the site locally you can clone it using the following instructions:
 - [EmailJS](https://www.emailjs.com/)
 - [FileSaver.js](https://github.com/eligrey/FileSaver.js/)
 - [FontAwesome](https://fontawesome.com/)
+- [Materialize](https://materializecss.com/)
 
 ---
 ### How did you test it?

@@ -3,155 +3,159 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Parisienne&display=swap" rel="stylesheet">
-    <title>Linux Command Generator</title>
+
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+    <!-- emailJS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
-    <script src="https://kit.fontawesome.com/624307dae0.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/Fork-Awesome-1.1.7/css/fork-awesome.min.css">
-    <link rel="stylesheet" href="css/icofont/icofont.min.css">
     <script type="text/javascript">
         (function () {
             emailjs.init("user_13DhOIaJga1D7ndnbfmQj");
         })();
     </script>
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/624307dae0.js" crossorigin="anonymous"></script>
+
+    <!-- fork awesome -->
+    <link rel="stylesheet" href="css/Fork-Awesome-1.1.7/css/fork-awesome.min.css">
+
+    <!-- IcoFont -->
+    <link rel="stylesheet" href="css/icofont/icofont.min.css">
+
+    <!--  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Linux Command Generator</title>
+
 </head>
 
-<body class="container">
-    <div class="row">
+<body>
+    <div class="container">
         <h1>Linux Command Generator</h1>
         <section class="search">
             <input type="text" class="searchBox" placeholder="Search...">
         </section>
-    </div>
-    <div class="row">
-        <div class="container col-12">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" id="os-tab" data-toggle="tab" href="#osList" role="tab"
-                        aria-controls="operating-system" aria-selected="true">Linux Distro</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="app-tab" data-toggle="tab" href="#appList" role="tab" aria-controls="apps"
-                        aria-selected="false">Apps</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="icon-tab" data-toggle="tab" href="#iconList" role="tab"
-                        aria-controls="icons" aria-selected="false">Icons</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="settings-tab" data-toggle="tab" href="#themeList" role="tab"
-                        aria-controls="themes" aria-selected="false">Themes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="settings-tab" data-toggle="tab" href="#miscList" role="tab"
-                        aria-controls="misc" aria-selected="false">Miscellaneous</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="settings-tab" data-toggle="tab" href="#outputTab" role="tab"
-                        aria-controls="output" aria-selected="false">Output</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="tab-content">
-        <div class="tab-pane active" id="osList" role="tabpanel" aria-labelledby="os-tab">
-            <section class="distroSelect">
-                <h2>Pick your OS:</h2>
+
+        <div class="row">
+            <div class="col s12">
+                <ul class="tabs">
+                    <li class="tab col s3"><a class="active" href="#distroSelect">Pick OS</a class="active"></li>
+                    <li class="tab col s3"><a href="#appSelect">Apps</a></li>
+                    <li class="tab col s3"><a href="#iconSelect">Icons</a></li>
+                    <li class="tab col s3"><a href="#themeSelect">Themes</a></li>
+                    <li class="tab col s3"><a href="#miscSelect">Misc</a></li>
+                </ul>
+            </div>
+
+            <!-- operating systems -->
+            <div id="distroSelect" class="col s12">
                 <ul>
-                    <li id="arch" class="distro s1"><a href="#appSelect"><i class="fa fa-archlinux"></i></a> Arch
+                    <li><a id="arch" class="distro" href="#appSelect"><i class="fa fa-archlinux"></i></a id="arch"
+                            class="distro"> Arch
                     </li>
-                    <li id="debian" class="distro s1"><a href="#appSelect"><i class="fa fa-debian"
-                                aria-hidden="true"></i></a> Debian</li>
-                    <li id="elementary" class="distro s1"><a href="#appSelect"><span class="elementaryLogo">e</span></a>
+                    <li><a id="debian" class="distro" href="#appSelect"><i class="fa fa-debian"
+                                aria-hidden="true"></i></a>
+                        Debian</li>
+                    <li><a id="elementary" class="distro" href="#appSelect"><span class="elementaryLogo">e</span></a>
                         Elementary</li>
-                    <li id="solus" class="distro s1"><a href="#appSelect"><i class="icofont-sail-boat"></i></a>
+                    <li><a id="solus" class="distro" href="#appSelect"><i class="icofont-sail-boat"></i></a>
                         Solus</li>
-                    <li id="ubuntu" class="distro s1"><a href="#appSelect"><i class="fab fa-ubuntu"></i></a> Ubuntu
+                    <li><a id="ubuntu" class="distro" href="#appSelect"><i class="fab fa-ubuntu"></i></a> Ubuntu
                     </li>
-                    <li id="notSure" class="distro s1"><a href="#appSelect"><i class="far fa-question-circle"></i></a>
+                    <li><a id="notSure" class="distro" href="#appSelect"><i class="far fa-question-circle"></i></a>
                         Not
                         Sure</li>
                 </ul>
+            </div>
 
-            </section>
-        </div>
-        <div class="tab-pane" id="appList" role="tabpanel" aria-labelledby="app-tab">
-            <section id="appSelect" class="installSelect">
-                <h2>Select an app:</h2>
+            <!-- applications -->
+            <div id="appSelect" class="col s12">
                 <ul>
-                    <li><button id="appImageLauncher" class="select btn btn-primary" href="#outputTab"><i class="fas fa-rocket"></i>
+                    <li><button id="appImageLauncher" class="select btn btn-primary" href="#outputTab"><i
+                                class="fas fa-rocket"></i>
                             AppImageLauncher</button></li>
-                    <li><button id="atom" class="select btn btn-primary" href="#outputTab"><i class="fas fa-atom"></i> Atom</button></li>
-                    <li><button id="bitWarden" class="select btn btn-primary" href="#outputTab"><i class="fas fa-shield-alt"></i>
+                    <li><button id="atom" class="select btn waves-effect waves-light blue" href="#outputTab"><i
+                                class="fas fa-atom"></i>
+                            Atom</button></li>
+                    <li><button id="bitWarden" class="select btn btn-primary" href="#outputTab"><i
+                                class="fas fa-shield-alt"></i>
                             BitWarden</button></li>
-                    <li><button id="chrome" class="select btn btn-primary" href="#outputTab"><i class="fab fa-chrome"></i> Chrome</button>
+                    <li><button id="chrome" class="select btn btn-primary" href="#outputTab"><i
+                                class="fab fa-chrome"></i>
+                            Chrome</button>
                     </li>
-                    <li><button id="tweaks" class="select btn btn-primary" href="#outputTab"><i class="fas fa-sliders-h"></i>
+                    <li><button id="tweaks" class="select btn btn-primary" href="#outputTab"><i
+                                class="fas fa-sliders-h"></i>
                             Elementary-Tweaks</button></li>
-                    <li><button id="firefox" class="select btn btn-primary" href="#outputTab"><i class="fab fa-firefox-browser"></i>
+                    <li><button id="firefox" class="select btn btn-primary" href="#outputTab"><i
+                                class="fab fa-firefox-browser"></i>
                             Firefox</button></li>
-                    <li><button id="git" class="select btn btn-primary" href="#outputTab"><i class="fab fa-github-alt"></i> Git</button></li>
-                    <li><button id="gitKraken" class="select btn btn-primary" href="#outputTab"><i class="fab fa-gitkraken"></i>
+                    <li><button id="git" class="select btn btn-primary" href="#outputTab"><i
+                                class="fab fa-github-alt"></i>
+                            Git</button></li>
+                    <li><button id="gitKraken" class="select btn btn-primary" href="#outputTab"><i
+                                class="fab fa-gitkraken"></i>
                             GitKraken</button></li>
-                    <li><button id="kdeConnect" class="select btn btn-primary" href="#outputTab"><i class="fas fa-mobile-alt"></i> KDE
+                    <li><button id="kdeConnect" class="select btn btn-primary" href="#outputTab"><i
+                                class="fas fa-mobile-alt"></i> KDE
                             Connect</button></li>
-                    <li><button id="slack" class="select btn btn-primary" href="#outputTab"><i class="fab fa-slack"></i> Slack</a></li>
-                    <li><button id="standardNotes" class="select btn btn-primary" href="#outputTab"><i class="fas fa-sticky-note"></i>
+                    <li><button id="slack" class="select btn btn-primary" href="#outputTab"><i class="fab fa-slack"></i>
+                            Slack</a></li>
+                    <li><button id="standardNotes" class="select btn btn-primary" href="#outputTab"><i
+                                class="fas fa-sticky-note"></i>
                             Standard Notes</button></li>
                 </ul>
-            </section>
-        </div>
-        <div class="tab-pane" id="iconList" role="tabpanel" aria-labelledby="icon-tab">
-            <section class="iconSelect">
-                <h2>Select an icon-set:</h2>
+            </div>
+
+            <!-- icons -->
+            <div id="iconSelect" class="col s12">
                 <ul>
-                    <li id="papirus" class="select s1 waves-effect waves-light light-blue btn"><a href="#output">Papirus
-                            Icon Pack</a></li>
-                    <li id="flatery" class="select s1 waves-effect waves-light light-blue btn"><a href="#output">Flatery
-                            Icon Pack</a></li>
-                    <li id="flatRemix" class="select s1 waves-effect waves-light light-blue btn"><a href="#output">Flat
-                            Remix Icon Pack</a></li>
-                    <li id="vimix" class="select s1 waves-effect waves-light light-blue btn"><a href="#output">Vimix
+                    <li><button id="papirus" class="select btn btn-primary" href="#output">Papirus
+                            Icon Pack</button></li>
+                    <li><button id="flatery" class="select btn btn-primary" href="#output">Flatery
+                            Icon Pack</button></li>
+                    <li><button id="flatRemix" class="select btn btn-primary" href="#output">Flat
+                            Remix Icon Pack</button></li>
+                    <li><button id="vimix" class="select btn btn-primary" href="#output">Vimix
                             Icon
-                            Pack</a></li>
-                    <li id="uniform" class="select s1 waves-effect waves-light light-blue btn"><a href="#output">Uniform
-                            Icon Pack</a></li>
+                            Pack</button></li>
+                    <li><button id="uniform" class="select btn btn-primary" href="#output">Uniform
+                            Icon Pack</button></li>
                 </ul>
-            </section>
-        </div>
-        <div class="tab-pane" id="themeList" role="tabpanel" aria-labelledby="settings-tab">
-            <section class="themeSelect">
-                <h2>Select a theme:</h2>
+            </div>
+
+            <!-- themes -->
+            <div id="themeSelect" class="col s12">
                 <ul>
-                    <li id="mcMojave" class="select s1 waves-effect waves-light light-blue btn"><a
-                            href="#output">McMojave
-                            Theme</a></li>
+                    <li><button id="mcMojave" class="select btn btn-primary" href="#output">McMojave Theme</button></li>
                     <li>Theme2</li>
                     <li>Theme3</li>
                     <li>Theme4</li>
                     <li>Theme5</li>
                 </ul>
-            </section>
-        </div>
-        <div class="tab-pane" id="miscList" role="tabpanel" aria-labelledby="settings-tab">
-            <section class="miscSelect">
-                <h2>Miscellaneous:</h2>
+            </div>
+
+            <!-- miscellaneous -->
+            <div id="miscSelect" class="col s12">
                 <ul>
-                    <li id="openAsRoot" class="select elementaryOnly s1 waves-effect waves-light light-blue btn"><a
-                            href="#output">Add "Open As Root" to Right-Click</a></li>
+                    <li><button id="openAsRoot" class="select elementaryOnly btn btn-primary" href="#output">Add "Open
+                            As Root" to Right-Click</button></li>
                     <li>Misc2</li>
                     <li>Misc3</li>
                     <li>Misc4</li>
                     <li>Misc5</li>
                 </ul>
-            </section>
+
+            </div>
         </div>
-        <div class="tab-pane" id="outputTab" role="tabpanel" aria-labelledby="settings-tab">
+
             <div id="output" class="outputDiv">
                 <h2>Command:</h2>
                 <p id="outputIntro"></p>
@@ -162,20 +166,21 @@
                 <button id="emailOutput">Send via email</button>
             </div>
         </div>
-    </div>
-    </div>
-    <script type="text/javascript" src="scripts/distros.js"></script>
-    <script type="text/javascript" src="scripts/FileSaver.min.js"></script>
-    <script type="text/javascript" src="scripts/commandGenerator.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
+
+        <!-- SCRIPTS -->
+
+        <!-- materialize -->
+        <script type="text/javascript" src="scripts/materialize.min.js"></script>
+        <script>          
+            M.AutoInit();
+        </script>
+
+        <!-- FileSaver -->
+        <script type="text/javascript" src="scripts/FileSaver.min.js"></script>
+
+        <script type="text/javascript" src="scripts/distros.js"></script>
+        <script type="text/javascript" src="scripts/commandGenerator.js"></script>
+
 </body>
 
 </html>
