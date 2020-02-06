@@ -6,6 +6,125 @@ let selection; // to hold user app/icon/theme selection.
 let choice; // to hold text name of user's OS
 
 
+// FUNCTIONS
+
+// distro picker
+const distroPicker = name => {
+    switch (name) {
+        case "arch":
+            osObj = arch;
+            osName = name;
+            choice = "Arch Linux"
+            break;
+        case "debian":
+            osObj = debian;
+            osName = name;
+            choice = "Debian"
+            break;
+        case "elementary":
+            osObj = elementary;
+            osName = name;
+            choice = "Elementary OS"
+            break;
+        case "solus":
+            osObj = solus;
+            osName = name;
+            choice = "Solus"
+            break;
+        case "ubuntu":
+            osObj = ubuntu;
+            osName = name;
+            choice = "Ubuntu"
+            break;
+        case "notSure":
+            document.getElementById("outputIntro").innerText = "Enter the following to find out what OS you\'re using:";
+            document.getElementById("outputContent").innerText = "$ cat /etc/issue";
+    }
+    if (osObj && this.id !== "notSure") {
+        document.getElementById("outputIntro").innerText = `Please select an App, Theme, or Icon pack to install on ${choice}.`;
+    }
+};
+
+// available apps checker
+const appChecker = () => {
+    // check what apps are available for selected distro
+    let availableApps = document.getElementsByClassName("select");
+    for (let j = 0; j < availableApps.length; j++) {
+        let currentID = availableApps[j].id;
+        // console.log(availableApps[j].id);
+        if (osObj.hasOwnProperty(currentID)) {
+            document.getElementById(currentID).removeAttribute("disabled");
+        } else {
+            document.getElementById(currentID).setAttribute("disabled", "true");
+        }
+    }
+};
+
+const codePrinter = codetobeprinted => {
+    let codePrint = "";
+    let codeSplit = [];
+    codeSplit = osObj[codetobeprinted].code.split("\n");
+    for (let i = 0; i < codeSplit.length; i++) {
+        codePrint += codeSplit[i] + '<br>';
+    }
+    document.getElementById("outputContent").innerHTML = `<code>${codePrint}</code>`;
+}
+
+// add to list
+const addToList = (distname, selectionname) => {
+    // check if OS has already been added to list object, if so app/theme/icon to it
+    if (userList[distname]) {
+        if (userList[distname][selectionname]) {
+            console.log("Item already added")
+        } else {
+            console.log(userList[distname]);
+            userList[distname][selectionname] = osObj[selection];
+        }
+    } else {
+        // if OS hasnt' been added, add it then add app/theme/icon to it
+        userList[distname] = {};
+        userList[distname][selectionname] = osObj[selection];
+    }
+};
+
+// add to sidebar
+const addToSidebar = (osinfo, selectioninfo) => {
+    // check if distro is already in sidebar
+    if (document.getElementById(`${osinfo}_side`)) {
+        
+        // if so, check if the distro element in sidebar already has the app
+        if (document.getElementById(`${osinfo}_side_${selectioninfo}`)) {
+            
+            // if so, log warning
+            console.log("OS and App already in list");
+        } else {
+            // if not, create element to hold app name and append to os element withint sidebar
+            let sideElementContent = document.createElement("span");
+            sideElementContent.innerHTML = `, ${selectioninfo}`;
+            sideElementContent.setAttribute("id", `${osinfo}_side_${selectioninfo}`);
+            document.getElementById(`${osinfo}_side`).appendChild(sideElementContent);
+        }
+    } else {
+        // if distro not already in sidebar create element to hold it, populate it, and add ID
+        let sideElement = document.createElement("p");
+        console.log("Creating OS element for first time");
+        sideElement.innerHTML = `${osObj.logo}:`;
+        sideElement.setAttribute("id", `${osinfo}_side`);
+
+        // create element to hold app selection, populate it, add ID, and append to distro element
+        let sideElementContent = document.createElement("span");
+        console.log("Creating app element for first time");
+        sideElementContent.innerText = `${selectioninfo}`;
+        sideElementContent.setAttribute("id", `${osinfo}_side_${selectioninfo}`);
+        sideElement.appendChild(sideElementContent);
+
+        // add to DOM
+        document.getElementById("sideOutput").appendChild(sideElement);
+    }
+
+};
+
+
 // EVENT LISTENERS
 // add click listener to OS buttons.
 let distros = document.getElementsByClassName("distro");
@@ -20,55 +139,23 @@ for (let i = 0; i < distros.length; i++) {
         choice = document.getElementById(this.id).innerText;
 
         // switch statement to populate userOS var with object name
-        switch (this.id) {
-            case "arch":
-                osObj = arch;
-                osName = this.id;
-                break;
-            case "debian":
-                osObj = debian;
-                osName = this.id;
-                break;
-            case "elementary":
-                osObj = elementary;
-                osName = this.id;
-                break;
-            case "solus":
-                osObj = solus;
-                osName = this.id;
-                break;
-            case "ubuntu":
-                osObj = ubuntu;
-                osName = this.id;
-                break;
-            case "notSure":
-                document.getElementById("outputIntro").innerText = "Enter the following to find out what OS you\'re using:";
-                document.getElementById("outputContent").innerText = "$ cat /etc/issue";
-        }
-        if (osObj && this.id !== "notSure") {
-            document.getElementById("outputIntro").innerText = `Please select an App, Theme, or Icon pack to install on ${choice}.`;
-        }
+        distroPicker(this.id);
 
-        // check what apps are available for selected distro
-        let availableApps = document.getElementsByClassName("select");
-        for (let j = 0; j < availableApps.length; j++) {
-            let currentID = availableApps[j].id;
-            console.log(availableApps[j].id);
-            if (osObj.hasOwnProperty(currentID)) {
-                document.getElementById(currentID).removeAttribute("disabled");
-            } else {
-                document.getElementById(currentID).setAttribute("disabled", "true");
-                
-                
-            }
-        }
+
+        appChecker();
     });
 }
+
+
+
 
 // add click listener to App buttons.
 let toInstall = document.getElementsByClassName("select");
 for (i = 0; i < toInstall.length; i++) {
     toInstall[i].addEventListener("click", function () {
+
+        // empty/reset variables
+
 
         // check if selection var is already populated, if so empty it
         if (selection) {
@@ -80,16 +167,21 @@ for (i = 0; i < toInstall.length; i++) {
             document.getElementById("outputIntro").innerText = "Please select an Operating System above.";
             document.getElementById("outputContent").innerText = "";
 
-            // check if var is already populated and if so empty it
         } else {
             selection = (this.id);
+            // generic instruction, same regardless of selections
             document.getElementById("outputIntro").innerHTML = `<p>Enter the following in your terminal (<code>cmd+t</code> or <code>ctrl+shift+t</code> on most Linux systems) to install <span class="installName">${document.getElementById(selection).innerText}</span> on <span class="osName">${choice}</span>:</p>`;
-            document.getElementById("outputContent").innerHTML = `<code>${osObj[selection]}</code>`;
 
+            // check the os object to see if app selection has custom instructions, if so populate instructions element
+            if (osObj[selection].instructions) {
+                document.getElementById("outputInstructions").innerHTML = osObj[selection].instructions;
+            }
+
+            // split the output code across multiple lines
+            codePrinter(selection);
         }
     });
 }
-
 
 // add click listener to copy button
 document.getElementById("copyOutput").addEventListener("click", function () {
@@ -119,17 +211,10 @@ function copyToClipboard(inputText) {
 
 // add click listener to add to list button
 document.getElementById("saveOutput").addEventListener("click", function () {
-    // check if OS has already been added to list object
-    if (userList[osName]) {
-        userList[osName][selection] = osObj[selection];
-    } else {
-        userList[osName] = {};
-        userList[osName][selection] = osObj[selection];
-    }
-
-    console.log(userList[osName]);
-    copyToClipboard(document.getElementById("outputContent").innerText);
+    addToSidebar(osName, selection);
+    addToList(osName, selection);
 });
+
 
 
 

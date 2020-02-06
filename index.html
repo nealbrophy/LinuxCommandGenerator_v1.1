@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
 
-    <!-- google fonts -->
+    <!-- import google fonts -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Parisienne&display=swap" rel="stylesheet">
 
-    <!--Import materialize.css-->
+    <!--import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
 
-    <!-- emailJS -->
+    <!-- import emailJS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
     <script type="text/javascript">
         (function () {
@@ -19,13 +19,13 @@
         })();
     </script>
 
-    <!-- font awesome -->
+    <!-- import font awesome -->
     <script src="https://kit.fontawesome.com/624307dae0.js" crossorigin="anonymous"></script>
 
-    <!-- fork awesome -->
+    <!-- import fork awesome -->
     <link rel="stylesheet" href="css/Fork-Awesome-1.1.7/css/fork-awesome.min.css">
 
-    <!-- IcoFont -->
+    <!-- import IcoFont -->
     <link rel="stylesheet" href="css/icofont/icofont.min.css">
 
     <!--  -->
@@ -33,7 +33,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Linux Command Generator</title>
-
 </head>
 
 <body>
@@ -43,35 +42,34 @@
             <input type="text" class="searchBox" placeholder="Search...">
         </section>
 
+        <!-- materialize tabs -->
         <div class="row">
             <div class="col s12">
                 <ul class="tabs">
-                    <li class="tab col s3"><a class="active" href="#distroSelect">Pick OS</a class="active"></li>
-                    <li class="tab col s3"><a href="#appSelect">Apps</a></li>
-                    <li class="tab col s3"><a href="#iconSelect">Icons</a></li>
-                    <li class="tab col s3"><a href="#themeSelect">Themes</a></li>
-                    <li class="tab col s3"><a href="#miscSelect">Misc</a></li>
+                    <li class="tab col s2"><a class="active" href="#distroSelect">Pick OS</a></li>
+                    <li class="tab col s2"><a href="#appSelect">Apps</a></li>
+                    <li class="tab col s2"><a href="#iconSelect">Icons</a></li>
+                    <li class="tab col s2"><a href="#themeSelect">Themes</a></li>
+                    <li class="tab col s2"><a href="#miscSelect">Misc</a></li>
                 </ul>
             </div>
 
             <!-- operating systems -->
-            <div id="distroSelect" class="col s12">
+            <div id="distroSelect" class="col s12 active">
+
                 <ul>
-                    <li><a id="arch" class="distro" href="#appSelect"><i class="fa fa-archlinux"></i></a id="arch"
-                            class="distro"> Arch
+                    <li><a id="arch" class="distro s1 btn" href="#appSelect"><span class="distro-btn-name">Arch | </span>
+                            <i class="fa fa-archlinux"></i></a></li>
+                    <li><a id="debian" class="distro s1 btn" href="#appSelect">Debian | <i class="fa fa-debian"
+                                aria-hidden="true"></i></a></li>
+                    <li><a id="elementary" class="distro s1 btn" href="#appSelect">Elementary | <span
+                                class="elementaryLogo">e</span></a></li>
+                    <li><a id="solus" class="distro s1 btn" href="#appSelect">Solus | <i
+                                class="icofont-sail-boat"></i></a></li>
+                    <li><a id="ubuntu" class="distro s1 btn" href="#appSelect">Ubuntu | <i class="fab fa-ubuntu"></i></a>
                     </li>
-                    <li><a id="debian" class="distro" href="#appSelect"><i class="fa fa-debian"
-                                aria-hidden="true"></i></a>
-                        Debian</li>
-                    <li><a id="elementary" class="distro" href="#appSelect"><span class="elementaryLogo">e</span></a>
-                        Elementary</li>
-                    <li><a id="solus" class="distro" href="#appSelect"><i class="icofont-sail-boat"></i></a>
-                        Solus</li>
-                    <li><a id="ubuntu" class="distro" href="#appSelect"><i class="fab fa-ubuntu"></i></a> Ubuntu
-                    </li>
-                    <li><a id="notSure" class="distro" href="#appSelect"><i class="far fa-question-circle"></i></a>
-                        Not
-                        Sure</li>
+                    <li><a id="notSure" class="distro s1 btn" href="#appSelect">Not Sure | <i
+                                class="far fa-question-circle"></i></a></li>
                 </ul>
             </div>
 
@@ -109,8 +107,7 @@
                     <li><button id="slack" class="select btn btn-primary" href="#outputTab"><i class="fab fa-slack"></i>
                             Slack</a></li>
                     <li><button id="standardNotes" class="select btn btn-primary" href="#outputTab"><i
-                                class="fas fa-sticky-note"></i>
-                            Standard Notes</button></li>
+                                class="fas fa-sticky-note"></i> Standard Notes</button></li>
                 </ul>
             </div>
 
@@ -156,30 +153,49 @@
             </div>
         </div>
 
-            <div id="output" class="outputDiv">
-                <h2>Command:</h2>
-                <p id="outputIntro"></p>
-                <button id="copyOutput">Copy to clipboard</button>
-                <button id="saveOutput">Add to my list</button>
-                <div id="outputContent"></div>
-                <button id="downloadOutput">Download as .TXT</button>
-                <button id="emailOutput">Send via email</button>
-            </div>
+        <!-- sidebar -->
+        <ul id="slide-out" class="sidenav">
+            <li>
+                <div id="sideOutput">
+                    
+
+                </div>
+
+                <div class="divider"></div>
+            </li>
+            <li><a class="subheader">Subheader</a></li>
+            <a class="waves-effect btn" href="#!">Download as .TXT</a>
+            <a class="waves-effect btn" href="#!">Send via Email</a>
+        </ul>
+        <!-- sidebar trigger -->
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+        <!-- output -->
+        <div id="output" class="outputDiv">
+            <h2>Instructions:</h2>
+            <p id="outputIntro"></p>
+            <button id="copyOutput">Copy to clipboard</button>
+            <button id="saveOutput">Add to my list</button>
+            <div id="outputInstructions"></div>
+            <div id="outputContent"></div>
+            <button id="downloadOutput">Download as .TXT</button>
+            <button id="emailOutput">Send via email</button>
         </div>
+    </div>
 
-        <!-- SCRIPTS -->
+    <!-- SCRIPTS -->
 
-        <!-- materialize -->
-        <script type="text/javascript" src="scripts/materialize.min.js"></script>
-        <script>          
-            M.AutoInit();
-        </script>
+    <!-- materialize -->
+    <script type="text/javascript" src="scripts/materialize.min.js"></script>
+    <script>
+        M.AutoInit();
+    </script>
 
-        <!-- FileSaver -->
-        <script type="text/javascript" src="scripts/FileSaver.min.js"></script>
+    <!-- FileSaver -->
+    <script type="text/javascript" src="scripts/FileSaver.min.js"></script>
 
-        <script type="text/javascript" src="scripts/distros.js"></script>
-        <script type="text/javascript" src="scripts/commandGenerator.js"></script>
+    <script type="text/javascript" src="scripts/distros.js"></script>
+    <script type="text/javascript" src="scripts/commandGenerator.js"></script>
 
 </body>
 

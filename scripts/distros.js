@@ -19,7 +19,7 @@ const arch = {
     _vimix: "",
     _uniform: "",
     _distSummary: "<p>Arch Linux  is a Linux distribution for computers based on x86-64 architectures. Arch adheres to five principles: simplicity, modernity, pragmatism, user centrality and versatility. In general, the principles maintain minimal distribution-specific changes, minimal breakage with updates, pragmatic over ideological design choices, user-friendliness, and minimal bloat.</p>",
-    _logo: "/images/arch_white.png",
+    _logo: `<i class="fa fa-archlinux"></i>`,
     get appImageLauncher() {
         return this._appImageLauncher;
     },
@@ -92,7 +92,7 @@ const debian = {
     _vimix: "",
     _uniform: "",
     _distSummary: "<p>Debian, also known as Debian GNU/Linux, is a Linux distribution composed of free and open-source software, developed by the community-supported Debian Project, which was established by Ian Murdock on August 16, 1993. Debian is one of the oldest operating systems based on the Linux kernel. The project is coordinated over the Internet by a team of volunteers guided by the Debian Project Leader and three foundational documents: the Debian Social Contract, the Debian Constitution, and the Debian Free Software Guidelines. New distributions are updated continually, and the next candidate is released after a time-based freeze.</p>",
-    _logo: "/images/debian_white.png",
+    _logo: `<i class="fa fa-debian" aria-hidden="true"></i>`,
     get appImageLauncher() {
         return this._appImageLauncher;
     },
@@ -151,22 +151,46 @@ const elementary = {
     _appImageLauncher: "",
     _atom: "",
     _bitWarden: "",
-    _chrome: "",
-    _firefox: "",
+    _chrome: {
+        instructions:"",
+        code: "wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \nsudo dpkg -i google-chrome*.deb"
+    },
+    _firefox: {
+        instructions:"",
+        code: "wget https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US && \ncd ~/Downloads/ && \ntar xjf firefox-*.tar.bz2 && \nsudo rm -r /opt/firefox && \nsudo mv firefox /opt/firefox72"
+    },
     _git: "",
-    _gitKraken: "",
+    _gitKraken: {
+        instructions: "",
+        code: "wget https://release.gitkraken.com/linux/gitkraken-amd64.deb && \nsudo dpkg -i gitkraken-amd64.deb"
+    },
     _kdeConnect: "",
-    _mcMojave: "<p>Go to <a href='#'>link</a> and and download the desired version.</p> sudo apt-get install gtk2-engines-murrine gtk2-engines-pixbuf -y && cd Downloads && tar xvf Mojave-*.tar.xz && sudo mv Mojave-* /usr/share/themes/",
+    _mcMojave: {
+        instructions: "<p>Go <a href='#' class='instructionLink'>here</a> and and download the desired version.</p>",
+        code: "sudo apt-get install gtk2-engines-murrine gtk2-engines-pixbuf -y && \ncd Downloads && tar xvf Mojave-*.tar.xz && \nsudo mv Mojave-* /usr/share/themes/"
+    },
+    _nodeJS: {
+        instructions: "",
+        code:"sudo apt-get install curl && \ncurl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && \nsudo apt-get install -y nodejs"
+    },
+    _opera: {
+        instructions: "",
+        code: "wget -qO- https://deb.opera.com/archive.key | sudo apt-key add - && \nsudo add-apt-repository \"deb [arch=i386,amd64] https://deb.opera.com/opera-stable/ stable non-free\" && \nsudo apt install opera-stable -y"
+    },
     _slack: "",
     _standardNotes: "",
-    _tweaks: "sudo apt install software-properties-common && sudo add-apt-repository ppa:philip.scott/elementary-tweaks && sudo apt-get update && sudo apt-get install elementary-tweaks",
-    _papirus: "",
-    _flatery: "",
-    _flatRemix: "",
-    _vimix: "",
-    _uniform: "",
+    _tor: {
+        code: "sudo add-apt-repository ppa:webupd8team/tor-browser && \nsudo apt-get update && \nsudo apt-get upgrade -y && \nsudo apt-get install tor-browser"
+    },
+    _tweaks: {
+        code: "sudo apt install software-properties-common && \nsudo add-apt-repository ppa:philip.scott/elementary-tweaks && \nsudo apt-get update && \nsudo apt-get install elementary-tweaks"},
+    _papirus: {},
+    _flatery: {},
+    _flatRemix: {},
+    _vimix: {},
+    _uniform: {},
     _distSummary: "elementary OS is a Linux distribution based on Ubuntu that focuses mainly on non-technical users. It promotes itself as a “fast, open, and privacy-respecting” replacement to macOS and Windows and has a pay-what-you-want model. The human interface guidelines of the elementary OS project focus on immediate usability with a gentle learning curve, rather than full-fledged customization.[9] The three core rules the developers set for themselves were \"concision\", \"accessible configuration\" and \"minimal documentation\".",
-    _logo: "/images/elementary_white.png",
+    _logo: `<span class="elementaryLogo">e</span>`,
     get appImageLauncher() {
         return this._appImageLauncher;
     },
@@ -194,11 +218,20 @@ const elementary = {
     get mcMojave() {
         return this._mcMojave;
     },
+    get nodeJS() {
+        return this._nodeJS;
+    },
+    get opera() {
+        return this._opera;
+    },
     get standardNotes() {
         return this._standardNotes;
     },
     get slack() {
         return this._slack;
+    },
+    get tor() {
+        return this._tor;
     },
     get tweaks() {
         return this._tweaks;
@@ -243,7 +276,7 @@ const solus = {
     _vimix: "",
     _uniform: "",
     _distSummary: "<p>Solus is an independently developed desktop operating system based on the Linux kernel and using its own desktop environment derived from GNOME. Starting with the Debian branch of Linux it migrated to a unique approach including Pisi and Evolve OS. It is offered as a curated rolling release model under the slogan \"Install Today. Updates Forever\". Solus contains a wide variety of desktop environments depending on release chosen, options include Solus' own Budgie Desktop, GNOME, MATE and KDE Plasma.</p>",
-    _logo: "/images/solus_white.png",
+    _logo: `<i class="icofont-sail-boat"></i>`,
     get appImageLauncher() {
         return this._appImageLauncher;
     },
@@ -315,7 +348,7 @@ const ubuntu = {
     _vimix: "",
     _uniform: "",
     _distSummary: "<p>Ubuntu is a free and open-source Linux distribution based on Debian. Ubuntu is released every six months, with long-term support (LTS) releases every two years. Ubuntu is developed by Canonical, and a community of other developers, under a meritocratic governance model. Canonical provides security updates and support for each Ubuntu release, starting from the release date and until the release reaches its designated end-of-life (EOL) date. Canonical generates revenue through the sale of premium services related to Ubuntu.</p>",
-    _logo: "/images/ubuntu_white.png",
+    _logo: `<i class="fab fa-ubuntu"></i>`,
     get appImageLauncher() {
         return this._appImageLauncher;
     },
