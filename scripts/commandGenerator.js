@@ -1,14 +1,17 @@
-// GLOBAL VARs
+/*  ===========
+    GLOBAL VARs & OBJs
+    =========== */
 let userOS;
 let osName; // to hold name of users OS choice
 let osObj; // reference to os object matching user choice name
 let selection; // to hold user app/icon/theme selection.
 let choice; // to hold text name of user's OS
+const userList = {}; // object to hold list of users chosen commands
 
-
-// FUNCTIONS
-
-// distro picker
+/*  ==========
+    FUNCTIONS
+    ========== */
+// grab os object and populate vars
 const distroPicker = name => {
     switch (name) {
         case "arch":
@@ -45,9 +48,8 @@ const distroPicker = name => {
     }
 };
 
-// available apps checker
+// check which apps are available for selected distro
 const appChecker = () => {
-    // check what apps are available for selected distro
     let availableApps = document.getElementsByClassName("select");
     for (let j = 0; j < availableApps.length; j++) {
         let currentID = availableApps[j].id;
@@ -60,6 +62,7 @@ const appChecker = () => {
     }
 };
 
+// split code onto multiple lines for printing to screen
 const codePrinter = codetobeprinted => {
     let codePrint = "";
     let codeSplit = [];
@@ -70,7 +73,7 @@ const codePrinter = codetobeprinted => {
     document.getElementById("outputContent").innerHTML = `<code>${codePrint}</code>`;
 }
 
-// add to list
+// add distro & selected apps to list object
 const addToList = (distname, selectionname) => {
     // check if OS has already been added to list object, if so app/theme/icon to it
     if (userList[distname]) {
@@ -87,45 +90,102 @@ const addToList = (distname, selectionname) => {
     }
 };
 
-// add to sidebar
+// add distro & selected apps to sidebar
 const addToSidebar = (osinfo, selectioninfo) => {
     // check if distro is already in sidebar
     if (document.getElementById(`${osinfo}_side`)) {
-        
+
         // if so, check if the distro element in sidebar already has the app
         if (document.getElementById(`${osinfo}_side_${selectioninfo}`)) {
-            
+
             // if so, log warning
-            console.log("OS and App already in list");
+            M.toast({
+                html: 'Item already on list!'
+            });
         } else {
             // if not, create element to hold app name and append to os element withint sidebar
             let sideElementContent = document.createElement("span");
-            sideElementContent.innerHTML = `, ${selectioninfo}`;
+            sideElementContent.innerHTML = `${selectioninfo}`;
             sideElementContent.setAttribute("id", `${osinfo}_side_${selectioninfo}`);
+            sideElementContent.setAttribute("class", "chip");
             document.getElementById(`${osinfo}_side`).appendChild(sideElementContent);
         }
     } else {
         // if distro not already in sidebar create element to hold it, populate it, and add ID
         let sideElement = document.createElement("p");
-        console.log("Creating OS element for first time");
         sideElement.innerHTML = `${osObj.logo}:`;
         sideElement.setAttribute("id", `${osinfo}_side`);
 
+
         // create element to hold app selection, populate it, add ID, and append to distro element
         let sideElementContent = document.createElement("span");
-        console.log("Creating app element for first time");
         sideElementContent.innerText = `${selectioninfo}`;
         sideElementContent.setAttribute("id", `${osinfo}_side_${selectioninfo}`);
+        sideElementContent.setAttribute("class", "chip");
         sideElement.appendChild(sideElementContent);
 
         // add to DOM
         document.getElementById("sideOutput").appendChild(sideElement);
+        M.toast({
+            html: 'Added to list!'
+        });
     }
-
 };
 
+// basic copy to clipboard function
+function copyToClipboard(inputText) {
+    let textArea = document.createElement("textarea");
+    textArea.value = inputText;
+    textArea.style.position = "fixed";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
 
-// EVENT LISTENERS
+    try {
+        let successful = document.execCommand("copy");
+        let msg = successful ? "successful" : "unsuccessful";
+        M.toast({
+            html: 'Copy ' + msg + '!'
+        });
+    } catch (err) {
+        M.toast({
+            html: "Copy failed"
+        });
+        console.log("Copy failed", err);
+    }
+
+    document.body.removeChild(textArea);
+}
+
+/*  ===============
+    EVENT LISTENERS
+    =============== */
+
+
+// tab listener ****SOMETHING NOT RIGHT HERE (also look at setAttribute changes in distro click listener)
+let materializeTabs = document.getElementsByClassName("tabLink");
+for (let i = 0; i < materializeTabs.length; i++) {
+    materializeTabs[i].addEventListener("click", function () {
+            if (this.classList.contains("active")) {
+                console.log("ACTIVE")
+            } else {
+                for (let j = 0; j < materializeTabs.length; j++) {
+                    console.log(this.id);
+                    let innerId = this.id.split("T");
+                    let innerIdPlus = innerId[0] + "Select"
+                    document.getElementById(innerIdPlus).setAttribute("class", "col s12");
+                    document.getElementById(innerIdPlus).setAttribute("style", "display: none;");
+                    document.getElementById(this.id).setAttribute("class", "col s12");
+                }
+            }
+            this.setAttribute("class", "active");
+            let getTheId = this.id.split("T");
+            document.getElementById(getTheId[0] + "Select").setAttribute("style", "display: block;");
+
+    });
+}
+
+
 // add click listener to OS buttons.
 let distros = document.getElementsByClassName("distro");
 for (let i = 0; i < distros.length; i++) {
@@ -138,24 +198,26 @@ for (let i = 0; i < distros.length; i++) {
         // store the text from the clicked id
         choice = document.getElementById(this.id).innerText;
 
-        // switch statement to populate userOS var with object name
+        // func calls
         distroPicker(this.id);
-
-
         appChecker();
+
+        document.getElementById("distroSelect").setAttribute("class", "col s12");
+        document.getElementById("distroSelect").setAttribute("style", "display: none;");
+        document.getElementById("distroTab").setAttribute("class", "col s12");
+
+
+        document.getElementById("appSelect").setAttribute("class", "active");
+        document.getElementById("appSelect").setAttribute("style", "display: block;");
+        document.getElementById("appTab").setAttribute("class", "active");
+
     });
 }
-
-
-
 
 // add click listener to App buttons.
 let toInstall = document.getElementsByClassName("select");
 for (i = 0; i < toInstall.length; i++) {
     toInstall[i].addEventListener("click", function () {
-
-        // empty/reset variables
-
 
         // check if selection var is already populated, if so empty it
         if (selection) {
@@ -177,7 +239,7 @@ for (i = 0; i < toInstall.length; i++) {
                 document.getElementById("outputInstructions").innerHTML = osObj[selection].instructions;
             }
 
-            // split the output code across multiple lines
+            // func calls
             codePrinter(selection);
         }
     });
@@ -189,34 +251,8 @@ document.getElementById("copyOutput").addEventListener("click", function () {
     copyToClipboard(document.getElementById("outputContent").innerText);
 });
 
-// basic copy to clipboard function
-function copyToClipboard(inputText) {
-    let textArea = document.createElement("textarea");
-    textArea.value = inputText;
-    textArea.style.position = "fixed";
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-
-    try {
-        let successful = document.execCommand("copy");
-        let msg = successful ? "successful" : "unsuccessful";
-        console.log("Copy text was " + msg);
-    } catch (err) {
-        console.log("Copy failed", err);
-    }
-
-    document.body.removeChild(textArea);
-}
-
 // add click listener to add to list button
 document.getElementById("saveOutput").addEventListener("click", function () {
     addToSidebar(osName, selection);
     addToList(osName, selection);
 });
-
-
-
-
-// object to hold list of users chosen commands
-const userList = {};
