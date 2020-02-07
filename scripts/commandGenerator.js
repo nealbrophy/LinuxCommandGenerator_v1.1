@@ -66,6 +66,7 @@ const appChecker = () => {
 const codePrinter = codetobeprinted => {
     let codePrint = "";
     let codeSplit = [];
+    console.log(osObj[codetobeprinted]);
     codeSplit = osObj[codetobeprinted].code.split("\n");
     for (let i = 0; i < codeSplit.length; i++) {
         codePrint += codeSplit[i] + '<br>';
@@ -162,30 +163,6 @@ function copyToClipboard(inputText) {
     =============== */
 
 
-// tab listener ****SOMETHING NOT RIGHT HERE (also look at setAttribute changes in distro click listener)
-let materializeTabs = document.getElementsByClassName("tabLink");
-for (let i = 0; i < materializeTabs.length; i++) {
-    materializeTabs[i].addEventListener("click", function () {
-            if (this.classList.contains("active")) {
-                console.log("ACTIVE")
-            } else {
-                for (let j = 0; j < materializeTabs.length; j++) {
-                    console.log(this.id);
-                    let innerId = this.id.split("T");
-                    let innerIdPlus = innerId[0] + "Select"
-                    document.getElementById(innerIdPlus).setAttribute("class", "col s12");
-                    document.getElementById(innerIdPlus).setAttribute("style", "display: none;");
-                    document.getElementById(this.id).setAttribute("class", "col s12");
-                }
-            }
-            this.setAttribute("class", "active");
-            let getTheId = this.id.split("T");
-            document.getElementById(getTheId[0] + "Select").setAttribute("style", "display: block;");
-
-    });
-}
-
-
 // add click listener to OS buttons.
 let distros = document.getElementsByClassName("distro");
 for (let i = 0; i < distros.length; i++) {
@@ -201,16 +178,6 @@ for (let i = 0; i < distros.length; i++) {
         // func calls
         distroPicker(this.id);
         appChecker();
-
-        document.getElementById("distroSelect").setAttribute("class", "col s12");
-        document.getElementById("distroSelect").setAttribute("style", "display: none;");
-        document.getElementById("distroTab").setAttribute("class", "col s12");
-
-
-        document.getElementById("appSelect").setAttribute("class", "active");
-        document.getElementById("appSelect").setAttribute("style", "display: block;");
-        document.getElementById("appTab").setAttribute("class", "active");
-
     });
 }
 

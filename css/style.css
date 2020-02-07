@@ -38,9 +38,25 @@ li  {
     padding: 0 50px 0 50px;
 }
 
-#outputContent {
+.outputInner {
+    min-height: 150px;;
+    border: 2px solid rgba(0, 0, 0, 0.685);
     background-color: black;
+    border-radius: 1.5em;
+    padding-left: 1.5rem;
+}
+
+#outputContent {
+    padding: 1.5rem;
     color: lightcoral;
+}
+
+#sideOutput {
+    padding-left: 1rem;
+}
+
+#sideOutput p span:nth-child(2) {
+    margin-left: .5rem;
 }
 
 .distroSelect img {

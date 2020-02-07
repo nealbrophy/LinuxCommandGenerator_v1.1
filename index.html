@@ -36,25 +36,28 @@
 </head>
 
 <body>
+    <!-- sidebar trigger -->
+    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <div class="container">
+
         <h1>Linux Command Generator</h1>
         <section class="search">
             <form>
                 <nav>
                     <div class="nav-wrapper">
-                      <form>
-                        <div class="input-field">
-                          <input id="search" type="search" required>
-                          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                          <i class="material-icons">close</i>
-                        </div>
-                      </form>
+                        <form>
+                            <div class="input-field">
+                                <input id="search" type="search" required>
+                                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                                <i class="material-icons">close</i>
+                            </div>
+                        </form>
                     </div>
-                  </nav>
-              </form>
+                </nav>
+            </form>
         </section>
         <br>
-        
+
         <br>
         <!-- materialize tabs -->
         <div class="row">
@@ -70,22 +73,23 @@
 
             <!-- operating systems -->
             <div id="distroSelect" class="col s12 active">
-                    <a id="arch" class="distro s1 btn waves-effect waves-light" href="#appSelect"><span class="distro-btn-name">Arch |
-                            </span>
-                            <i class="fa fa-archlinux"></i></a>
-                    <a id="debian" class="distro s1 btn waves-effect waves-light" href="#appSelect">Debian | <i class="fa fa-debian"
-                                aria-hidden="true"></i></a>
-                    <a id="elementary" class="distro s1 btn waves-effect waves-light" href="#appSelect">Elementary | <span
-                                class="elementaryLogo">e</span></a>
-                    <a id="solus" class="distro s1 btn waves-effect waves-light" href="#appSelect">Solus | <i
-                                class="icofont-sail-boat"></i></a>
-                    <a id="ubuntu" class="distro s1 btn waves-effect waves-light" href="#appSelect">Ubuntu | <i
-                                class="fab fa-ubuntu"></i></a>
+                <a id="arch" class="distro s1 btn waves-effect waves-light" href="#appSelect"><span
+                        class="distro-btn-name">Arch |
+                    </span>
+                    <i class="fa fa-archlinux"></i></a>
+                <a id="debian" class="distro s1 btn waves-effect waves-light" href="#appSelect">Debian | <i
+                        class="fa fa-debian" aria-hidden="true"></i></a>
+                <a id="elementary" class="distro s1 btn waves-effect waves-light" href="#appSelect">Elementary | <span
+                        class="elementaryLogo">e</span></a>
+                <a id="solus" class="distro s1 btn waves-effect waves-light" href="#appSelect">Solus | <i
+                        class="icofont-sail-boat"></i></a>
+                <a id="ubuntu" class="distro s1 btn waves-effect waves-light" href="#appSelect">Ubuntu | <i
+                        class="fab fa-ubuntu"></i></a>
 
-                    <a id="notSure" class="distro s1 btn waves-effect waves-light" href="#appSelect">Not Sure | <i
-                                class="far fa-question-circle"></i></a>
-                                
-                                <!-- *******OLD BUTTONS*********** -->
+                <a id="notSure" class="distro s1 btn waves-effect waves-light" href="#appSelect">Not Sure | <i
+                        class="far fa-question-circle"></i></a>
+
+                <!-- *******OLD BUTTONS*********** -->
                 <!-- <ul>
                     <li><a id="arch" class="distro s1 btn inline" href="#appSelect"><span class="distro-btn-name">Arch |
                             </span>
@@ -106,40 +110,40 @@
 
             <!-- applications -->
             <div id="appSelect" class="col s12">
-                <button id="appImageLauncher" class="select btn" href="#outputTab"><i
-                                class="fas fa-rocket"></i>
-                            AppImageLauncher</button>
+                <button id="appImageLauncher" class="select btn" href="#outputTab"><i class="fas fa-rocket"></i>
+                    AppImageLauncher</button>
                 <button id="atom" class="select btn waves-effect waves-light" href="#outputTab"><i
-                                class="fas fa-atom"></i>
-                            Atom</button>
+                        class="fas fa-atom"></i>
+                    Atom</button>
                 <button id="bitWarden" class="select btn waves-effect waves-light" href="#outputTab"><i
-                                class="fas fa-shield-alt"></i>
-                            BitWarden</button>
+                        class="fas fa-shield-alt"></i>
+                    BitWarden</button>
                 <button id="chrome" class="select btn waves-effect waves-light" href="#outputTab"><i
-                                class="fab fa-chrome"></i>
-                            Chrome</button>
+                        class="fab fa-chrome"></i>
+                    Chrome</button>
                 <button id="tweaks" class="select btn waves-effect waves-light" href="#outputTab"><i
-                                class="fas fa-sliders-h"></i>
-                            Elementary-Tweaks</button>
+                        class="fas fa-sliders-h"></i>
+                    Elementary-Tweaks</button>
                 <button id="firefox" class="select btn waves-effect waves-light" href="#outputTab"><i
-                                class="fab fa-firefox-browser"></i>
-                            Firefox</button>
+                        class="fab fa-firefox-browser"></i>
+                    Firefox</button>
                 <button id="git" class="select btn waves-effect waves-light" href="#outputTab"><i
-                                class="fab fa-github-alt"></i>
-                            Git</button>
+                        class="fab fa-github-alt"></i>
+                    Git</button>
                 <button id="gitKraken" class="select btn waves-effect waves-light" href="#outputTab"><i
-                                class="fab fa-gitkraken"></i>
-                            GitKraken</button>
+                        class="fab fa-gitkraken"></i>
+                    GitKraken</button>
                 <button id="kdeConnect" class="select btn waves-effect waves-light" href="#outputTab"><i
-                                class="fas fa-mobile-alt"></i> KDE
-                            Connect</button>
-                <button id="slack" class="select btn waves-effect waves-light" href="#outputTab"><i class="fab fa-slack"></i>
-                            Slack</a>
-                <button id="standardNotes" class="select btn waves-effect waves-light" href="#outputTab"><i
-                                class="fas fa-sticky-note"></i> Standard Notes</button>
+                        class="fas fa-mobile-alt"></i> KDE
+                    Connect</button>
+                <button id="slack" class="select btn waves-effect waves-light" href="#outputTab"><i
+                        class="fab fa-slack"></i>
+                    Slack</a>
+                    <button id="standardNotes" class="select btn waves-effect waves-light" href="#outputTab"><i
+                            class="fas fa-sticky-note"></i> Standard Notes</button>
 
-                                <!-- ***********OLD BUTTONS***************** -->
-                <!-- <ul>
+                    <!-- ***********OLD BUTTONS***************** -->
+                    <!-- <ul>
                     <li><button id="appImageLauncher" class="select btn btn-primary" href="#outputTab"><i
                                 class="fas fa-rocket"></i>
                             AppImageLauncher</button></li>
@@ -177,17 +181,17 @@
 
             <!-- icons -->
             <div id="iconSelect" class="col s12">
-                    <button id="papirus" class="select btn waves-effect waves-light" href="#output">Papirus
-                            Icon Pack</button>
-                    <button id="flatery" class="select btn waves-effect waves-light" href="#output">Flatery
-                            Icon Pack</button>
-                    <button id="flatRemix" class="select btn waves-effect waves-light" href="#output">Flat
-                            Remix Icon Pack</button>
-                    <button id="vimix" class="select btn waves-effect waves-light" href="#output">Vimix
-                            Icon
-                            Pack</button>
-                    <button id="uniform" class="select btn waves-effect waves-light" href="#output">Uniform
-                            Icon Pack</button>
+                <button id="papirus" class="select btn waves-effect waves-light" href="#output">Papirus
+                    Icon Pack</button>
+                <button id="flatery" class="select btn waves-effect waves-light" href="#output">Flatery
+                    Icon Pack</button>
+                <button id="flatRemix" class="select btn waves-effect waves-light" href="#output">Flat
+                    Remix Icon Pack</button>
+                <button id="vimix" class="select btn waves-effect waves-light" href="#output">Vimix
+                    Icon
+                    Pack</button>
+                <button id="uniform" class="select btn waves-effect waves-light" href="#output">Uniform
+                    Icon Pack</button>
 
                 <!-- ******************** OLD BUTTONS ******************** -->
                 <!-- <ul>
@@ -207,11 +211,11 @@
 
             <!-- themes -->
             <div id="themeSelect" class="col s12">
-                    <button id="mcMojave" class="select btn waves-effect waves-light" href="#output">McMojave Theme</button>
-                    <button id="mcMojave" class="select btn waves-effect waves-light" href="#output">McMojave Theme</button>
-                    <button id="mcMojave" class="select btn waves-effect waves-light" href="#output">McMojave Theme</button>
-                    <button id="mcMojave" class="select btn waves-effect waves-light" href="#output">McMojave Theme</button>
-                    
+                <button id="mcMojave" class="select btn waves-effect waves-light" href="#output">McMojave Theme</button>
+                <button id="mcMojave" class="select btn waves-effect waves-light" href="#output">McMojave Theme</button>
+                <button id="mcMojave" class="select btn waves-effect waves-light" href="#output">McMojave Theme</button>
+                <button id="mcMojave" class="select btn waves-effect waves-light" href="#output">McMojave Theme</button>
+
 
                 <!-- *********** OLD BUTTONS *********** -->
                 <!-- <ul>
@@ -225,9 +229,9 @@
 
             <!-- miscellaneous -->
             <div id="miscSelect" class="col s12">
-                    <button id="openAsRoot" class="select elementaryOnly btn btn-primary" href="#output">Add "Open
-                            As Root" to Right-Click</button>
-                    
+                <button id="openAsRoot" class="select elementaryOnly btn btn-primary" href="#output">Add "Open
+                    As Root" to Right-Click</button>
+
 
                 <!-- ************ OLD BUTTONS ****************** -->
                 <!-- <ul>
@@ -260,17 +264,16 @@
             </li>
         </ul>
 
-        <!-- sidebar trigger -->
-        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-
         <!-- output -->
         <div id="output" class="outputDiv">
-            <h2>Instructions:</h2>
+            <h2>Output:</h2>
             <p id="outputIntro"></p>
+            <div id="outputInstructions"></div>
+            <div class="outputInner">
+                <div id="outputContent"></div>
+            </div>
             <button id="copyOutput">Copy to clipboard</button>
             <button id="saveOutput">Add to my list</button>
-            <div id="outputInstructions"></div>
-            <div id="outputContent"></div>
             <button id="downloadOutput">Download as .TXT</button>
             <button id="emailOutput">Send via email</button>
         </div>
