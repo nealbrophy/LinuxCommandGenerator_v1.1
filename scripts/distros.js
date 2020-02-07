@@ -8,7 +8,6 @@ const arch = {
         code: "sudo pacman -S appimagelauncher-git"
     },
     _atom: {},
-    _bitWarden: {},
     _chrome: {
         instructions: "",
         code: "sudo pacman -S git && \ncd Downloads && \ngit clone https://aur.archlinux.org/google-chrome.git && \ncd google-chrome/ && \nmakepkg -s -y && \nsudo pacman -U google-chrome-63.0.3239.108-1-x86_64.pkg.tar.xz"
@@ -47,9 +46,6 @@ const arch = {
     },
     get atom() {
         return this._atom;
-    },
-    get bitWarden() {
-        return this._bitWarden;
     },
     get chrome() {
         return this._chrome;
@@ -106,7 +102,6 @@ const debian = {
         code: "sudo dpkg -i appimagelauncher_*.deb"
     },
     _atom: {},
-    _bitWarden: {},
     _chrome: {
         instructions: "",
         code: "sudo apt-get install libxss1 libappindicator1 libindicator7 -y && \nwget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \nsudo dpkg -i google-chrome*.deb && \nsudo apt-get install -f && \nsudo apt autoremove -y"
@@ -145,9 +140,6 @@ const debian = {
     },
     get atom() {
         return this._atom;
-    },
-    get bitWarden() {
-        return this._bitWarden;
     },
     get chrome() {
         return this._chrome;
@@ -199,11 +191,13 @@ const debian = {
 // elementary
 const elementary = {
     _appImageLauncher: {
-        instructions: "<p>Go <a href=\"https://github.com/TheAssassin/AppImageLauncher/releases\" and download the appropriate .deb file. Then execute the below in terminal.",
+        instructions: "<p>Go <a href=\"https://github.com/TheAssassin/AppImageLauncher/releases\">here</a> and download the appropriate .deb file. Then execute the below in terminal.",
         code: "sudo dpkg -i appimagelauncher_*.deb"
     },
-    _atom: {},
-    _bitWarden: {},
+    _atom: {
+        instructions: "",
+        code: "sudo add-apt-repository ppa:webupd8team/atom && \nsudo apt-get update && \nsudo apt-get install -y atom"
+    },
     _chrome: {
         instructions:"",
         code: "wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \nsudo dpkg -i google-chrome*.deb"
@@ -238,8 +232,11 @@ const elementary = {
         instructions: "<p>First, paste the following in terminal: <code>sudo nano /usr/share/contractor/Open_as_admin.contract</code>. Then paste the following and write-out/save the file:",
         code: "[Contractor Entry] \nName=Open folder as root \nIcon=gksu-root-terminal \nDescription=Open folder as root \nMimeType=inode;application/x-sh;application/x-executable; \nExec=/usr/bin/io.elementary.files-pkexec \nGettext-Domain=pantheon-files"
     },
-    _slack: "",
-    _standardNotes: "",
+    _slack: {},
+    _standardNotes: {
+        instructions: "<p>Install App Image Launcher first, then execute the below code in terminal and select \"Integrate and Run\" on the pop-up.</p>",
+        code: "wget https://github.com/standardnotes/desktop/releases/download/v3.0.25/Standard-Notes-3.0.25.AppImage && \nchmod a+x Standard-Notes-3.0.25.AppImage && \n./Standard-Notes-3.0.25.AppImage"
+    },
     _tor: {
         instructions: "",
         code: "sudo add-apt-repository ppa:webupd8team/tor-browser && \nsudo apt-get update && \nsudo apt-get upgrade -y && \nsudo apt-get install tor-browser"
@@ -247,7 +244,10 @@ const elementary = {
     _tweaks: {
         instructions: "",
         code: "sudo apt install software-properties-common && \nsudo add-apt-repository ppa:philip.scott/elementary-tweaks && \nsudo apt-get update && \nsudo apt-get install elementary-tweaks"},
-    _papirus: {},
+    _papirus: {
+        instructions: "",
+        code: "sudo add-apt-repository ppa:papirus/papirus && \nsudo apt update && \nsudo apt install papirus-icon-theme"
+    },
     _flatery: {},
     _flatRemix: {},
     _vimix: {},
@@ -259,9 +259,6 @@ const elementary = {
     },
     get atom() {
         return this._atom;
-    },
-    get bitWarden() {
-        return this._bitWarden;
     },
     get chrome() {
         return this._chrome;
@@ -331,7 +328,6 @@ const elementary = {
 const solus = {
     _appImageLauncher: {},
     _atom: {},
-    _bitWarden: {},
     _chrome: {
         instructions: "",
         code: "sudo eopkg install google-chrome"
@@ -405,25 +401,42 @@ const solus = {
 // ubuntu
 const ubuntu = {
     _appImageLauncher: {
-        instructions: "<p>Go <a href=\"https://github.com/TheAssassin/AppImageLauncher/releases\" and download the appropriate .deb file. Then execute the below in terminal.",
+        instructions: "<p>Go <a href=\"https://github.com/TheAssassin/AppImageLauncher/releases\">here</a> and download the appropriate .deb file. Then execute the below in terminal.",
         code: "sudo dpkg -i appimagelauncher_*.deb"
     },
-    _atom: {},
-    _bitWarden: {},
+    _atom: {
+        instructions: "",
+        code: "sudo add-apt-repository ppa:webupd8team/atom && \nsudo apt-get update && \nsudo apt-get install -y atom"
+    },
     _chrome: {
         instructions: "",
         code: "sudo apt-get install libxss1 libappindicator1 libindicator7 -y && \nwget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \nsudo dpkg -i google-chrome*.deb && \nsudo apt-get install -f && \nsudo apt autoremove -y"},
     _firefox: {
         instructions: "",
         code: "wget https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US && cd ~/Downloads/ && tar xjf firefox-*.tar.bz2 && sudo rm -r /opt/firefox && sudo mv firefox /opt/firefox72"},
-    _git: {},
-    _gitKraken: {},
-    _kdeConnect: {},
-    _slack: {},
+    _git: {
+        instructions: "",
+        code: "sudo apt install git"
+    },
+    _gitKraken: {
+        instructions: "",
+        code: "wget https://release.gitkraken.com/linux/gitkraken-amd64.deb && \n sudo dpkg -i gitkraken*.deb"
+    },
+    _kdeConnect: {
+        instructions: "",
+        code: "sudo apt install kdeconnect"
+    },
+    _slack: {
+        instructions: "",
+        code: "wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.3.2-amd64.deb && \nsudo dpkg -i slack*.deb && \nsudo apt -f install -y"
+    },
     _standardNotes: {
         instructions: "",
         code: "wget https://github.com/standardnotes/desktop/releases/download/v3.0.25/Standard-Notes-3.0.25.AppImage && \nmv ~/Downloads/Standard-Notes-3.0.25.AppImage ~/Standard-Notes-3.0.25.AppImage && cd ~ && \nchmod a+x Standard-Notes-3.0.25.AppImage"},
-    _papirus: {},
+    _papirus: {
+        instructions: "",
+        code: "sudo add-apt-repository ppa:papirus/papirus && \nsudo apt update && \nsudo apt install papirus-icon-theme"
+    },
     _flatery: {},
     _flatRemix: {},
     _vimix: {},

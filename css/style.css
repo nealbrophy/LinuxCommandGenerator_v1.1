@@ -31,11 +31,18 @@ h1 {
     letter-spacing: 6.1px;
 }
 
-
-
 li  {
     display: inline;
     padding: 0 50px 0 50px;
+}
+
+tr {
+    border: none;
+}
+
+
+.select a {
+    color: white !important;
 }
 
 .outputInner {
@@ -59,20 +66,66 @@ li  {
     margin-left: .5rem;
 }
 
-.distroSelect img {
-    width: 60px;
+.distro {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    background-color: #f54e00;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.sidenav-trigger {
+    margin-left: 2rem;
+    margin-top: 5rem;
+    color: white;
+}
+
+.distro a {
+    color: white !important;
+}
+
+.distroWrapper {
+    margin-left: 2rem;
+}
+
+#appSelect .btn:disabled a {
+    color: rgba(2, 2, 2, 0.589) !important;
+}
+
+#arch-logo,
+#debian-logo,
+#elementary-logo,
+#solus-logo,
+#ubuntu-logo,
+#not-sure-logo {
+    font-size: 3.5rem !important;
+    padding-left: 20%;
+}
+
+#not-sure-logo {
+    padding-left: 35%;
+    padding-top: 10%;
+}
+
+.distroWrapper {
+    width: 100%;
+    margin-bottom: 2rem;;
 }
 
 .fa-archlinux,
 .fa-debian,
-.icofont-sail-boat,
 .fa-ubuntu,
 .fa-question-circle {
-    font-size: 1rem !important;
+    font-size: 1.8rem !important;
+}
+
+.icofont-sail-boat {
+    font-size: 2rem !important;
 }
 
 .elementaryLogo {
-    font-size: 2rem;
+    font-size: 4rem;
     font-family: 'Parisienne', cursive;
     text-transform: lowercase;
 }
@@ -87,9 +140,7 @@ li  {
     margin-top: 1.5rem;
 }
 
-#sideOutput ul {
-    list-style-type: disc !important;
-}
+
 
 .instructionLink,
 .instructionLink:link,

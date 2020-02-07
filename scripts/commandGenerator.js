@@ -55,7 +55,6 @@ const appChecker = () => {
     let availableApps = document.getElementsByClassName("select");
     for (let j = 0; j < availableApps.length; j++) {
         let currentID = availableApps[j].id;
-        // console.log(availableApps[j].id);
         if (osObj.hasOwnProperty(currentID)) {
             document.getElementById(currentID).removeAttribute("disabled");
         } else {
@@ -68,7 +67,6 @@ const appChecker = () => {
 const codePrinter = codetobeprinted => {
     let codePrint = "";
     let codeSplit = [];
-    console.log(osObj[codetobeprinted]);
     codeSplit = osObj[codetobeprinted].code.split("\n");
     for (let i = 0; i < codeSplit.length; i++) {
         codePrint += codeSplit[i] + '<br>';
@@ -81,9 +79,7 @@ const addToList = (distname, selectionname) => {
     // check if OS has already been added to list object, if so app/theme/icon to it
     if (userList[distname]) {
         if (userList[distname][selectionname]) {
-            console.log("Item already added")
         } else {
-            console.log(userList[distname]);
             userList[distname][selectionname] = osObj[selection];
         }
     } else {
@@ -166,10 +162,9 @@ function copyToClipboard(inputText) {
 
 
 // add click listener to OS buttons.
-let distros = document.getElementsByClassName("distro");
+let distros = document.getElementsByClassName("distroLogo");
 for (let i = 0; i < distros.length; i++) {
     distros[i].addEventListener("click", function () {
-
         // clear any text from the output section
         document.getElementById("outputIntro").innerText = "";
         document.getElementById("outputContent").innerText = "";
@@ -214,13 +209,13 @@ for (i = 0; i < toInstall.length; i++) {
 
             // func calls
             codePrinter(selection);
+            
         }
     });
 }
 
 // add click listener to copy button
 document.getElementById("copyOutput").addEventListener("click", function () {
-    console.log(document.getElementById("outputContent").innerText);
     copyToClipboard(document.getElementById("outputContent").innerText);
 });
 

@@ -8,8 +8,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Parisienne&display=swap" rel="stylesheet">
 
-    <!--import materialize.css-->
+    <!--import materialize.css -->
     <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+
+    <!--import font-logos -->
+    <link href="//cdn.jsdelivr.net/gh/Lukas-W/font-logos@v0.11/assets/font-logos.css" rel="stylesheet">
 
     <!-- import emailJS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
@@ -41,29 +44,32 @@
     <div class="container">
 
         <h1>Linux Command Generator</h1>
-        <section class="search">
-            <form>
-                <nav>
-                    <div class="nav-wrapper">
-                        <form>
-                            <div class="input-field">
-                                <input id="search" type="search" required>
-                                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                                <i class="material-icons">close</i>
-                            </div>
-                        </form>
-                    </div>
-                </nav>
-            </form>
-        </section>
+        <div class="divider"></div>
         <br>
 
         <br>
+        <h2>Pick Your Distro:</h2>
+        <table class="distroWrapper">
+            <tr>
+                <td class="arch-linux left s1 distro hoverable"><a class="distroLogo" id="arch" href="#matTabs"><span
+                            id="arch-logo" class="fl-archlinux"></span></a></td>
+                <td class="debian-linux left s1 distro hoverable"><a class="distroLogo" id="debian"
+                        href="#matTabs"><span id="debian-logo" class="fl-debian"></span></a></td>
+                <td class="elementary-linux left s1 distro hoverable"><a class="distroLogo" id="elementary"
+                        href="#matTabs"><span id="elementary-logo" class="fl-elementary"></span></a></td>
+                <td class="solus-linux left s1 distro hoverable"><a class="distroLogo" id="solus" href="#matTabs"><span
+                            id="solus-logo" class="icofont-sail-boat"></span></a></td>
+                <td class="ubuntu-linux left s1 distro hoverable"><a class="distroLogo" id="ubuntu"
+                        href="#matTabs"><span id="ubuntu-logo" class="fl-ubuntu"></span></a></td>
+                <td class="not-sure left s1 distro hoverable"><a class="distroLogo" id="notSure" href="#matTabs"><span
+                            id="not-sure-logo" class="fa fa-question"></span></a></td>
+            </tr>
+        </table>
         <!-- materialize tabs -->
+
         <div class="row">
             <div id="matTabs" class="col s12">
                 <ul class="tabs tabs-fixed-width">
-                    <li class="tab col s2"><a id="distroTab" class="tabLink active" href="#distroSelect">Distro</a></li>
                     <li class="tab col s2"><a id="appTab" class="tabLink" href="#appSelect">Apps</a></li>
                     <li class="tab col s2"><a id="iconTab" class="tabLink" href="#iconSelect">Icons</a></li>
                     <li class="tab col s2"><a id="themeTab" class="tabLink" href="#themeSelect">Themes</a></li>
@@ -71,77 +77,38 @@
                 </ul>
             </div>
 
-            <!-- operating systems -->
-            <div id="distroSelect" class="col s12 active">
-                <a id="arch" class="distro s1 btn waves-effect waves-light" href="#appSelect"><span
-                        class="distro-btn-name">Arch |
-                    </span>
-                    <i class="fa fa-archlinux"></i></a>
-                <a id="debian" class="distro s1 btn waves-effect waves-light" href="#appSelect">Debian | <i
-                        class="fa fa-debian" aria-hidden="true"></i></a>
-                <a id="elementary" class="distro s1 btn waves-effect waves-light" href="#appSelect">Elementary | <span
-                        class="elementaryLogo">e</span></a>
-                <a id="solus" class="distro s1 btn waves-effect waves-light" href="#appSelect">Solus | <i
-                        class="icofont-sail-boat"></i></a>
-                <a id="ubuntu" class="distro s1 btn waves-effect waves-light" href="#appSelect">Ubuntu | <i
-                        class="fab fa-ubuntu"></i></a>
-
-                <a id="notSure" class="distro s1 btn waves-effect waves-light" href="#appSelect">Not Sure | <i
-                        class="far fa-question-circle"></i></a>
-
-                <!-- *******OLD BUTTONS*********** -->
-                <!-- <ul>
-                    <li><a id="arch" class="distro s1 btn inline" href="#appSelect"><span class="distro-btn-name">Arch |
-                            </span>
-                            <i class="fa fa-archlinux"></i></a></li>
-                    <li><a id="debian" class="distro s1 btn" href="#appSelect">Debian | <i class="fa fa-debian"
-                                aria-hidden="true"></i></a></li>
-                    <li><a id="elementary" class="distro s1 btn" href="#appSelect">Elementary | <span
-                                class="elementaryLogo">e</span></a></li>
-                    <li><a id="solus" class="distro s1 btn" href="#appSelect">Solus | <i
-                                class="icofont-sail-boat"></i></a></li>
-                    <li><a id="ubuntu" class="distro s1 btn" href="#appSelect">Ubuntu | <i
-                                class="fab fa-ubuntu"></i></a>
-                    </li>
-                    <li><a id="notSure" class="distro s1 btn" href="#appSelect">Not Sure | <i
-                                class="far fa-question-circle"></i></a></li>
-                </ul> -->
-            </div>
-
             <!-- applications -->
             <div id="appSelect" class="col s12">
-                <button id="appImageLauncher" class="select btn" href="#outputTab"><i class="fas fa-rocket"></i>
-                    AppImageLauncher</button>
-                <button id="atom" class="select btn waves-effect waves-light" href="#outputTab"><i
-                        class="fas fa-atom"></i>
-                    Atom</button>
-                <button id="bitWarden" class="select btn waves-effect waves-light" href="#outputTab"><i
-                        class="fas fa-shield-alt"></i>
-                    BitWarden</button>
-                <button id="chrome" class="select btn waves-effect waves-light" href="#outputTab"><i
-                        class="fab fa-chrome"></i>
-                    Chrome</button>
-                <button id="tweaks" class="select btn waves-effect waves-light" href="#outputTab"><i
-                        class="fas fa-sliders-h"></i>
-                    Elementary-Tweaks</button>
-                <button id="firefox" class="select btn waves-effect waves-light" href="#outputTab"><i
-                        class="fab fa-firefox-browser"></i>
-                    Firefox</button>
-                <button id="git" class="select btn waves-effect waves-light" href="#outputTab"><i
-                        class="fab fa-github-alt"></i>
-                    Git</button>
-                <button id="gitKraken" class="select btn waves-effect waves-light" href="#outputTab"><i
-                        class="fab fa-gitkraken"></i>
-                    GitKraken</button>
-                <button id="kdeConnect" class="select btn waves-effect waves-light" href="#outputTab"><i
-                        class="fas fa-mobile-alt"></i> KDE
-                    Connect</button>
-                <button id="slack" class="select btn waves-effect waves-light" href="#outputTab"><i
-                        class="fab fa-slack"></i>
-                    Slack</a>
-                <button id="standardNotes" class="select btn waves-effect waves-light" href="#outputTab"><i
-                            class="fas fa-sticky-note"></i> Standard Notes</button>
-                <button id="visualStudioCode" class="select btn waves-effect waves-light" href="#outputTab"><i class="fas fa-code"></i> VSCode</button>
+                <button id="appImageLauncher" class="select btn"><a href="#output"><i class="fas fa-rocket"></i>
+                        AppImageLauncher</a></button>
+                <button id="atom" class="select btn waves-effect waves-light"><a href="#output"><i
+                            class="fas fa-atom"></i>
+                        Atom</a></button>
+                <button id="chrome" class="select btn waves-effect waves-light"><a href="#output"><i
+                            class="fab fa-chrome"></i>
+                        Chrome</a></button>
+                <button id="tweaks" class="select btn waves-effect waves-light"><a href="#output"><i
+                            class="fas fa-sliders-h"></i>
+                        Elementary-Tweaks</a></button>
+                <button id="firefox" class="select btn waves-effect waves-light"><a href="#output"><i
+                            class="fab fa-firefox-browser"></i>
+                        Firefox</a></button>
+                <button id="git" class="select btn waves-effect waves-light"><a href="#output"><i
+                            class="fab fa-github-alt"></i>
+                        Git</a></button>
+                <button id="gitKraken" class="select btn waves-effect waves-light"><a href="#output"><i
+                            class="fab fa-gitkraken"></i>
+                        GitKraken</a></button>
+                <button id="kdeConnect" class="select btn waves-effect waves-light"><a href="#output"><i
+                            class="fas fa-mobile-alt"></i> KDE
+                        Connect</a></button>
+                <button id="slack" class="select btn waves-effect waves-light"><a href="#output"><i
+                            class="fab fa-slack"></i>
+                        Slack</a></button>
+                <button id="standardNotes" class="select btn waves-effect waves-light"><a href="#output"><i
+                            class="fas fa-sticky-note"></i> Standard Notes</a></button>
+                <button id="visualStudioCode" class="select btn waves-effect waves-light"><a href="#output"><i
+                            class="fas fa-code"></i> VSCode</a></button>
             </div>
 
             <!-- icons -->
@@ -207,12 +174,20 @@
         </div>
     </div>
 
+
     <!-- SCRIPTS -->
 
     <!-- materialize -->
     <script type="text/javascript" src="scripts/materialize.min.js"></script>
     <script>
         M.AutoInit();
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.fixed-action-btn');
+            var instances = M.FloatingActionButton.init(elems, {
+                direction: "bottom",
+                hoverEnabled: false
+            });
+        });
     </script>
 
     <!-- FileSaver -->

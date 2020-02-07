@@ -4525,7 +4525,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 h1 {
   font-size: 4.2rem;
   line-height: 110%;
-  margin: 2.8rem 0 1.68rem 0;
+  margin: 1rem 0 1.68rem 0;
 }
 
 h2 {
@@ -5201,7 +5201,7 @@ small {
   background-color: #DFDFDF !important;
   -webkit-box-shadow: none;
           box-shadow: none;
-  color: #9F9F9F !important;
+  color: rgb(36, 36, 36) !important;
   cursor: default;
 }
 
@@ -5225,7 +5225,7 @@ small {
 .btn-small[disabled]:hover,
 .btn-flat[disabled]:hover {
   background-color: #DFDFDF !important;
-  color: #9F9F9F !important;
+  color: rgb(22, 22, 22) !important;
 }
 
 .btn, .btn-large, .btn-small,
@@ -5345,8 +5345,8 @@ button.btn-floating {
 
 .fixed-action-btn {
   position: fixed;
-  right: 23px;
-  bottom: 23px;
+  left: 700px;
+  top: 225px;
   padding-top: 15px;
   margin-bottom: 0;
   z-index: 997;
@@ -5515,7 +5515,7 @@ button.btn-floating {
 
 .btn-flat.disabled, .btn-flat.btn-flat[disabled] {
   background-color: transparent !important;
-  color: #b3b2b2 !important;
+  color: #2b2b2b !important;
   cursor: default;
 }
 
