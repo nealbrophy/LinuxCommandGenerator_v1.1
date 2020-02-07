@@ -13,6 +13,7 @@ const userList = {}; // object to hold list of users chosen commands
     ========== */
 // grab os object and populate vars
 const distroPicker = name => {
+    osObj = {};
     switch (name) {
         case "arch":
             osObj = arch;
@@ -40,10 +41,11 @@ const distroPicker = name => {
             choice = "Ubuntu"
             break;
         case "notSure":
+            document.getElementById("outputIntro").innerText = "";
             document.getElementById("outputIntro").innerText = "Enter the following to find out what OS you\'re using:";
             document.getElementById("outputContent").innerText = "$ cat /etc/issue";
     }
-    if (osObj && this.id !== "notSure") {
+    if (osObj && name !== "notSure") {
         document.getElementById("outputIntro").innerText = `Please select an App, Theme, or Icon pack to install on ${choice}.`;
     }
 };
@@ -171,6 +173,7 @@ for (let i = 0; i < distros.length; i++) {
         // clear any text from the output section
         document.getElementById("outputIntro").innerText = "";
         document.getElementById("outputContent").innerText = "";
+        document.getElementById("outputInstructions").innerHTML = "";
 
         // store the text from the clicked id
         choice = document.getElementById(this.id).innerText;
@@ -185,6 +188,9 @@ for (let i = 0; i < distros.length; i++) {
 let toInstall = document.getElementsByClassName("select");
 for (i = 0; i < toInstall.length; i++) {
     toInstall[i].addEventListener("click", function () {
+        document.getElementById("outputIntro").innerText = "";
+        document.getElementById("outputContent").innerText = "";
+        document.getElementById("outputInstructions").innerHTML = "";
 
         // check if selection var is already populated, if so empty it
         if (selection) {
@@ -199,7 +205,7 @@ for (i = 0; i < toInstall.length; i++) {
         } else {
             selection = (this.id);
             // generic instruction, same regardless of selections
-            document.getElementById("outputIntro").innerHTML = `<p>Enter the following in your terminal (<code>cmd+t</code> or <code>ctrl+shift+t</code> on most Linux systems) to install <span class="installName">${document.getElementById(selection).innerText}</span> on <span class="osName">${choice}</span>:</p>`;
+            // document.getElementById("outputIntro").innerHTML = `<p>Enter the following in your terminal (<code>cmd+t</code> or <code>ctrl+shift+t</code> on most Linux systems) to install <span class="installName">${document.getElementById(selection).innerText}</span> on <span class="osName">${choice}</span>:</p>`;
 
             // check the os object to see if app selection has custom instructions, if so populate instructions element
             if (osObj[selection].instructions) {
