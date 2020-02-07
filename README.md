@@ -47,6 +47,7 @@ To run the site locally you can clone it using the following instructions:
 - [EmailJS](https://www.emailjs.com/)
 - [FileSaver.js](https://github.com/eligrey/FileSaver.js/)
 - [FontAwesome](https://fontawesome.com/)
+- [font-logos](https://github.com/lukas-w/font-logos)
 - [Materialize](https://materializecss.com/)
 
 ---
@@ -85,12 +86,8 @@ Dean Taylor's answer on [StackOverflow](https://stackoverflow.com/questions/4002
 [EmailJS](https://www.emailjs.com/)
 
 #### OS Logos
-- Arch logo based on [this wikimedia image file](https://commons.wikimedia.org/wiki/File:Archlinux-vert-dark.svg)
-- Debian logo based on [this wikimedia image file](https://commons.wikimedia.org/wiki/File:Debian_logo.png)
-- Elementary logo based on [this wikimedia image file](https://commons.wikimedia.org/wiki/File:Elementary_logo.svg)
-- Solus logo based on [this wikimedia image file](https://commons.wikimedia.org/wiki/File:Solus.svg)
-- Ubuntu logo based on [this worldvectorlogo image file](https://worldvectorlogo.com/logo/ubuntu-icon)
-- Not Sure Mark based on [this wikimedia image file](https://commons.wikimedia.org/wiki/File:Question_mark_alternate.png)
+- Arch, Debian, Elementary, and Ubuntu from [font-logos by lukas-w](https://github.com/lukas-w/font-logos)
+- Solus from [IcoFont](https://icofont.com/)
 
 #### Style inspired by:
 Cake Bar Exercise by [Codecademy](https://www.codecademy.com/courses/learn-javascript-unit-testing/projects/cake-clock)
