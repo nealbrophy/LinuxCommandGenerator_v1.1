@@ -69,7 +69,7 @@ const codePrinter = codetobeprinted => {
     let codeSplit = [];
     codeSplit = osObj[codetobeprinted].code.split("\n");
     for (let i = 0; i < codeSplit.length; i++) {
-        codePrint += codeSplit[i] + '<br>';
+        codePrint += '<i class="fas fa-dollar-sign"></i>' + codeSplit[i] + '<br>';
     }
     document.getElementById("outputContent").innerHTML = `<code>${codePrint}</code>`;
 }
@@ -78,8 +78,7 @@ const codePrinter = codetobeprinted => {
 const addToList = (distname, selectionname) => {
     // check if OS has already been added to list object, if so app/theme/icon to it
     if (userList[distname]) {
-        if (userList[distname][selectionname]) {
-        } else {
+        if (userList[distname][selectionname]) {} else {
             userList[distname][selectionname] = osObj[selection];
         }
     } else {
@@ -130,6 +129,22 @@ const addToSidebar = (osinfo, selectioninfo) => {
         });
     }
 };
+
+const clearSidebar = () => {
+    let listChildren = document.getElementById("sideOutput").childNodes;
+    if (listChildren.length > 1) {
+        for (let i = 0; i < listChildren.length; i++) {
+            document.getElementById("sideOutput").innerHTML = "";
+            M.toast({
+                html: "List cleared!"
+            });
+        }
+    } else {
+        M.toast({
+            html: "List already empty"
+        });
+    }
+}
 
 // basic copy to clipboard function
 function copyToClipboard(inputText) {
@@ -209,7 +224,7 @@ for (i = 0; i < toInstall.length; i++) {
 
             // func calls
             codePrinter(selection);
-            
+
         }
     });
 }
@@ -223,4 +238,9 @@ document.getElementById("copyOutput").addEventListener("click", function () {
 document.getElementById("saveOutput").addEventListener("click", function () {
     addToSidebar(osName, selection);
     addToList(osName, selection);
+});
+
+// add click listener to clear list button
+document.getElementById("sidebarClear").addEventListener("click", function () {
+    clearSidebar();
 });

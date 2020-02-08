@@ -6,7 +6,8 @@
 
     <!-- import google fonts -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Monofett|Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Monofett|Montserrat&display=swap"
+        rel="stylesheet">
 
     <!--import materialize.css -->
     <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
@@ -40,14 +41,17 @@
 
 <body>
     <!-- sidebar trigger -->
-    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <div class="fixed-action-btn sidenav-trigger" data-target="slide-out">
+        <a class="btn-floating btn-large red"><i class="material-icons">menu</i></a>
+    </div>
+    <!-- <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
     <div class="container">
 
         <h1 class="center-align">Linux Command Generator</h1>
         <div class="divider"></div>
         <br>
         <br>
-        <div class="container">
+        <div class="container distroContainer">
             <h2 id="distroHeading" class="center-align">Pick Your Distro:</h2>
             <div class="bgCreme"></div>
             <p class="distroWrapper center-align">
@@ -164,7 +168,7 @@
                 <a class="waves-effect btn" id="sidebarClear" href="#!">Clear List</a>
             </li>
         </ul>
-
+        <div class="divider"></div>
         <!-- output -->
         <div id="output" class="outputDiv">
             <h2 id="outputHeading" class="center-align">Output:</h2>
@@ -173,10 +177,10 @@
             <div class="outputInner">
                 <div id="outputContent"></div>
             </div>
-            <button id="copyOutput">Copy to clipboard</button>
-            <button id="saveOutput">Add to my list</button>
-            <button id="downloadOutput">Download as .TXT</button>
-            <button id="emailOutput">Send via email</button>
+            <button id="copyOutput" class="btn">Copy to clipboard</button>
+            <button id="saveOutput" class="btn">Add to my list</button>
+            <button id="downloadOutput" class="btn">Download as .TXT</button>
+            <button id="emailOutput" class="btn">Send via email</button>
         </div>
     </div>
 
@@ -190,7 +194,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.fixed-action-btn');
             var instances = M.FloatingActionButton.init(elems, {
-                direction: "bottom",
+                direction: 'left',
                 hoverEnabled: false
             });
         });
