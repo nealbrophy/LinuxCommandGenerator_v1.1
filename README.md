@@ -73,6 +73,10 @@ To run the site locally you can clone it using the following instructions:
 #### Wirefreams created using:
 [Balsamiq](https://balsamiq.com/)
 
+#### Frameworks
+This site uses the [Materialize.CSS](https://materializecss.com/) framework.
+[This video](https://www.youtube.com/watch?v=4kN5lW4PNEs) from [TheNetNinja](https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg) was helpful in implementing the Materialize Tabs functionality.
+
 #### Installation instructions written with help from:
 McMojave for Elementary [All Techs Tricks](https://alltechstricks.blogspot.com/2019/05/how-to-install-mcmojave-linux-theme.html)
 
@@ -85,9 +89,14 @@ Dean Taylor's answer on [StackOverflow](https://stackoverflow.com/questions/4002
 #### Send via email functionality uses:
 [EmailJS](https://www.emailjs.com/)
 
-#### OS Logos
-- Arch, Debian, Elementary, and Ubuntu from [font-logos by lukas-w](https://github.com/lukas-w/font-logos)
-- Solus from [IcoFont](https://icofont.com/)
+#### Icons:
+- Arch, Debian, Elementary, and Ubuntu logo icons from [font-logos by lukas-w](https://github.com/lukas-w/font-logos)
+- Solus logo icon from [IcoFont](https://icofont.com/)
+- App icons from [FontAwesome](https://fontawesome.com/)
 
-#### Style inspired by:
+#### Site look/style inspired by:
 Cake Bar Exercise by [Codecademy](https://www.codecademy.com/courses/learn-javascript-unit-testing/projects/cake-clock)
+
+#### Colour scheme:
+- [W3Schools Color Picker](https://www.w3schools.com/colors/colors_picker.asp) and [Sessions College Color Calculator](https://www.sessions.edu/color-calculator/) were both used during this project.
+- [This Pinterest image](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F227431849906259188%2F&psig=AOvVaw2vvsbXesw2jbiMwVrKCNCO&ust=1581267436155000&source=images&cd=vfe&ved=2ahUKEwj7qPGvtsLnAhVjQEEAHYKiCGoQr4kDegUIARD0AQ) was used for reference.

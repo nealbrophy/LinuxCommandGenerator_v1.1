@@ -5251,13 +5251,13 @@ small {
 
 .btn:focus, .btn-large:focus, .btn-small:focus,
 .btn-floating:focus {
-  background-color: #1d7d74;
+  background-color: #6670ff;
 }
 
 .btn, .btn-large, .btn-small {
   text-decoration: none;
   color: #fff;
-  background-color: #26a69a;
+  background-color: #000ecc;
   text-align: center;
   letter-spacing: .5px;
   -webkit-transition: background-color .2s ease-out;

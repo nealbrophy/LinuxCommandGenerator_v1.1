@@ -3,6 +3,24 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- requireJS -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"
+        integrity="sha256-1fEPhSsRKlFKGfK3eO710tEweHh1fwokU5wFGDHO+vg=" crossorigin="anonymous"></script> -->
+
+    <!-- emailJS -->
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init('user_13DhOIaJga1D7ndnbfmQj');
+        })();
+    </script> -->
+
+    <!-- filesave -->
+    <script src="scripts/FileSaver.js">
+    </script>
+
+    <!-- prettify -->
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
     <!-- import google fonts -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -14,14 +32,6 @@
 
     <!--import font-logos -->
     <link href="//cdn.jsdelivr.net/gh/Lukas-W/font-logos@v0.11/assets/font-logos.css" rel="stylesheet">
-
-    <!-- import emailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("user_13DhOIaJga1D7ndnbfmQj");
-        })();
-    </script>
 
     <!-- import font awesome -->
     <script src="https://kit.fontawesome.com/624307dae0.js" crossorigin="anonymous"></script>
@@ -164,11 +174,24 @@
             <li><a class="subheader">Subheader</a></li>
             <li>
                 <a class="waves-effect btn" id="sidebarDownload" href="#!">Download as .TXT</a>
-                <a class="waves-effect btn" id="sidebarEmail" href="#!">Send via Email</a>
+
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header">Send via Email</div>
+                        <div class="collapsible-body">
+                            <form id="emailForm">
+                                Email: <input type="email" name="user_email" required placeholder="abc@email.net">
+                                <textarea id="emailMessage" name="message" cols="30" rows="10"></textarea>
+                                <input class="btn" type="submit" value="Send">
+                            </form>
+                        </div>
+                    </li>
+                </ul>
                 <a class="waves-effect btn" id="sidebarClear" href="#!">Clear List</a>
             </li>
         </ul>
         <div class="divider"></div>
+
         <!-- output -->
         <div id="output" class="outputDiv">
             <h2 id="outputHeading" class="center-align">Output:</h2>
@@ -199,12 +222,10 @@
             });
         });
     </script>
-
-    <!-- FileSaver -->
-    <script type="text/javascript" src="scripts/FileSaver.min.js"></script>
-
     <script type="text/javascript" src="scripts/distros.js"></script>
     <script type="text/javascript" src="scripts/commandGenerator.js"></script>
+
+
 
 </body>
 

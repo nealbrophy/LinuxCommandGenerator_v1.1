@@ -1,12 +1,17 @@
 /*  ===========
+    REQUIRE
+    =========== */
+
+/*  ===========
     GLOBAL VARs & OBJs
     =========== */
-let userOS;
+
 let osName; // to hold name of users OS choice
 let osObj; // reference to os object matching user choice name
 let selection; // to hold user app/icon/theme selection.
 let choice; // to hold text name of user's OS
 const userList = {}; // object to hold list of users chosen commands
+let dataOutput = '';
 
 /*  ==========
     FUNCTIONS
@@ -78,13 +83,27 @@ const codePrinter = codetobeprinted => {
 const addToList = (distname, selectionname) => {
     // check if OS has already been added to list object, if so app/theme/icon to it
     if (userList[distname]) {
-        if (userList[distname][selectionname]) {} else {
+        if (userList[distname][selectionname]) {
+            M.toast({
+                html: 'Item already on list!'
+            });
+        } else {
             userList[distname][selectionname] = osObj[selection];
+            M.toast({
+                html: 'Added to list!'
+            });
+            dataOutput += `<p>Distro: ${choice}<br>App: ${selectionname}<br><code>Command: ${osObj[selection].code}</code></p>`;
         }
     } else {
         // if OS hasnt' been added, add it then add app/theme/icon to it
         userList[distname] = {};
         userList[distname][selectionname] = osObj[selection];
+        console.log(distname);
+        console.log(selectionname)
+        M.toast({
+            html: 'Added to list!'
+        });
+        dataOutput += `<p>Distro: ${choice}<br>App: ${selectionname}<br><code>Command: ${osObj[selection].code}</code></p>`;
     }
 };
 
@@ -97,9 +116,7 @@ const addToSidebar = (osinfo, selectioninfo) => {
         if (document.getElementById(`${osinfo}_side_${selectioninfo}`)) {
 
             // if so, log warning
-            M.toast({
-                html: 'Item already on list!'
-            });
+            
         } else {
             // if not, create element to hold app name and append to os element withint sidebar
             let sideElementContent = document.createElement("span");
@@ -124,12 +141,13 @@ const addToSidebar = (osinfo, selectioninfo) => {
 
         // add to DOM
         document.getElementById("sideOutput").appendChild(sideElement);
-        M.toast({
-            html: 'Added to list!'
-        });
+        // M.toast({
+        //     html: 'Added to list!'
+        // });
     }
 };
 
+// clear list
 const clearSidebar = () => {
     let listChildren = document.getElementById("sideOutput").childNodes;
     if (listChildren.length > 1) {
@@ -170,6 +188,9 @@ function copyToClipboard(inputText) {
 
     document.body.removeChild(textArea);
 }
+
+
+
 
 /*  ===============
     EVENT LISTENERS
@@ -244,3 +265,20 @@ document.getElementById("saveOutput").addEventListener("click", function () {
 document.getElementById("sidebarClear").addEventListener("click", function () {
     clearSidebar();
 });
+
+// add click listener to clear list button
+document.getElementById("sidebarDownload").addEventListener("click", function () {
+    let dataForFile = `<html><head><title>Linux Command Generator - Output</title></head><body><h1>Your Linux Commands</h1><p>Below are the commands you saved.</p>${dataOutput}</body></html>`;
+    var blob = new Blob([dataForFile], {type: "text/plain;charset=utf-8"});
+
+    saveAs(blob, "testfile.html")
+});
+
+
+
+// send email listener
+// document.getElementById("emailForm").addEventListener('submit', function (event) {
+//     document.getElementById("emailMessage").innerText = JSON.stringify(userList);
+//     event.preventDefault();
+//     emailjs.sendForm('gmail', 'template_v04V7QEN', this);
+// });
