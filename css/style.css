@@ -1,10 +1,10 @@
-/* global reset */
-
+/* ========
+    GLOBAL
+   ======== */
 body {
     padding: 0;
     margin: 0;
-    background-color: #4fc3f7;
-    
+    background-color: #00ccbe;
 }
 
 ul {
@@ -13,22 +13,12 @@ ul {
     padding: 0;
 }
 
-a,
-a:link,
-a:visited,
-a:hover {
-    text-decoration: inherit;
-    
-}
-
-/* styles */
-
 h1 {
     color: white;
     text-shadow: 3px 5px #f54e00;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600 !important;
-    letter-spacing: 6.1px;
+    letter-spacing: 5.1px;
 }
 
 li  {
@@ -36,88 +26,34 @@ li  {
     padding: 0 50px 0 50px;
 }
 
-tr {
-    border: none;
+/* =========
+    STYLES
+   ========= */
+.btn {
+    margin: 1rem;
 }
-
 
 .select a {
     color: white !important;
 }
 
-.outputInner {
-    min-height: 150px;;
-    border: 2px solid rgba(0, 0, 0, 0.685);
-    background-color: black;
-    border-radius: 1.5em;
-    padding-left: 1.5rem;
-}
-
-#outputContent {
-    padding: 1.5rem;
-    color: lightcoral;
-}
-
-#sideOutput {
-    padding-left: 1rem;
-}
-
-#sideOutput p span:nth-child(2) {
-    margin-left: .5rem;
-}
-
+/* distro select section */
 .distro {
     margin-left: 2rem;
     margin-bottom: 1rem;
-    background-color: #f54e00;
+    background-color: #ff5443;
     width: 100px;
     height: 100px;
     border-radius: 50%;
 }
 
-.sidenav-trigger {
-    margin-left: 2rem;
-    margin-top: 5rem;
-    color: white;
+.distroWrapper {
+    width: 100%;
+    margin-bottom: 2rem;
 }
 
 .distro a {
     color: white !important;
-}
-
-.distroWrapper {
-    margin-left: 2rem;
-}
-
-#appSelect .btn:disabled a {
-    color: rgba(2, 2, 2, 0.589) !important;
-}
-
-#arch-logo,
-#debian-logo,
-#elementary-logo,
-#solus-logo,
-#ubuntu-logo,
-#not-sure-logo {
-    font-size: 3.5rem !important;
-    padding-left: 20%;
-}
-
-#not-sure-logo {
-    padding-left: 35%;
-    padding-top: 10%;
-}
-
-.distroWrapper {
-    width: 100%;
-    margin-bottom: 2rem;;
-}
-
-.fa-archlinux,
-.fa-debian,
-.fa-ubuntu,
-.fa-question-circle {
-    font-size: 1.8rem !important;
 }
 
 .icofont-sail-boat {
@@ -130,17 +66,57 @@ tr {
     text-transform: lowercase;
 }
 
+#arch,
+#debian,
+#elementary,
+#solus,
+#ubuntu,
+#notSure {
+    font-size: 3.5rem !important;
+    padding-top: .6rem;
+    color: white;
+}
 
+#solus-logo {
+    font-size: 3.5rem !important;
+}
+
+#distroHeading,
+#tabHeading {
+    font-size: 2.5rem;
+    margin-top: 0;
+    font-family: 'Major Mono Display', monospace;
+    color: black;
+}
+
+/* tab section */
+#matTabs {
+    margin-top: 3rem;;
+}
+
+#appSelect .btn:disabled a {
+    color: rgba(2, 2, 2, 0.589) !important;
+}
+
+/* output section */
 .outputDiv {
     margin-top: 3rem;
     margin-left: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    
+}
+
+#outputHeading {
+    font-size: 3.5rem;
+    margin-top: 0;
+    font-family: 'Monofett', 'Courier', cursive;
+    color: black;
 }
 
 .outputDiv button {
     margin-top: 1.5rem;
 }
-
-
 
 .instructionLink,
 .instructionLink:link,
@@ -149,7 +125,36 @@ tr {
     font-style: initial;
 }
 
-.btn {
-    margin: 1rem;
+.outputInner {
+    min-height: 150px;;
+    border: 2px solid rgba(0, 0, 0, 0.685);
+    background-color: black;
+    border-radius: 1.5em;
+    padding-left: 1.5rem;
 }
 
+#outputContent {
+    padding: .5rem;
+    color: lightcoral;
+    overflow: scroll;
+    /* overflow-wrap: break-word; */
+}
+
+/* sidebar */
+.sidenav-trigger {
+    margin-left: 2rem;
+    margin-top: 15rem !important;
+    color: white;
+}
+
+#sideOutput {
+    padding-left: 1rem;
+}
+
+#sideOutput p span:nth-child(2) {
+    margin-left: .5rem;
+}
+
+/* ===============
+    MEDIA QUERIES
+   =============== */
