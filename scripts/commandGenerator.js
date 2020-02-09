@@ -289,7 +289,7 @@ document.getElementById("saveOutput").addEventListener("click", function () {
         document.getElementById("sideTrigger").setAttribute("class", "btn-floating btn-large pulse");
     } else {
         M.toast({
-            html: 'Nothing add yet'
+            html: 'Nothing to add yet'
         });
     }
 });
