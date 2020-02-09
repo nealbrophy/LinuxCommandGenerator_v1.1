@@ -107,6 +107,7 @@ This site uses the [Materialize.CSS](https://materializecss.com/) framework.
 [ArchLinux Wiki](https://wiki.archlinux.org/)
 [Elementary OS]() forums
 [Solus]() forums
+[ScottLinux](https://scottlinux.com/)
 
 
 #### Copy to Clipboard implementation from:

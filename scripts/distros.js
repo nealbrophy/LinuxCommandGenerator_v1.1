@@ -7,16 +7,34 @@ const arch = {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "sudo pacman -S appimagelauncher-git"
     },
-    _atom: {},
+    _atom: {
+        instructions: "",
+        code: ""
+    },
     _chrome: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "sudo pacman -S git && \ncd Downloads && \ngit clone https://aur.archlinux.org/google-chrome.git && \ncd google-chrome/ && \nmakepkg -s -y && \nsudo pacman -U google-chrome-63.0.3239.108-1-x86_64.pkg.tar.xz"
     },
-    _firefox: {},
-    _git: {},
-    _gitKraken: {},
-    _kdeConnect: {},
-    _slack: {},
+    _firefox: {
+        instructions: "",
+        code: ""
+    },
+    _git: {
+        instructions: "",
+        code: ""
+    },
+    _gitKraken: {
+        instructions: "",
+        code: ""
+    },
+    _kdeConnect: {
+        instructions: "",
+        code: ""
+    },
+    _slack: {
+        instructions: "",
+        code: ""
+    },
     _standardNotes: {
         instructions: "install <em>App Image Launcher</em> first, then execute the below code in terminal and select \"Integrate and Run\" on the pop-up.",
         code: "wget https://github.com/standardnotes/desktop/releases/download/v3.0.25/Standard-Notes-3.0.25.AppImage && \nchmod a+x Standard-Notes-3.0.25.AppImage && \n./Standard-Notes-3.0.25.AppImage"
@@ -29,12 +47,23 @@ const arch = {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "sudo pacman -S papirus-icon-theme"
     },
-    _flatery: {},
+    _inverse: {
+        instructions: "",
+        code: ""
+    },
     _flatRemix: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "git clone https://github.com/daniruiz/flat-remix && \nmkdir -p ~/.icons && \ncp -r flat-remix/Flat-Remix* ~/.icons/ && \ngsettings set org.gnome.desktop.interface icon-theme \"Flat-Remix\""
+        code: "git clone https://github.com/daniruiz/flat-remix && \nmkdir -p ~/.icons && \ncp -r flat-remix/Flat-Remix* ~/.icons/ && \ngsettings set org.gnome.desktop.interface icon-theme \"Flat-Remix\"",
+        code2: "sudo pacman -S flat-remix"
     },
-    _vimix: {},
+    _inspire: {
+        instructions: "",
+        code: ""
+    },
+    _vimix: {
+        instructions: "",
+        code: ""
+    },
     _uniform: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "yaourt -S uniform-icon-theme"
@@ -77,8 +106,8 @@ const arch = {
     get papirus() {
         return this._papirus;
     },
-    get flatery() {
-        return this._flatery;
+    get inverse() {
+        return this._inverse;
     },
     get flatRemix() {
         return this._flatRemix;
@@ -88,6 +117,9 @@ const arch = {
     },
     get uniform() {
         return this._uniform;
+    },
+    get inspire() {
+        return this._inspire;
     },
     get logo() {
         return this._logo;
@@ -101,7 +133,10 @@ const debian = {
         instructions: "go to <a href=\"https://github.com/TheAssassin/AppImageLauncher/releases\">https://github.com/TheAssassin/AppImageLauncher/releases</a> and download the appropriate <code>.deb</code> file. Then execute the below in terminal.",
         code: "sudo dpkg -i appimagelauncher_*.deb"
     },
-    _atom: {},
+    _atom: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo add-apt-repository ppa:webupd8team/atom && \nsudo apt-get update && \nsudo apt-get install -y atom"
+    },
     _chrome: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "sudo apt-get install libxss1 libappindicator1 libindicator7 -y && \nwget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \nsudo dpkg -i google-chrome*.deb && \nsudo apt-get install -f && \nsudo apt autoremove -y"
@@ -110,10 +145,22 @@ const debian = {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "wget https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US && \ncd ~/Downloads/ && \ntar xjf firefox-*.tar.bz2 && \nsudo rm -r /opt/firefox && \nsudo mv firefox /opt/firefox72"
     },
-    _git: {},
-    _gitKraken: {},
-    _kdeConnect: {},
-    _slack: {},
+    _git: {
+        instruction: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo apt install git"
+    },
+    _gitKraken: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "wget https://release.gitkraken.com/linux/gitkraken-amd64.deb && \nsudo dpkg -i gitkraken-amd64.deb"
+    },
+    _kdeConnect: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo apt install kdeconnect"
+    },
+    _slack: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: ""
+    },
     _standardNotes: {
         instructions: "install <em>App Image Launcher</em> first, then execute the below code in terminal and select \"Integrate and Run\" on the pop-up.",
         code: "wget https://github.com/standardnotes/desktop/releases/download/v3.0.25/Standard-Notes-3.0.25.AppImage && \nchmod a+x Standard-Notes-3.0.25.AppImage && \n./Standard-Notes-3.0.25.AppImage"
@@ -126,9 +173,22 @@ const debian = {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "sudo sh -c \"echo 'deb http://ppa.launchpad.net/papirus/papirus/ubuntu xenial main' > /etc/apt/sources.list.d/papirus-ppa.list\" && \nsudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F && \nsudo apt-get update && \nsudo apt-get install papirus-icon-theme"
     },
-    _flatery: {},
-    _flatRemix: {},
-    _vimix: {},
+    _inverse: {
+        instructions: "",
+        code: ""
+    },
+    _inspire: {
+        instructions: "go to <a href=\"https://www.gnome-look.org/p/1344791/\">https://www.gnome-look.org/p/1344791/</a> and download the desired version to your Downloads folder",
+        code: "cd /Downloads && sudo tar -xf Inverse*.tar.xz mv /usr/share/icons/"
+    },
+    _flatRemix: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo add-apt-repository ppa:daniruiz/flat-remix && \nsudo apt-get update && \nsudo apt-get install flat-remix"
+    },
+    _vimix: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "wget https://github.com/vinceliuice/vimix-gtk-themes/archive/Gtk3.22-12.25.tar.gz && \ntar -xvf Gtk3.22-12.25.tar.gz && \ncd vimix* && \n sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf && \n ./Vimix-installer.sh"
+    },
     _uniform: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "sudo add-apt-repository ppa:noobslab/icons2 && \nsudo apt-get update && \nsudo apt-get install uniform-icons"
@@ -171,17 +231,20 @@ const debian = {
     get papirus() {
         return this._papirus;
     },
-    get flatery() {
+    get inverse() {
         return this._flatery;
     },
     get flatRemix() {
-        return this._flatRemix;
+        return this._inverse;
     },
     get vimix() {
         return this._vimix;
     },
     get uniform() {
         return this._uniform;
+    },
+    get inspire() {
+        return this._inspire;
     },
     get logo() {
         return this._logo;
@@ -206,12 +269,14 @@ const elementary = {
         instructions:"execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "wget https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US && \ncd ~/Downloads/ && \ntar xjf firefox-*.tar.bz2 && \nsudo rm -r /opt/firefox && \nsudo mv firefox /opt/firefox72"
     },
-    _git: {},
     _gitKraken: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "wget https://release.gitkraken.com/linux/gitkraken-amd64.deb && \nsudo dpkg -i gitkraken-amd64.deb"
     },
-    _kdeConnect: {},
+    _kdeConnect: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo apt install kdeconnect"
+    },
     _mcMojave: {
         instructions: "go to <a href='#' class='instructionLink'>here</a> and and download the desired version.",
         code: "sudo apt-get install gtk2-engines-murrine gtk2-engines-pixbuf -y && \ncd Downloads && tar xvf Mojave-*.tar.xz && \nsudo mv Mojave-* /usr/share/themes/"
@@ -232,10 +297,17 @@ const elementary = {
         instructions: "first, paste the following in terminal: <code>sudo nano /usr/share/contractor/Open_as_admin.contract</code>. Then paste the below and write-out/save the file (if using nano: <code>ctrl+o</code>, then <code>return</code>, then <code>ctrl+x</code>)",
         code: "[Contractor Entry] \nName=Open folder as root \nIcon=gksu-root-terminal \nDescription=Open folder as root \nMimeType=inode;application/x-sh;application/x-executable; \nExec=/usr/bin/io.elementary.files-pkexec \nGettext-Domain=pantheon-files"
     },
-    _slack: {},
+    _slack: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.3.2-amd64.deb && \nsudo dpkg -i slack-desktop-4.3.2-amd64.deb"
+    },
     _standardNotes: {
         instructions: "install <em>App Image Launcher</em> first, then execute the below code in terminal and select \"Integrate and Run\" on the pop-up.</p>",
         code: "wget https://github.com/standardnotes/desktop/releases/download/v3.0.25/Standard-Notes-3.0.25.AppImage && \nchmod a+x Standard-Notes-3.0.25.AppImage && \n./Standard-Notes-3.0.25.AppImage"
+    },
+    _visualStudioCode: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "wget https://code.visualstudio.com/docs/?dv=linux64_deb && \ncd ~/Downloads && \nsudo dpkg -i code_*.deb \nsudo apt-get install -f"
     },
     _tor: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
@@ -248,10 +320,26 @@ const elementary = {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "sudo add-apt-repository ppa:papirus/papirus && \nsudo apt update && \nsudo apt install papirus-icon-theme"
     },
-    _flatery: {},
-    _flatRemix: {},
-    _vimix: {},
-    _uniform: {},
+    _inverse: {
+        instructions: "go to <a href=\"https://www.gnome-look.org/p/1344791/\">https://www.gnome-look.org/p/1344791/</a> and download the desired version to your Downloads folder",
+        code: "cd /Downloads && sudo tar -xf Inverse*.tar.xz mv /usr/share/icons/"
+    },
+    _inspire: {
+        instructions: "",
+        code: ""
+    },
+    _flatRemix: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo add-apt-repository ppa:daniruiz/flat-remix && \nsudo apt-get update && \nsudo apt-get install flat-remix"
+    },
+    _vimix: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "wget https://github.com/vinceliuice/vimix-gtk-themes/archive/Gtk3.22-12.25.tar.gz && \ntar -xvf Gtk3.22-12.25.tar.gz && \ncd vimix* && \n sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf && \n ./Vimix-installer.sh"
+    },
+    _uniform: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo add-apt-repository ppa:noobslab/icons2 && \nsudo apt-get update && \nsudo apt-get install uniform-icons"
+    },
     _distSummary: "elementary OS is a Linux distribution based on Ubuntu that focuses mainly on non-technical users. It promotes itself as a “fast, open, and privacy-respecting” replacement to macOS and Windows and has a pay-what-you-want model. The human interface guidelines of the elementary OS project focus on immediate usability with a gentle learning curve, rather than full-fledged customization.[9] The three core rules the developers set for themselves were \"concision\", \"accessible configuration\" and \"minimal documentation\".",
     _logo: `<i class="fl-elementary sideLogo" aria-hidden="true"></i>`,
     get appImageLauncher() {
@@ -265,9 +353,6 @@ const elementary = {
     },
     get firefox() {
         return this._firefox;
-    },
-    get git() {
-        return this._git;
     },
     get gitKraken() {
         return this._gitKraken;
@@ -302,11 +387,17 @@ const elementary = {
     get tweaks() {
         return this._tweaks;
     },
+    get visualStudioCode() {
+        return this._visualStudioCode;
+    },
     get papirus() {
         return this._papirus;
     },
-    get flatery() {
-        return this._flatery;
+    get inverse() {
+        return this._inverse;
+    },
+    get inspire() {
+        return this._inspire;
     },
     get flatRemix() {
         return this._flatRemix;
@@ -333,22 +424,66 @@ const notSure = {
 
 // solus
 const solus = {
-    _appImageLauncher: {},
-    _atom: {},
+    _appImageLauncher: {
+        instructions: "",
+        code: ""
+    },
+    _atom: {
+        instructions: "",
+        code: ""
+    },
     _chrome: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "sudo eopkg install google-chrome"
     },
-    _firefox: {},
-    _git: {},
-    _gitKraken: {},
-    _kdeConnect: {},
-    _slack: {},
-    _standardNotes: {},
-    _papirus: {},
-    _flatery: {},
-    _flatRemix: {},
-    _vimix: {},
+    _firefox: {
+        instructions: "",
+        code: ""
+    },
+    _git: {
+        instructions: "",
+        code: ""
+    },
+    _gitKraken: {
+        instructions: "",
+        code: ""
+    },
+    _kdeConnect: {
+        instructions: "",
+        code: ""
+    },
+    _slack: {
+        instructions: "",
+        code: ""
+    },
+    _standardNotes: {
+        instructions: "",
+        code: ""
+    },
+    _terminalShortcut: {
+        instructions: "",
+        code: ""
+    },
+    _papirus: {
+        instructions: "",
+        code: ""
+    },
+    _inverse: {
+        instructions: "",
+        code: ""
+    },
+    _inspire: {
+        instructions: "",
+        code: ""
+    },
+    _flatRemix: {
+        instructions: "",
+        code: "git clone https://github.com/daniruiz/flat-remix && \nmkdir -p ~/.icons && \ncp -r flat-remix/Flat-Remix* ~/.icons/ && \ngsettings set org.gnome.desktop.interface icon-theme \"Flat-Remix\""
+    },
+    _vimix: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "wget https://github.com/vinceliuice/vimix-gtk-themes/archive/Gtk3.22-12.25.tar.gz && \ntar -xvf Gtk3.22-12.25.tar.gz && \ncd vimix* && \n sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf && \n ./Vimix-installer.sh"
+    },
     _uniform: {},
     _distSummary: "<p>Solus is an independently developed desktop operating system based on the Linux kernel and using its own desktop environment derived from GNOME. Starting with the Debian branch of Linux it migrated to a unique approach including Pisi and Evolve OS. It is offered as a curated rolling release model under the slogan \"Install Today. Updates Forever\". Solus contains a wide variety of desktop environments depending on release chosen, options include Solus' own Budgie Desktop, GNOME, MATE and KDE Plasma.</p>",
     _logo: `<i class="icofont-sail-boat sideLogo" aria-hidden="true"></i>`,
@@ -385,11 +520,17 @@ const solus = {
     get slack() {
         return this._slack;
     },
+    get terminalShortcut() {
+        return this._terminalShortcut;
+    },
     get papirus() {
         return this._papirus;
     },
-    get flatery() {
-        return this._flatery;
+    get inverse() {
+        return this._inverse;
+    },
+    get inspire() {
+        return this._inspire;
     },
     get flatRemix() {
         return this._flatRemix;
@@ -439,15 +580,36 @@ const ubuntu = {
     },
     _standardNotes: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "wget https://github.com/standardnotes/desktop/releases/download/v3.0.25/Standard-Notes-3.0.25.AppImage && \nmv ~/Downloads/Standard-Notes-3.0.25.AppImage ~/Standard-Notes-3.0.25.AppImage && cd ~ && \nchmod a+x Standard-Notes-3.0.25.AppImage"},
+        code: "wget https://github.com/standardnotes/desktop/releases/download/v3.0.25/Standard-Notes-3.0.25.AppImage && \nmv ~/Downloads/Standard-Notes-3.0.25.AppImage ~/Standard-Notes-3.0.25.AppImage && cd ~ && \nchmod a+x Standard-Notes-3.0.25.AppImage"
+    },
+    _visualStudioCode: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "wget https://github.com/standardnotes/desktop/releases/download/v3.0.25/Standard-Notes-3.0.25.AppImage && \nmv ~/Downloads/Standard-Notes-3.0.25.AppImage ~/Standard-Notes-3.0.25.AppImage && cd ~ && \nchmod a+x Standard-Notes-3.0.25.AppImage"
+    },
     _papirus: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "sudo add-apt-repository ppa:papirus/papirus && \nsudo apt update && \nsudo apt install papirus-icon-theme"
     },
-    _flatery: {},
-    _flatRemix: {},
-    _vimix: {},
-    _uniform: {},
+    _inverse: {
+        instructions: "go to <a href=\"https://www.gnome-look.org/p/1344791/\">https://www.gnome-look.org/p/1344791/</a> and download the desired version to your Downloads folder",
+        code: "cd /Downloads && sudo tar -xf Inverse*.tar.xz mv /usr/share/icons/"
+    },
+    _inspire: {
+        instructions: "",
+        code: ""
+    },
+    _flatRemix: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo add-apt-repository ppa:daniruiz/flat-remix && \nsudo apt-get update && \nsudo apt-get install flat-remix"
+    },
+    _vimix: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "wget https://github.com/vinceliuice/vimix-gtk-themes/archive/Gtk3.22-12.25.tar.gz && \ntar -xvf Gtk3.22-12.25.tar.gz && \ncd vimix* && \n sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf && \n ./Vimix-installer.sh"
+    },
+    _uniform: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo add-apt-repository ppa:noobslab/icons2 && \nsudo apt-get update && \nsudo apt-get install uniform-icons"
+    },
     _distSummary: "<p>Ubuntu is a free and open-source Linux distribution based on Debian. Ubuntu is released every six months, with long-term support (LTS) releases every two years. Ubuntu is developed by Canonical, and a community of other developers, under a meritocratic governance model. Canonical provides security updates and support for each Ubuntu release, starting from the release date and until the release reaches its designated end-of-life (EOL) date. Canonical generates revenue through the sale of premium services related to Ubuntu.</p>",
     _logo: `<i class="fl-ubuntu sideLogo" aria-hidden="true"></i>`,
     get appImageLauncher() {
@@ -480,14 +642,20 @@ const ubuntu = {
     get standardNotes() {
         return this._standardNotes;
     },
+    get visualStudioCode() {
+        return this._visualStudioCode;
+    },
     get slack() {
         return this._slack;
     },
     get papirus() {
         return this._papirus;
     },
-    get flatery() {
-        return this._flatery;
+    get inverse() {
+        return this._inverse;
+    },
+    get inspire() {
+        return this._inspire;
     },
     get flatRemix() {
         return this._flatRemix;
