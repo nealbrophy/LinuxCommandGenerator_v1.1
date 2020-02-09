@@ -141,6 +141,28 @@ a:visited {
     margin-top: 1.5rem;
 }
 
+#saveOutput {
+    background-color: #f54e00;
+}
+
+#saveOutput:hover {
+    background-color: #b33900;
+}
+
+#saveOutput:active {}
+
+#downloadOutput {
+    background-color: #ff4433;
+}
+
+#downloadOutput:hover {
+    background-color: #ff1500;
+}
+
+#downloadOutput:active {
+    background-color: #ff8a80;
+}
+
 .instructionLink,
 .instructionLink:link,
 .instructionLink:visited,
@@ -169,6 +191,9 @@ a:visited {
 }
 
 /* sidebar */
+.sidenav {
+    background-color: #79a0a5;
+}
 
 .sideLogo {
     font-size: 1.2rem;
@@ -177,15 +202,56 @@ a:visited {
 .sidenav-trigger {
     margin-left: 2rem;
     margin-top: 15rem !important;
-    color: white;
+}
+
+#sideTrigger {
+    background-color: #a4680e;
+    
+}
+
+#sideHeading {
+    font-size: 2rem;
+    padding-left: .5rem;
+    font-family: 'Major Mono Display', monospace;
 }
 
 #sideOutput {
     padding-left: 1rem;
 }
 
+#sidebarDownload {
+    background-color: #eb9514;
+}
+
+#sidebarDownload:hover {
+    background-color:  #a4680e;
+}
+
+#sidebarDownload:active {
+    background-color:  #f3bf72;
+}
+
+#sidebarClear {
+    background-color: #ff5443;
+}
+
+#sidebarClear:hover {
+    background-color:  #ff2d1a;
+}
+
+#sidebarClear:active {
+    background-color:  #ff8a80;
+}
+
 #emailMessage {
     display: none;
+}
+
+#sidebarClear .fa-recycle,
+#sidebarDownload .fa-cart-arrow-down {
+    font-size: 1.5rem;
+    color: white !important;
+    margin: 0;
 }
 
 #sideOutput p span:nth-child(2) {

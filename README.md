@@ -52,6 +52,9 @@ To run the site locally you can clone it using the following instructions:
 
 ---
 ### How did you test it?
+
+User testing: Found if "Add To List" button was clicked after an OS had been selected but before an app had been selected the addToList function would run and add an "undefined" item to the list which would in turn be added to the sidebar and output to file.
+
 ---
 ### Anything else you want to tell me?
 #### To be implemented 

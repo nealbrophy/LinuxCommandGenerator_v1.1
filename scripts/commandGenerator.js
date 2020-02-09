@@ -81,69 +81,96 @@ const codePrinter = codetobeprinted => {
 
 // add distro & selected apps to list object
 const addToList = (distname, selectionname) => {
-    // check if OS has already been added to list object, if so app/theme/icon to it
-    if (userList[distname]) {
-        if (userList[distname][selectionname]) {
-            M.toast({
-                html: 'Item already on list!'
-            });
+    if (osName && selection) {
+        // check if OS has already been added to list object.....
+        if (userList[distname]) {
+            // if so, check if app has already been added
+            if (userList[distname][selectionname]) {
+                // if so, present toast-message
+                M.toast({
+                    html: 'Item already on list!'
+                });
+            } else {
+                // if not add app to existing OS
+                userList[distname][selectionname] = osObj[selection];
+                // confirm item added with toast msg
+                M.toast({
+                    html: 'Added to list!'
+                });
+                addToDataForFileOutput(choice, selectionname);
+            }
         } else {
+            // if OS hasnt' been added, add it then add app/theme/icon to it
+            userList[distname] = {};
             userList[distname][selectionname] = osObj[selection];
+            // confirm item added with toast msg
             M.toast({
                 html: 'Added to list!'
             });
-            dataOutput += `<p>Distro: ${choice}<br>App: ${selectionname}<br><code>Command: ${osObj[selection].code}</code></p>`;
+            addToDataForFileOutput(choice, selectionname);
         }
     } else {
-        // if OS hasnt' been added, add it then add app/theme/icon to it
-        userList[distname] = {};
-        userList[distname][selectionname] = osObj[selection];
-        console.log(distname);
-        console.log(selectionname)
+        // advise nothing select with toast msg
         M.toast({
-            html: 'Added to list!'
+            html: 'Nothing to add yet'
         });
-        dataOutput += `<p>Distro: ${choice}<br>App: ${selectionname}<br><code>Command: ${osObj[selection].code}</code></p>`;
     }
 };
 
+// add selections to html for file output
+const addToDataForFileOutput = (choice, selectionname) => {
+    dataOutput += `
+    <p>
+        <strong>Distro:</strong> ${choice}
+        <br>
+        <strong>App:</strong> ${selectionname}
+        <br>
+        <strong>Instructions: </strong><mark>${osObj[selection].instructions}</mark>
+        <br>
+        <strong>Command:</strong> <blockquote>${osObj[selection].code}</blockquote>
+        <br>
+    </p>`;
+}
+
 // add distro & selected apps to sidebar
 const addToSidebar = (osinfo, selectioninfo) => {
-    // check if distro is already in sidebar
-    if (document.getElementById(`${osinfo}_side`)) {
+    if (osName && selection) {
+        // check if distro is already in sidebar
+        if (document.getElementById(`${osinfo}_side`)) {
 
-        // if so, check if the distro element in sidebar already has the app
-        if (document.getElementById(`${osinfo}_side_${selectioninfo}`)) {
+            // if so, check if the distro element in sidebar already has the app
+            if (document.getElementById(`${osinfo}_side_${selectioninfo}`)) {
 
-            // if so, log warning
-            
+                // if so, log warning
+
+            } else {
+                // if not, create element to hold app name and append to os element withint sidebar
+                let sideElementContent = document.createElement("span");
+                sideElementContent.innerHTML = `${selectioninfo}`;
+                sideElementContent.setAttribute("id", `${osinfo}_side_${selectioninfo}`);
+                sideElementContent.setAttribute("class", "chip");
+                document.getElementById(`${osinfo}_side`).appendChild(sideElementContent);
+            }
         } else {
-            // if not, create element to hold app name and append to os element withint sidebar
+            // if distro not already in sidebar create element to hold it, populate it, and add ID
+            let sideElement = document.createElement("p");
+            sideElement.innerHTML = `${osObj.logo}:`;
+            sideElement.setAttribute("id", `${osinfo}_side`);
+
+
+            // create element to hold app selection, populate it, add ID, and append to distro element
             let sideElementContent = document.createElement("span");
-            sideElementContent.innerHTML = `${selectioninfo}`;
+            sideElementContent.innerText = `${selectioninfo}`;
             sideElementContent.setAttribute("id", `${osinfo}_side_${selectioninfo}`);
             sideElementContent.setAttribute("class", "chip");
-            document.getElementById(`${osinfo}_side`).appendChild(sideElementContent);
+            sideElement.appendChild(sideElementContent);
+
+            // add to DOM
+            document.getElementById("sideOutput").appendChild(sideElement);
+            // M.toast({
+            //     html: 'Added to list!'
+            // });
         }
-    } else {
-        // if distro not already in sidebar create element to hold it, populate it, and add ID
-        let sideElement = document.createElement("p");
-        sideElement.innerHTML = `${osObj.logo}:`;
-        sideElement.setAttribute("id", `${osinfo}_side`);
-
-
-        // create element to hold app selection, populate it, add ID, and append to distro element
-        let sideElementContent = document.createElement("span");
-        sideElementContent.innerText = `${selectioninfo}`;
-        sideElementContent.setAttribute("id", `${osinfo}_side_${selectioninfo}`);
-        sideElementContent.setAttribute("class", "chip");
-        sideElement.appendChild(sideElementContent);
-
-        // add to DOM
-        document.getElementById("sideOutput").appendChild(sideElement);
-        // M.toast({
-        //     html: 'Added to list!'
-        // });
     }
 };
 
@@ -154,7 +181,7 @@ const clearSidebar = () => {
         for (let i = 0; i < listChildren.length; i++) {
             document.getElementById("sideOutput").innerHTML = "";
             M.toast({
-                html: "List cleared!"
+                html: "List cleared"
             });
         }
     } else {
@@ -164,29 +191,45 @@ const clearSidebar = () => {
     }
 }
 
-// basic copy to clipboard function
+// copy to clipboard function
 function copyToClipboard(inputText) {
-    let textArea = document.createElement("textarea");
-    textArea.value = inputText;
-    textArea.style.position = "fixed";
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
+    if (osName && selection) {
+        let textArea = document.createElement("textarea");
+        textArea.value = inputText;
+        textArea.style.position = "fixed";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
 
-    try {
-        let successful = document.execCommand("copy");
-        let msg = successful ? "successful" : "unsuccessful";
+        try {
+            let successful = document.execCommand("copy");
+            let msg = successful ? "successful" : "unsuccessful";
+            M.toast({
+                html: 'Copy ' + msg + '!'
+            });
+        } catch (err) {
+            M.toast({
+                html: "Copy failed"
+            });
+            console.log("Copy failed", err);
+        }
+
+        document.body.removeChild(textArea);
+    } else {
         M.toast({
-            html: 'Copy ' + msg + '!'
+            html: "Nothing to copy yet"
         });
-    } catch (err) {
-        M.toast({
-            html: "Copy failed"
-        });
-        console.log("Copy failed", err);
+
     }
+}
 
-    document.body.removeChild(textArea);
+// download file function
+const downloadFile = (input) => {
+    var blob = new Blob([input], {
+        type: "text/plain;charset=utf-8"
+    });
+
+    saveAs(blob, "linux-commands.html")
 }
 
 
@@ -235,8 +278,6 @@ for (i = 0; i < toInstall.length; i++) {
 
         } else {
             selection = (this.id);
-            // generic instruction, same regardless of selections
-            // document.getElementById("outputIntro").innerHTML = `<p>Enter the following in your terminal (<code>cmd+t</code> or <code>ctrl+shift+t</code> on most Linux systems) to install <span class="installName">${document.getElementById(selection).innerText}</span> on <span class="osName">${choice}</span>:</p>`;
 
             // check the os object to see if app selection has custom instructions, if so populate instructions element
             if (osObj[selection].instructions) {
@@ -261,20 +302,35 @@ document.getElementById("saveOutput").addEventListener("click", function () {
     addToList(osName, selection);
 });
 
-// add click listener to clear list button
+// add click listener to download button
+document.getElementById("downloadOutput").addEventListener("click", function () {
+    if (choice && selection) {
+        addToDataForFileOutput(choice, selection);
+        downloadFile(dataOutput);
+        dataOutput = '';
+    } else {
+        M.toast({
+            html: 'Nothing to download yet'
+        });
+    }
+});
+
+// add click listener to sidebar clear list button
 document.getElementById("sidebarClear").addEventListener("click", function () {
     clearSidebar();
 });
 
-// add click listener to clear list button
+// add click listener to sidebar download file button
 document.getElementById("sidebarDownload").addEventListener("click", function () {
-    let dataForFile = `<html><head><title>Linux Command Generator - Output</title></head><body><h1>Your Linux Commands</h1><p>Below are the commands you saved.</p>${dataOutput}</body></html>`;
-    var blob = new Blob([dataForFile], {type: "text/plain;charset=utf-8"});
-
-    saveAs(blob, "testfile.html")
+    if (Object.keys(userList).length > 0) {
+        let dataForFile = `<html><head><title>Linux Command Generator - Output</title></head><body><h1>Your Linux Commands</h1><p>Below are the commands you saved.</p>${dataOutput}</body></html>`;
+        downloadFile(dataForFile);
+    } else {
+        M.toast({
+            html: 'List is empty'
+        });
+    }
 });
-
-
 
 // send email listener
 // document.getElementById("emailForm").addEventListener('submit', function (event) {

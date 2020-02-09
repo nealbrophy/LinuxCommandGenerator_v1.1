@@ -3,18 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- requireJS -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"
-        integrity="sha256-1fEPhSsRKlFKGfK3eO710tEweHh1fwokU5wFGDHO+vg=" crossorigin="anonymous"></script> -->
-
-    <!-- emailJS -->
-    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init('user_13DhOIaJga1D7ndnbfmQj');
-        })();
-    </script> -->
-
     <!-- filesave -->
     <script src="scripts/FileSaver.js">
     </script>
@@ -52,7 +40,7 @@
 <body>
     <!-- sidebar trigger -->
     <div class="fixed-action-btn sidenav-trigger" data-target="slide-out">
-        <a class="btn-floating btn-large red"><i class="material-icons">menu</i></a>
+        <a id="sideTrigger" class="btn-floating btn-large"><i class="fas fa-shopping-cart"></i></a>
     </div>
     <!-- <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
     <div class="container">
@@ -99,7 +87,7 @@
             </div>
             <!-- applications -->
             <div id="appSelect" class="col s12">
-                <button id="appImageLauncher" class="select btn"><a href="#output"><i class="fas fa-rocket"></i>
+                <button id="appImageLauncher" class="select btn waves-effect waves-light"><a href="#output"><i class="fas fa-rocket"></i>
                         AppImageLauncher</a></button>
                 <button id="atom" class="select btn waves-effect waves-light"><a href="#output"><i
                             class="fas fa-atom"></i>
@@ -163,6 +151,7 @@
 
         <!-- sidebar -->
         <ul id="slide-out" class="sidenav">
+            <h3 id="sideHeading">My List</h3>
             <li>
                 <div id="sideOutput">
 
@@ -171,11 +160,10 @@
 
                 <div class="divider"></div>
             </li>
-            <li><a class="subheader">Subheader</a></li>
             <li>
-                <a class="waves-effect btn" id="sidebarDownload" href="#!">Download as .TXT</a>
+                <a class="btn waves-effect waves-light" id="sidebarDownload" href="#!"><i class="fas fa-cart-arrow-down"></i> Download</a>
 
-                <ul class="collapsible">
+                <!-- <ul class="collapsible">
                     <li>
                         <div class="collapsible-header">Send via Email</div>
                         <div class="collapsible-body">
@@ -186,8 +174,8 @@
                             </form>
                         </div>
                     </li>
-                </ul>
-                <a class="waves-effect btn" id="sidebarClear" href="#!">Clear List</a>
+                </ul> -->
+                <a class="btn" id="sidebarClear" href="#!"><i class="fas fa-recycle"></i> Clear List</a>
             </li>
         </ul>
         <div class="divider"></div>
@@ -200,10 +188,10 @@
             <div class="outputInner">
                 <div id="outputContent"></div>
             </div>
-            <button id="copyOutput" class="btn">Copy to clipboard</button>
-            <button id="saveOutput" class="btn">Add to my list</button>
-            <button id="downloadOutput" class="btn">Download as .TXT</button>
-            <button id="emailOutput" class="btn">Send via email</button>
+            <button id="copyOutput" class="btn"><i class="far fa-copy"></i> Copy Code</button>
+            <button id="saveOutput" class="btn"><i class="fas fa-cart-plus"></i> Add to List</button>
+            <button id="downloadOutput" class="btn"><i class="fas fa-file-download"></i> Download File</button>
+            <!-- <button id="emailOutput" class="btn">Send via email</button> -->
         </div>
     </div>
 
