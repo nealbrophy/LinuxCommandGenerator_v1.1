@@ -59,9 +59,7 @@ a:visited {
     color: white;
 }
 
-
 /* distro select section */
-
 .distro {
     margin-left: 2rem;
     margin-bottom: 1rem;
@@ -130,6 +128,10 @@ a:visited {
     font-weight: 700;
 }
 
+.buttonText {
+    display: none;
+}
+
 #outputHeading {
     font-size: 3.5rem;
     margin-top: 0;
@@ -149,7 +151,9 @@ a:visited {
     background-color: #b33900;
 }
 
-#saveOutput:active {}
+#saveOutput:active {
+    background-color:  #ff854d;
+}
 
 #downloadOutput {
     background-color: #ff4433;
@@ -178,10 +182,14 @@ a:visited {
     padding-left: 1.5rem;
 }
 
+#outputInstructions {
+    overflow: wrap;
+    overflow-wrap: break-word;
+}
+
 #outputContent {
     padding: .5rem;
     color: white;
-    overflow: hidden;
     overflow-wrap: break-word;
 }
 
@@ -202,6 +210,8 @@ a:visited {
 .sidenav-trigger {
     margin-left: 2rem;
     margin-top: 15rem !important;
+    right: 15px;
+    bottom: 15px;
 }
 
 #sideTrigger {
@@ -268,6 +278,10 @@ a:visited {
 
     .distroContainer {
         height: 30vh;
+    }
+
+    .buttonText {
+        display: initial;
     }
 
     #distroHeading {

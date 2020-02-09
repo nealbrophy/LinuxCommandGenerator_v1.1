@@ -3,13 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- filesave -->
+    <!-- filesaver -->
     <script src="scripts/FileSaver.js">
     </script>
-
-    <!-- prettify -->
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-
     <!-- import google fonts -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Monofett|Montserrat&display=swap"
@@ -23,14 +19,16 @@
 
     <!-- import font awesome -->
     <script src="https://kit.fontawesome.com/624307dae0.js" crossorigin="anonymous"></script>
-
-    <!-- import fork awesome -->
-    <link rel="stylesheet" href="css/Fork-Awesome-1.1.7/css/fork-awesome.min.css">
+    <!-- 
+    import fork awesome
+    <link rel="stylesheet" href="css/Fork-Awesome-1.1.7/css/fork-awesome.min.css"> -->
 
     <!-- import IcoFont -->
     <link rel="stylesheet" href="css/icofont/icofont.min.css">
 
-    <!--  -->
+    <!-- import favicon -->
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -38,10 +36,7 @@
 </head>
 
 <body>
-    <!-- sidebar trigger -->
-    <div class="fixed-action-btn sidenav-trigger" data-target="slide-out">
-        <a id="sideTrigger" class="btn-floating btn-large"><i class="fas fa-shopping-cart"></i></a>
-    </div>
+    
     <!-- <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
     <div class="container">
 
@@ -53,23 +48,23 @@
             <h2 id="distroHeading" class="center-align">Pick Your Distro:</h2>
             <div class="bgCreme"></div>
             <p class="distroWrapper center-align">
-                <a class="distroLogo arch-linux left s1 distro hoverable center-align" id="arch" href="#matTabs">
+                <a class="distroLogo arch-linux left s1 distro hoverable center-align tooltipped" data-position="bottom" data-tooltip="Arch Linux" id="arch" href="#matTabs">
                     <span id="arch-logo" class="fl-archlinux center-align"></span>
                 </a>
-                <a class="distroLogo debian-linux left s1 distro hoverable center-align" id="debian" href="#matTabs">
+                <a class="distroLogo debian-linux left s1 distro hoverable center-align tooltipped" data-position="bottom" data-tooltip="Debian" id="debian" href="#matTabs">
                     <span id="debian-logo" class="fl-debian center-align"></span>
                 </a>
-                <a class="distroLogo elementary-linux left s1 distro hoverable center-align" id="elementary"
+                <a class="distroLogo elementary-linux left s1 distro hoverable center-align tooltipped" data-position="bottom" data-tooltip="Elementary OS" id="elementary"
                     href="#matTabs">
                     <span id="elementary-logo" class="fl-elementary center-align"></span>
                 </a>
-                <a class="distroLogo solus-linux left s1 distro hoverable center-align" id="solus" href="#matTabs">
+                <a class="distroLogo solus-linux left s1 distro hoverable center-align tooltipped" data-position="bottom" data-tooltip="Solus" id="solus" href="#matTabs">
                     <span id="solus-logo" class="icofont-sail-boat center-align"></span>
                 </a>
-                <a class="distroLogo ubuntu-linux left s1 distro hoverable center-align" id="ubuntu" href="#matTabs">
+                <a class="distroLogo ubuntu-linux left s1 distro hoverable center-align tooltipped" data-position="bottom" data-tooltip="Ubuntu" id="ubuntu" href="#matTabs">
                     <span id="ubuntu-logo" class="fl-ubuntu center-align"></span>
                 </a>
-                <a class="distroLogonot-sure left s1 distro hoverable center-align" id="notSure" href="#matTabs">
+                <a class="distroLogo not-sure left s1 distro hoverable center-align tooltipped" data-position="bottom" data-tooltip="Not sure" id="notSure" href="#matTabs">
                     <span id="not-sure-logo" class="fa fa-question center-align"></span>
                 </a>
             </p>
@@ -87,7 +82,8 @@
             </div>
             <!-- applications -->
             <div id="appSelect" class="col s12">
-                <button id="appImageLauncher" class="select btn waves-effect waves-light"><a href="#output"><i class="fas fa-rocket"></i>
+                <button id="appImageLauncher" class="select btn waves-effect waves-light"><a href="#output"><i
+                            class="fas fa-rocket"></i>
                         AppImageLauncher</a></button>
                 <button id="atom" class="select btn waves-effect waves-light"><a href="#output"><i
                             class="fas fa-atom"></i>
@@ -154,15 +150,12 @@
             <h3 id="sideHeading">My List</h3>
             <li>
                 <div id="sideOutput">
-
-
                 </div>
-
                 <div class="divider"></div>
             </li>
             <li>
-                <a class="btn waves-effect waves-light" id="sidebarDownload" href="#!"><i class="fas fa-cart-arrow-down"></i> Download</a>
-
+                <a class="btn waves-effect waves-light" id="sidebarDownload" href="#!"><i
+                        class="fas fa-cart-arrow-down"></i> Download</a>
                 <!-- <ul class="collapsible">
                     <li>
                         <div class="collapsible-header">Send via Email</div>
@@ -179,6 +172,10 @@
             </li>
         </ul>
         <div class="divider"></div>
+        <!-- sidebar trigger -->
+    <div class="fixed-action-btn sidenav-trigger" data-target="slide-out">
+        <a id="sideTrigger" class="btn-floating btn-large"><i class="fas fa-shopping-cart"></i></a>
+    </div>
 
         <!-- output -->
         <div id="output" class="outputDiv">
@@ -188,9 +185,12 @@
             <div class="outputInner">
                 <div id="outputContent"></div>
             </div>
-            <button id="copyOutput" class="btn"><i class="far fa-copy"></i> Copy Code</button>
-            <button id="saveOutput" class="btn"><i class="fas fa-cart-plus"></i> Add to List</button>
-            <button id="downloadOutput" class="btn"><i class="fas fa-file-download"></i> Download File</button>
+            <button id="copyOutput" class="btn"><i class="far fa-copy"></i> <span class="buttonText">Copy
+                    Code</span></button>
+            <button id="saveOutput" class="btn"><i class="fas fa-cart-plus"></i> <span class="buttonText">Add to
+                    List</span></button>
+            <button id="downloadOutput" class="btn"><i class="fas fa-file-download"></i> <span
+                    class="buttonText">Download File</span></button>
             <!-- <button id="emailOutput" class="btn">Send via email</button> -->
         </div>
     </div>
@@ -206,7 +206,7 @@
             var elems = document.querySelectorAll('.fixed-action-btn');
             var instances = M.FloatingActionButton.init(elems, {
                 direction: 'left',
-                hoverEnabled: false
+                hoverEnabled: false,
             });
         });
     </script>

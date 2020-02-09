@@ -1,8 +1,4 @@
 /*  ===========
-    REQUIRE
-    =========== */
-
-/*  ===========
     GLOBAL VARs & OBJs
     =========== */
 
@@ -46,9 +42,11 @@ const distroPicker = name => {
             choice = "Ubuntu"
             break;
         case "notSure":
-            document.getElementById("outputIntro").innerText = "";
-            document.getElementById("outputIntro").innerText = "Enter the following to find out what OS you\'re using:";
-            document.getElementById("outputContent").innerText = "$ cat /etc/issue";
+            osObj = notSure;
+            choice = "notSure";
+            selection = "notSure";
+            codePrinter(choice)
+            document.getElementById("outputInstructions").innerHTML = `${osObj[choice].instructions}`;
     }
     if (osObj && name !== "notSure") {
         document.getElementById("outputIntro").innerText = `Please select an App, Theme, or Icon pack to install on ${choice}.`;
@@ -81,27 +79,16 @@ const codePrinter = codetobeprinted => {
 
 // add distro & selected apps to list object
 const addToList = (distname, selectionname) => {
-    if (osName && selection) {
-        // check if OS has already been added to list object.....
-        if (userList[distname]) {
-            // if so, check if app has already been added
-            if (userList[distname][selectionname]) {
-                // if so, present toast-message
-                M.toast({
-                    html: 'Item already on list!'
-                });
-            } else {
-                // if not add app to existing OS
-                userList[distname][selectionname] = osObj[selection];
-                // confirm item added with toast msg
-                M.toast({
-                    html: 'Added to list!'
-                });
-                addToDataForFileOutput(choice, selectionname);
-            }
+    // check if OS has already been added to list object.....
+    if (userList[distname]) {
+        // if so, check if app has already been added
+        if (userList[distname][selectionname]) {
+            // if so, present toast-message
+            M.toast({
+                html: 'Item already on list!'
+            });
         } else {
-            // if OS hasnt' been added, add it then add app/theme/icon to it
-            userList[distname] = {};
+            // if not add app to existing OS
             userList[distname][selectionname] = osObj[selection];
             // confirm item added with toast msg
             M.toast({
@@ -110,10 +97,14 @@ const addToList = (distname, selectionname) => {
             addToDataForFileOutput(choice, selectionname);
         }
     } else {
-        // advise nothing select with toast msg
+        // if OS hasnt' been added, add it then add app/theme/icon to it
+        userList[distname] = {};
+        userList[distname][selectionname] = osObj[selection];
+        // confirm item added with toast msg
         M.toast({
-            html: 'Nothing to add yet'
+            html: 'Added to list!'
         });
+        addToDataForFileOutput(choice, selectionname);
     }
 };
 
@@ -134,43 +125,41 @@ const addToDataForFileOutput = (choice, selectionname) => {
 
 // add distro & selected apps to sidebar
 const addToSidebar = (osinfo, selectioninfo) => {
-    if (osName && selection) {
-        // check if distro is already in sidebar
-        if (document.getElementById(`${osinfo}_side`)) {
+    // check if distro is already in sidebar
+    if (document.getElementById(`${osinfo}_side`)) {
 
-            // if so, check if the distro element in sidebar already has the app
-            if (document.getElementById(`${osinfo}_side_${selectioninfo}`)) {
+        // if so, check if the distro element in sidebar already has the app
+        if (document.getElementById(`${osinfo}_side_${selectioninfo}`)) {
 
-                // if so, log warning
+            // if so, log warning
 
-            } else {
-                // if not, create element to hold app name and append to os element withint sidebar
-                let sideElementContent = document.createElement("span");
-                sideElementContent.innerHTML = `${selectioninfo}`;
-                sideElementContent.setAttribute("id", `${osinfo}_side_${selectioninfo}`);
-                sideElementContent.setAttribute("class", "chip");
-                document.getElementById(`${osinfo}_side`).appendChild(sideElementContent);
-            }
         } else {
-            // if distro not already in sidebar create element to hold it, populate it, and add ID
-            let sideElement = document.createElement("p");
-            sideElement.innerHTML = `${osObj.logo}:`;
-            sideElement.setAttribute("id", `${osinfo}_side`);
-
-
-            // create element to hold app selection, populate it, add ID, and append to distro element
+            // if not, create element to hold app name and append to os element withint sidebar
             let sideElementContent = document.createElement("span");
-            sideElementContent.innerText = `${selectioninfo}`;
+            sideElementContent.innerHTML = `${selectioninfo}`;
             sideElementContent.setAttribute("id", `${osinfo}_side_${selectioninfo}`);
             sideElementContent.setAttribute("class", "chip");
-            sideElement.appendChild(sideElementContent);
-
-            // add to DOM
-            document.getElementById("sideOutput").appendChild(sideElement);
-            // M.toast({
-            //     html: 'Added to list!'
-            // });
+            document.getElementById(`${osinfo}_side`).appendChild(sideElementContent);
         }
+    } else {
+        // if distro not already in sidebar create element to hold it, populate it, and add ID
+        let sideElement = document.createElement("p");
+        sideElement.innerHTML = `${osObj.logo}:`;
+        sideElement.setAttribute("id", `${osinfo}_side`);
+
+
+        // create element to hold app selection, populate it, add ID, and append to distro element
+        let sideElementContent = document.createElement("span");
+        sideElementContent.innerText = `${selectioninfo}`;
+        sideElementContent.setAttribute("id", `${osinfo}_side_${selectioninfo}`);
+        sideElementContent.setAttribute("class", "chip");
+        sideElement.appendChild(sideElementContent);
+
+        // add to DOM
+        document.getElementById("sideOutput").appendChild(sideElement);
+        // M.toast({
+        //     html: 'Added to list!'
+        // });
     }
 };
 
@@ -180,6 +169,7 @@ const clearSidebar = () => {
     if (listChildren.length > 1) {
         for (let i = 0; i < listChildren.length; i++) {
             document.getElementById("sideOutput").innerHTML = "";
+            document.getElementById("sideTrigger").setAttribute("class", "btn-floating btn-large");
             M.toast({
                 html: "List cleared"
             });
@@ -193,7 +183,7 @@ const clearSidebar = () => {
 
 // copy to clipboard function
 function copyToClipboard(inputText) {
-    if (osName && selection) {
+    if (osName && selection || choice === "notSure") {
         let textArea = document.createElement("textarea");
         textArea.value = inputText;
         textArea.style.position = "fixed";
@@ -232,14 +222,9 @@ const downloadFile = (input) => {
     saveAs(blob, "linux-commands.html")
 }
 
-
-
-
 /*  ===============
     EVENT LISTENERS
     =============== */
-
-
 // add click listener to OS buttons.
 let distros = document.getElementsByClassName("distroLogo");
 for (let i = 0; i < distros.length; i++) {
@@ -272,7 +257,7 @@ for (i = 0; i < toInstall.length; i++) {
         }
 
         // check if valid OS has been selected, if not print message
-        if (!osObj || choice === "Not Sure") {
+        if (!osObj) {
             document.getElementById("outputIntro").innerText = "Please select an Operating System above.";
             document.getElementById("outputContent").innerText = "";
 
@@ -280,8 +265,8 @@ for (i = 0; i < toInstall.length; i++) {
             selection = (this.id);
 
             // check the os object to see if app selection has custom instructions, if so populate instructions element
-            if (osObj[selection].instructions) {
-                document.getElementById("outputInstructions").innerHTML = osObj[selection].instructions;
+            if (osObj[selection].instructions && choice !== "notSure") {
+                document.getElementById("outputInstructions").innerHTML = `To install ${selection} on ${choice}, ` + osObj[selection].instructions;
             }
 
             // func calls
@@ -298,13 +283,20 @@ document.getElementById("copyOutput").addEventListener("click", function () {
 
 // add click listener to add to list button
 document.getElementById("saveOutput").addEventListener("click", function () {
-    addToSidebar(osName, selection);
-    addToList(osName, selection);
+    if (osName && selection && choice !== "notSure") {
+        addToSidebar(osName, selection);
+        addToList(osName, selection);
+        document.getElementById("sideTrigger").setAttribute("class", "btn-floating btn-large pulse");
+    } else {
+        M.toast({
+            html: 'Nothing add yet'
+        });
+    }
 });
 
 // add click listener to download button
 document.getElementById("downloadOutput").addEventListener("click", function () {
-    if (choice && selection) {
+    if (choice && selection || choice === "notSure") {
         addToDataForFileOutput(choice, selection);
         downloadFile(dataOutput);
         dataOutput = '';

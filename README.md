@@ -53,7 +53,13 @@ To run the site locally you can clone it using the following instructions:
 ---
 ### How did you test it?
 
-User testing: Found if "Add To List" button was clicked after an OS had been selected but before an app had been selected the addToList function would run and add an "undefined" item to the list which would in turn be added to the sidebar and output to file.
+Bugs squashed: 
+- If "Add To List" button was clicked after an OS had been selected but before an app had been selected the addToList function would run and add an "undefined" item to the list which would in turn be added to the sidebar and output to file.
+ - __FIX__: Add if statment to prevent addToList from running unless both distro and app/icon/theme selections had been and present a warning message if not.
+- Clicking "Copy Code" button before anything had been selected would present confirmation that copy was successful but there was nothing to copy.
+ - __Fix__: Add if statement to check that distro and app/icon/theme selection had both been made. If not, present msg saying nothing to copy.
+- Clicking "Download File" button would execute as expected but if user then opened sidebar and clicked "Download" button the same file would download even though no items were present in the saved list.
+ - __FIX__: Added final action after Download File listener executes to overwrite the dataOuput variable with an empty string.
 
 ---
 ### Anything else you want to tell me?
@@ -96,6 +102,9 @@ Dean Taylor's answer on [StackOverflow](https://stackoverflow.com/questions/4002
 - Arch, Debian, Elementary, and Ubuntu logo icons from [font-logos by lukas-w](https://github.com/lukas-w/font-logos)
 - Solus logo icon from [IcoFont](https://icofont.com/)
 - App icons from [FontAwesome](https://fontawesome.com/)
+
+### Tux favicon
+Tux icon from [Favicon.cc](https://www.favicon.cc/?action=icon&file_id=899032)
 
 #### Site look/style inspired by:
 Cake Bar Exercise by [Codecademy](https://www.codecademy.com/courses/learn-javascript-unit-testing/projects/cake-clock)
