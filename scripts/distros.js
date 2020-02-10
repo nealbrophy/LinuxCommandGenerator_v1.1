@@ -331,7 +331,7 @@ const elementary = {
         code: "wget -qO- https://deb.opera.com/archive.key | sudo apt-key add - && \nsudo add-apt-repository \"deb [arch=i386,amd64] https://deb.opera.com/opera-stable/ stable non-free\" && \nsudo apt install opera-stable -y"
     },
     _openAsRoot: {
-        instructions: "first, paste the following in terminal: <code>sudo nano /usr/share/contractor/Open_as_admin.contract</code>. Then paste the below and write-out/save the file (if using nano: <code>ctrl+o</code>, then <code>return</code>, then <code>ctrl+x</code>)",
+        instructions: "first, paste the following in terminal: <br><mark>sudo nano /usr/share/contractor/Open_as_admin.contract</mark>. <br>Then paste the below and write-out/save the file (if using nano: <code>ctrl+o</code>, then <code>return</code>, then <code>ctrl+x</code>)",
         code: "[Contractor Entry] \nName=Open folder as root \nIcon=gksu-root-terminal \nDescription=Open folder as root \nMimeType=inode;application/x-sh;application/x-executable; \nExec=/usr/bin/io.elementary.files-pkexec \nGettext-Domain=pantheon-files"
     },
     _slack: {
@@ -467,122 +467,56 @@ const notSure = {
 
 // solus
 const solus = {
-    _appImageLauncher: {
-        instructions: "",
-        code: ""
-    },
     _atom: {
-        instructions: "",
-        code: ""
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo eopkg it atom"
     },
     _chrome: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "sudo eopkg install google-chrome"
     },
-    _firefox: {
-        instructions: "",
-        code: ""
-    },
-    _git: {
-        instructions: "",
-        code: ""
-    },
     _gitKraken: {
-        instructions: "",
-        code: ""
-    },
-    _kdeConnect: {
-        instructions: "",
-        code: ""
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo snap install gitkraken"
     },
     _slack: {
-        instructions: "",
-        code: ""
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo eopkg install slack"
     },
-    _standardNotes: {
-        instructions: "",
-        code: ""
-    },
-    _terminalShortcut: {
-        instructions: "",
-        code: ""
-    },
-    _papirus: {
-        instructions: "",
-        code: ""
-    },
-    _inverse: {
-        instructions: "",
-        code: ""
-    },
-    _inspiration: {
-        instructions: "",
-        code: ""
+    _visualStudioCode: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo snap install code"
     },
     _flatRemix: {
-        instructions: "",
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "git clone https://github.com/daniruiz/flat-remix && \nmkdir -p ~/.icons && \ncp -r flat-remix/Flat-Remix* ~/.icons/ && \ngsettings set org.gnome.desktop.interface icon-theme \"Flat-Remix\""
     },
     _vimix: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "wget https://github.com/vinceliuice/vimix-gtk-themes/archive/Gtk3.22-12.25.tar.gz && \ntar -xvf Gtk3.22-12.25.tar.gz && \ncd vimix* && \nsudo apt install gtk2-engines-murrine gtk2-engines-pixbuf && \n ./Vimix-installer.sh"
     },
-    _uniform: {},
     _distSummary: "<p>Solus is an independently developed desktop operating system based on the Linux kernel and using its own desktop environment derived from GNOME. Starting with the Debian branch of Linux it migrated to a unique approach including Pisi and Evolve OS. It is offered as a curated rolling release model under the slogan \"Install Today. Updates Forever\". Solus contains a wide variety of desktop environments depending on release chosen, options include Solus' own Budgie Desktop, GNOME, MATE and KDE Plasma.</p>",
     _logo: `<i class="icofont-sail-boat sideLogo" aria-hidden="true"></i>`,
-    get appImageLauncher() {
-        return this._appImageLauncher;
-    },
     get atom() {
         return this._atom;
-    },
-    get bitWarden() {
-        return this._bitWarden;
     },
     get chrome() {
         return this._chrome;
     },
-    get firefox() {
-        return this._firefox;
-    },
-    get git() {
-        return this._git;
-    },
     get gitKraken() {
         return this._gitKraken;
-    },
-    get kdeConnect() {
-        return this._kdeConnect;
-    },
-    get mcMojave() {
-        return this._mcMojave;
-    },
-    get standardNotes() {
-        return this._standardNotes;
     },
     get slack() {
         return this._slack;
     },
-    get terminalShortcut() {
-        return this._terminalShortcut;
-    },
-    get papirus() {
-        return this._papirus;
-    },
-    get inverse() {
-        return this._inverse;
-    },
-    get inspire() {
-        return this._inspiration;
+    get visualStudioCode() {
+        return this._visualStudioCode;
     },
     get flatRemix() {
         return this._flatRemix;
     },
     get vimix() {
         return this._vimix;
-    },
-    get uniform() {
-        return this._uniform;
     },
     get logo() {
         return this._logo;
@@ -635,7 +569,7 @@ const ubuntu = {
     },
     _visualStudioCode: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "wget https://github.com/standardnotes/desktop/releases/download/v3.0.25/Standard-Notes-3.0.25.AppImage && \nmv ~/Downloads/Standard-Notes-3.0.25.AppImage ~/Standard-Notes-3.0.25.AppImage && cd ~ && \nchmod a+x Standard-Notes-3.0.25.AppImage"
+        code: "wget https://code.visualstudio.com/docs/?dv=linux64_deb && \ncd ~/Downloads && \nsudo dpkg -i code_*.deb \nsudo apt-get install -f"
     },
     _papirus: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
@@ -690,9 +624,6 @@ const ubuntu = {
     },
     get kdeConnect() {
         return this._kdeConnect;
-    },
-    get mcMojave() {
-        return this._mcMojave;
     },
     get mkusb() {
         return this._mkusb;

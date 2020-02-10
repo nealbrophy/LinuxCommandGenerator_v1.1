@@ -19,33 +19,33 @@ const distroPicker = name => {
         case "arch":
             osObj = arch;
             osName = name;
-            choice = "Arch Linux"
+            choice = "Arch Linux";
             break;
         case "debian":
             osObj = debian;
             osName = name;
-            choice = "Debian"
+            choice = "Debian";
             break;
         case "elementary":
             osObj = elementary;
             osName = name;
-            choice = "Elementary OS"
+            choice = "Elementary OS";
             break;
         case "solus":
             osObj = solus;
             osName = name;
-            choice = "Solus"
+            choice = "Solus";
             break;
         case "ubuntu":
             osObj = ubuntu;
             osName = name;
-            choice = "Ubuntu"
+            choice = "Ubuntu";
             break;
         case "notSure":
             osObj = notSure;
             choice = "notSure";
             selection = "notSure";
-            codePrinter(choice)
+            codePrinter(choice);
             document.getElementById("outputInstructions").innerHTML = `${osObj[choice].instructions}`;
     }
     if (osObj && name !== "notSure") {
@@ -60,8 +60,10 @@ const appChecker = () => {
         let currentID = availableApps[j].id;
         if (osObj.hasOwnProperty(currentID)) {
             document.getElementById(currentID).removeAttribute("disabled");
+            document.getElementById(currentID).classList.remove("disabled");
         } else {
             document.getElementById(currentID).setAttribute("disabled", "true");
+            document.getElementById(currentID).classList.add("disabled");
         }
     }
 };
@@ -75,7 +77,7 @@ const codePrinter = codetobeprinted => {
         codePrint += '<i class="fas fa-dollar-sign"></i>' + codeSplit[i] + '<br>';
     }
     document.getElementById("outputContent").innerHTML = `<code>${codePrint}</code>`;
-}
+};
 
 // add distro & selected apps to list object
 const addToList = (distname, selectionname) => {
@@ -121,7 +123,7 @@ const addToDataForFileOutput = (choice, selectionname) => {
         <strong>Command:</strong> <blockquote>${osObj[selection].code}</blockquote>
         <br>
     </p>`;
-}
+};
 
 // add distro & selected apps to sidebar
 const addToSidebar = (osinfo, selectioninfo) => {
@@ -131,12 +133,13 @@ const addToSidebar = (osinfo, selectioninfo) => {
         // if so, check if the distro element in sidebar already has the app
         if (document.getElementById(`${osinfo}_side_${selectioninfo}`)) {
 
-            // if so, log warning
+            return;
 
         } else {
             // if not, create element to hold app name and append to os element withint sidebar
             let sideElementContent = document.createElement("span");
-            sideElementContent.innerHTML = `${selectioninfo}`;
+            let lowerCaseName = selectioninfo.toLowerCase();
+            sideElementContent.innerHTML = `${lowerCaseName}`;
             sideElementContent.setAttribute("id", `${osinfo}_side_${selectioninfo}`);
             sideElementContent.setAttribute("class", "chip");
             document.getElementById(`${osinfo}_side`).appendChild(sideElementContent);
@@ -150,7 +153,8 @@ const addToSidebar = (osinfo, selectioninfo) => {
 
         // create element to hold app selection, populate it, add ID, and append to distro element
         let sideElementContent = document.createElement("span");
-        sideElementContent.innerText = `${selectioninfo}`;
+        let lowerCaseName = selectioninfo.toLowerCase();
+        sideElementContent.innerText = `${lowerCaseName}`;
         sideElementContent.setAttribute("id", `${osinfo}_side_${selectioninfo}`);
         sideElementContent.setAttribute("class", "chip");
         sideElement.appendChild(sideElementContent);
@@ -167,6 +171,7 @@ const addToSidebar = (osinfo, selectioninfo) => {
 const clearSidebar = () => {
     let listChildren = document.getElementById("sideOutput").childNodes;
     if (listChildren.length > 1) {
+        console.log(listChildren.length);
         for (let i = 0; i < listChildren.length; i++) {
             document.getElementById("sideOutput").innerHTML = "";
             document.getElementById("sideTrigger").setAttribute("class", "btn-floating btn-large");
@@ -179,7 +184,7 @@ const clearSidebar = () => {
             html: "List already empty"
         });
     }
-}
+};
 
 // copy to clipboard function
 function copyToClipboard(inputText) {
@@ -266,8 +271,10 @@ for (i = 0; i < toInstall.length; i++) {
             console.log(selection);
 
             // check the os object to see if app selection has custom instructions, if so populate instructions element
-            if (osObj[selection].instructions && choice !== "notSure") {
+            if (osObj[selection].instructions && choice !== "notSure" && selection !== 'openAsRoot') {
                 document.getElementById("outputInstructions").innerHTML = `To install ${selection} on ${choice}, ` + osObj[selection].instructions;
+            } else if (selection === 'openAsRoot') {
+                document.getElementById("outputInstructions").innerHTML = `To add ${selection} to the right-click options on ${choice}, ` + osObj[selection].instructions;
             }
 
             // func calls
@@ -295,19 +302,6 @@ document.getElementById("saveOutput").addEventListener("click", function () {
     }
 });
 
-// add click listener to download button
-document.getElementById("downloadOutput").addEventListener("click", function () {
-    if (choice && selection || choice === "notSure") {
-        addToDataForFileOutput(choice, selection);
-        downloadFile(dataOutput);
-        dataOutput = '';
-    } else {
-        M.toast({
-            html: 'Nothing to download yet'
-        });
-    }
-});
-
 // add click listener to sidebar clear list button
 document.getElementById("sidebarClear").addEventListener("click", function () {
     clearSidebar();
@@ -326,8 +320,7 @@ document.getElementById("sidebarDownload").addEventListener("click", function ()
 });
 
 // send email listener
-// document.getElementById("emailForm").addEventListener('submit', function (event) {
-//     document.getElementById("emailMessage").innerText = JSON.stringify(userList);
-//     event.preventDefault();
-//     emailjs.sendForm('gmail', 'template_v04V7QEN', this);
+// document.getElementById("singleCommandEmail").addEventListener('submit', function () {
+//     sendSingleEmail();
+
 // });
