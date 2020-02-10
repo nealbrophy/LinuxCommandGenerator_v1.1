@@ -7,17 +7,42 @@ A web app where users can get app, theme, and icon-pack installation commands fo
 
 ---
 ### Demo
-#### TBC
+You can view the GitHub pages deployment [here] (https://nealbrophy.github.io/LinuxCommandGenerator/)
 
-<!-- <img src="https://github.com/nealbrophy/GetHubby/blob/master/images/ipad.gif" alt="site demo on ipad" width="300px" align="left">
+<img src="https://github.com/nealbrophy/LinuxCommandGenerator/blob/master/images/desktop-use.gif" alt="site demo on desktop" width="300px" align="left">
 
-<img src="https://github.com/nealbrophy/GetHubby/blob/master/images/iphone.gif" alt="site demo on iphone" width="200px" align="center"> -->
+<img src="https://github.com/nealbrophy/LinuxCommandGenerator/blob/master/images/mobile-use.gif" alt="site demo on iphone" width="200px" align="center">
 
 ---
-### How do I get it?
+
+### UX
+The site is intended to be above all else, clean and simple. It was developed mobile first and is intended to be simple to use regardless of user device. The colour scheme is and fonts should suggest a 1950s retro style.
+
+#### User Stories
+- As a Linux user I would like a simple repository of useful commands which is enjoyable and clutter free
+- As a lay user the commands instructions should be clear and easily understood
+- As a power user I want to be able to easily copy specific commands to achieve my goal of install an app/icons/themes
+
+#### Strategy
+The command generator concept occurred to me when I was trying to think of a project which I personally would find useful and which got me excited. As someone who frequently "distro hops" to try out different Linux distros I often have to spend time googling commands to install apps/icons/themes I regularly use because there are too many to memorize. I wanted a site that could be quickly & easily used to retrieve such commands and which I could expand in the future to include more Linux distros and obviously more apps/icons/themes.
+
+Eventually I would like to update the site so that rather than downloading a HTML file of the commands, users can download a install script to run on the specified distro. My knowledge of bash & shell scripts is not yet good enough to achieve this so the HTML download was a middle-ground. I would also like to impliment an "Email Commands" functionality so that users can email themselves the list of individual commands they need.
+
+#### Wireframes
+<img src="images/Desktop-1.png" alt="desktop-wireframe-1" width="500px">
+<img src="images/Desktop-2.png" alt="desktop-wireframe-2" width="500px">
+<img src="images/Mobile.png" alt="mobile-wireframe" width="200px">
+
+### Features
+The site is intentionally easy to navigate to avoid needed a navbar. Materialize.CSS was used to make the site responsive and to enable the pleasant "flat" style design elements.
+
+### Features to implement in the future
+- "Email Command to Me" function so users can email the command(s) they need to themselves
+- "Report bug" feature for users to report if/when a command stops functioning and needs to be revisited
+- A simple interface for adding more distros/apps/icons/themes which doesn't require manually adding to the distros script
 
 #### Deployment
-LinuxCommandGenerator will be hosted on GitHub pages and will be deployed from the master branch. Any changes committed to the master branch will automatically update on the GitHub deployment.
+LinuxCommandGenerator is hosted on GitHub pages and deployed from the master branch. Any changes committed to the master branch will automatically update on the GitHub deployment.
 
 To run the site locally you can clone it using the following instructions:
 - Create a folder in the desired location on your computer.
@@ -38,13 +63,6 @@ To run the site locally you can clone it using the following instructions:
 - 6.) When you have collected all the commands you need (see Step 5 above) you can either download them as a .txt file or email the list of commands to yourself.
 
 ---
-### How did you do it?
-#### Wireframes
-<img src="images/Desktop-1.png" alt="desktop-wireframe-1" width="500px">
-<img src="images/Desktop-2.png" alt="desktop-wireframe-2" width="500px">
-<img src="images/Mobile.png" alt="mobile-wireframe" width="200px">
-
-
 #### Technologies used
 - [EmailJS](https://www.emailjs.com/)
 - [FileSaver.js](https://github.com/eligrey/FileSaver.js/)
@@ -52,12 +70,13 @@ To run the site locally you can clone it using the following instructions:
 - [font-logos](https://github.com/lukas-w/font-logos)
 - [Materialize](https://materializecss.com/)
 - [Cypress.io](https://www.cypress.io/)
+- [Google Fonts](https://fonts.google.com/)
 
 ---
-### How did you test it?
+### Testomg
 
 #### Automated End-to-End
-The project was NOT developed using TDD practices as I was not yet comfortable enough with JS knowledge to do so. Instead I opted for end-to-end testing using Cypress.io. The tests were written to validate:
+The project was NOT developed using TDD practices as I was not yet comfortable enough with my JS knowledge to do so. Instead I opted for end-to-end testing using Cypress.io. The tests were written to validate:
 - That the page loaded ok
 - That the default/start state blank and the output & list areas were empty
 - That each distro behaved as expected such that the ouput and instructions elements populated expected contents
@@ -73,15 +92,27 @@ The project was NOT developed using TDD practices as I was not yet comfortable e
 - In terminal type `npm install cypress --save-dev`
 - Once the install process finishes, launch Cypress by typing `npx cypress run` (if you run into problems [check the documentation](https://docs.cypress.io/guides/guides/command-line.html#Installation))
 - When the Cypress GUI launches simply click on the name of the test script `commandGeneratorTests.spec.js`
+- This test scipt can be found in `Cypress > Integration`
 
 #### Manual testing
-In addition to the automated end-to-end tests described above the site was also rigourously tested via simple user interaction. These tests were carried out using Firefox and Chrome on a variety of Linux distributions (Elementary, Endeavour, Ubuntu, Solus) and using the in-browser developer tools
+In addition to the automated end-to-end tests described above the site was also rigourously tested via simple user interaction. These tests were carried out using Firefox and Chrome on a variety of Linux distributions (Elementary, Endeavour, Ubuntu, Solus) and using the in-browser developer tools. The following items were tested:
+- Clicking app/icon/theme buttons prior to Distro button should present a message in the output section advising user to select a distri
+- Apps/Icons/Themes which are not available for selected distro should appear as disabled/inactive
+- Clicking "Copy" and "Add to list" buttons before making a valid selection should present the user with a warning message of same
+- Sidebar trigger should only pulse when items are in the list and stop when the list is cleared
+- Clicking clicking "Download as file" after user has cleared the list should notify user that the list is empty.
+
+#### Validation
+- HTML was validated using [W3C Markup Validation Service](https://validator.w3.org/)
+    - NOTE: The Markup Validator presents multiple errors due to the "cy-data" property, however, this has no effect on the code and is considered best practice for testing with Cypress.
+- CSS was validated using [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+- JS was validated using [JSHint](https://jshint.com/)
 
 #### Open Bugs:
 - Copy text button presents "Copy unsuccessful" toast during cypress test but present "Copy successful" in manual testing.
 - Having `scroll-behavior: smooth` enabled in the stylesheet causes some Cypress tests to fail.
 
-#### Bugs Squashed: 
+#### Squashed Bugs: 
 - If "Add To List" button was clicked after an OS had been selected but before an app had been selected the addToList function would run and add an "undefined" item to the list which would in turn be added to the sidebar and output to file.
     - __FIX__: Add if statment to prevent addToList from running unless both distro and app/icon/theme selections had been populated and present warning msg to user if not.
 - Clicking "Copy Code" button before anything had been selected would present confirmation that copy was successful but there was nothing to copy.
@@ -90,18 +121,6 @@ In addition to the automated end-to-end tests described above the site was also 
     __FIX__: Added final action after Download File listener executes to overwrite the dataOuput variable with an empty string.
 - Copy Code functionality didn't work for the code from notSure selection. Having this ability for other code but not the code to determine which OS user is running seemed counterproductive and not great UX.
     - __FIX__: Refactored commandGenerator script to accept notSure as valid choice for the purposes of running the copyToClipBoard and downloadFile functions. Achieved by moving the if statement (to validate distro/app selection) from within the copyToClipboard & downloadFile functions to within the click-listener "Add to List" button listener (that way statement is evaluated prior to calling addToList function and doesn't interfere with copyToClipboard/downloadFile).
-
-
----
-### Anything else you want to tell me?
-#### To be implemented 
-- Send via Email functionality
-- Add more apps/themes/icons/misc
-- Add more commands to OS objects
-
-#### Maybe?
-- Recommended distros
-
 
 ---
 ### Credits/Acknowledgements
@@ -132,11 +151,8 @@ In addition to the automated end-to-end tests described above the site was also 
 #### Copy to Clipboard implementation from:
 [Dean Taylor's](https://stackoverflow.com/users/406712/dean-taylor) excellent answer on [StackOverflow](https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript)
 
-#### Download as TXT functionality uses:
+#### Download as file functionality uses:
 [FileSaver.js](https://github.com/eligrey/FileSaver.js/)
-
-#### Send via email functionality uses:
-[EmailJS](https://www.emailjs.com/)
 
 #### Icons:
 - Arch, Debian, Elementary, and Ubuntu logo icons from [font-logos by lukas-w](https://github.com/lukas-w/font-logos)
@@ -158,3 +174,6 @@ Cake Bar Exercise by [Codecademy](https://www.codecademy.com/courses/learn-javas
 - [Cypress End-to-End Testing](https://www.youtube.com/watch?v=7N63cMKosIE) by [Fireship](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA)
 - [Introduction to automation testing with Cypress.io](https://www.youtube.com/watch?v=l_Q7cbmYjDY) by [Execute Automation](https://www.youtube.com/channel/UCO1aucBAJgFR8odzfXOZ5uw)
 - [PicFlip](https://github.com/AJGreaves/picflip/blob/master/testing.md) testing write-up by AJ Greaves
+
+### Screen record GIFs created using
+[Peek](https://github.com/phw/peek)

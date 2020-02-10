@@ -6,7 +6,7 @@ let osName; // to hold name of users OS choice
 let osObj; // reference to os object matching user choice name
 let selection; // to hold user app/icon/theme selection.
 let choice; // to hold text name of user's OS
-const userList = {}; // object to hold list of users chosen commands
+let userList = {}; // object to hold list of users chosen commands
 let dataOutput = '';
 
 /*  ==========
@@ -171,10 +171,12 @@ const addToSidebar = (osinfo, selectioninfo) => {
 const clearSidebar = () => {
     let listChildren = document.getElementById("sideOutput").childNodes;
     if (listChildren.length > 1) {
-        console.log(listChildren.length);
         for (let i = 0; i < listChildren.length; i++) {
             document.getElementById("sideOutput").innerHTML = "";
             document.getElementById("sideTrigger").setAttribute("class", "btn-floating btn-large");
+            console.log(userList);
+            userList = {};
+            console.log(userList);
             M.toast({
                 html: "List cleared"
             });
