@@ -132,9 +132,7 @@ const addToSidebar = (osinfo, selectioninfo) => {
 
         // if so, check if the distro element in sidebar already has the app
         if (document.getElementById(`${osinfo}_side_${selectioninfo}`)) {
-
             return;
-
         } else {
             // if not, create element to hold app name and append to os element withint sidebar
             let sideElementContent = document.createElement("span");
@@ -174,9 +172,7 @@ const clearSidebar = () => {
         for (let i = 0; i < listChildren.length; i++) {
             document.getElementById("sideOutput").innerHTML = "";
             document.getElementById("sideTrigger").setAttribute("class", "btn-floating btn-large");
-            console.log(userList);
             userList = {};
-            console.log(userList);
             M.toast({
                 html: "List cleared"
             });
@@ -210,13 +206,11 @@ function copyToClipboard(inputText) {
             });
             console.log("Copy failed", err);
         }
-
         document.body.removeChild(textArea);
     } else {
         M.toast({
             html: "Nothing to copy yet"
         });
-
     }
 }
 
@@ -262,26 +256,20 @@ for (i = 0; i < toInstall.length; i++) {
         if (selection) {
             selection = "";
         }
-
         // check if valid OS has been selected, if not print message
         if (!osObj) {
             document.getElementById("outputIntro").innerText = "Please select an Operating System above.";
             document.getElementById("outputContent").innerText = "";
-
         } else {
             selection = (this.id);
-            console.log(selection);
-
             // check the os object to see if app selection has custom instructions, if so populate instructions element
             if (osObj[selection].instructions && choice !== "notSure" && selection !== 'openAsRoot') {
                 document.getElementById("outputInstructions").innerHTML = `To install ${selection} on ${choice}, ` + osObj[selection].instructions;
             } else if (selection === 'openAsRoot') {
                 document.getElementById("outputInstructions").innerHTML = `To add ${selection} to the right-click options on ${choice}, ` + osObj[selection].instructions;
             }
-
             // func calls
             codePrinter(selection);
-
         }
     });
 }
@@ -320,9 +308,3 @@ document.getElementById("sidebarDownload").addEventListener("click", function ()
         });
     }
 });
-
-// send email listener
-// document.getElementById("singleCommandEmail").addEventListener('submit', function () {
-//     sendSingleEmail();
-
-// });

@@ -16,12 +16,12 @@ You can view the GitHub pages deployment [here](https://nealbrophy.github.io/Lin
 ---
 
 ### UX
-The site is intended to be above all else, clean and simple. It was developed mobile first and is intended to be simple to use regardless of user device. The colour scheme is and fonts should suggest a 1950s retro style.
+The site is intended to be above all else, clean and simple. It was developed mobile first and should be easy & pleasant to use regardless of user device. The colour scheme is and fonts should suggest a 1950s retro style.
 
 #### User Stories
-- As a Linux user I would like a simple repository of useful commands which is enjoyable and clutter free
-- As a lay user the commands instructions should be clear and easily understood
-- As a power user I want to be able to easily copy specific commands to achieve my goal of install an app/icons/themes
+- As a Linux user I would like a simple repository of useful commands which is easy to navigate and understand.
+- As a lay user the commands and instructions should be clear and easily followed.
+- As a power user I want to be able to easily copy specific commands to achieve my goal of installing an app/icons/themes
 
 #### Strategy
 The command generator concept occurred to me when I was trying to think of a project which I personally would find useful and which got me excited. As someone who frequently "distro hops" to try out different Linux distros I often have to spend time googling commands to install apps/icons/themes I regularly use because there are too many to memorize. I wanted a site that could be quickly & easily used to retrieve such commands and which I could expand in the future to include more Linux distros and obviously more apps/icons/themes.
@@ -34,7 +34,7 @@ Eventually I would like to update the site so that rather than downloading a HTM
 <img src="images/Mobile.png" alt="mobile-wireframe" width="200px">
 
 ### Features
-The site is intentionally easy to navigate to avoid needed a navbar. Materialize.CSS was used to make the site responsive and to enable the pleasant "flat" style design elements.
+The site is intentionally easy to navigate to avoid needing a navbar or page links. Clicking on a button should immediately take the user to the next step in the process. Materialize.CSS was used to make the site responsive and to enable the pleasant "flat" style design elements to keep things easy on the eyes.
 
 ### Features to implement in the future
 - "Email Command to Me" function so users can email the command(s) they need to themselves
@@ -77,22 +77,22 @@ To run the site locally you can clone it using the following instructions:
 
 #### Automated End-to-End
 The project was NOT developed using TDD practices as I was not yet comfortable enough with my JS knowledge to do so. Instead I opted for end-to-end testing using Cypress.io. The tests were written to validate:
-- That the page loaded ok
-- That the default/start state blank and the output & list areas were empty
-- That each distro behaved as expected such that the ouput and instructions elements populated expected contents
-- That the sidebar element was hidden until it's trigger-button was clicked
-- That the download as file button successfully downloaded a file with the name "linux-commands.html"
+- That the page loads ok
+- That the default/start state is blank and the output & list areas were empty
+- That each distro behaves as expected such that the `ouput` and `instructions` elements populate expected contents
+- That the `sidebar` element was hidden until it's trigger-button is clicked
+- That the "download as file" button successfully downloads a file with the name "linux-commands.html"
 
 ##### How to run Cypress tests
 - First clone the repo as discribed [above](#deployment).
 - Next make sure you have nodeJS installed (if not [install it](https://nodejs.org/en/))
-- Open Visual Studio Code and open a terminal (Ctrl+Shift+)
+- Open Visual Studio Code and open a terminal (`Ctrl+Shift+`)
 - Make sure you're in the root directory of the repo (if not use the `cd` command in terminal to navigate there)
 - In terminal type `npm init` and fill out the fields as desired
 - In terminal type `npm install cypress --save-dev`
 - Once the install process finishes, launch Cypress by typing `npx cypress run` (if you run into problems [check the documentation](https://docs.cypress.io/guides/guides/command-line.html#Installation))
-- When the Cypress GUI launches simply click on the name of the test script `commandGeneratorTests.spec.js`
-- This test scipt can be found in `Cypress > Integration`
+- When the Cypress GUI launches simply click on the name of the test script `commandGeneratorTests.spec.js` and the tests will run
+- The test scipt can be found in `Cypress > Integration` folder within the root directory
 
 #### Manual testing
 In addition to the automated end-to-end tests described above the site was also rigourously tested via simple user interaction. These tests were carried out using Firefox and Chrome on a variety of Linux distributions (Elementary, Endeavour, Ubuntu, Solus) and using the in-browser developer tools. The following items were tested:

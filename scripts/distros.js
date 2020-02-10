@@ -141,7 +141,7 @@ const arch = {
 // debian
 const debian = {
     _appImageLauncher: {
-        instructions: "go to <a href=\"https://github.com/TheAssassin/AppImageLauncher/releases\">https://github.com/TheAssassin/AppImageLauncher/releases</a> and download the appropriate <code>.deb</code> file. Then execute the below in terminal.",
+        instructions: "go to <a href=\"https://github.com/TheAssassin/AppImageLauncher/releases\" target=\"_blank\">https://github.com/TheAssassin/AppImageLauncher/releases</a> and download the appropriate <code>.deb</code> file. Then execute the below in terminal.",
         code: "sudo dpkg -i appimagelauncher_*.deb"
     },
     _atom: {
@@ -193,11 +193,11 @@ const debian = {
         code: "sudo sh -c \"echo 'deb http://ppa.launchpad.net/papirus/papirus/ubuntu xenial main' > /etc/apt/sources.list.d/papirus-ppa.list\" && \nsudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F && \nsudo apt-get update && \nsudo apt-get install papirus-icon-theme"
     },
     _inverse: {
-        instructions: "go to <a href=\"https://www.gnome-look.org/p/1344791/\">https://www.gnome-look.org/p/1344791/</a> and download the desired version to your Downloads folder. Then execute the below in terminal.",
+        instructions: "go to <a href=\"https://www.gnome-look.org/p/1344791/\" target=\"_blank\">https://www.gnome-look.org/p/1344791/</a> and download the desired version to your Downloads folder. Then execute the below in terminal.",
         code: "cd /Downloads && \nsudo tar -xf Inverse*.tar.xz && \nsudo rm Inverse*.tar.xz &&\nsudo mv Inverse* /usr/share/icons/"
     },
     _inspiration: {
-        instructions: "go to <a href=\"https://www.gnome-look.org/s/Gnome/p/1348081\">https://www.gnome-look.org/s/Gnome/p/1348081</a> and download the desired version to your Downloads folder. Then execute the below in terminal.",
+        instructions: "go to <a href=\"https://www.gnome-look.org/s/Gnome/p/1348081\" target=\"_blank\">https://www.gnome-look.org/s/Gnome/p/1348081</a> and download the desired version to your Downloads folder. Then execute the below in terminal.",
         code: "cd Downloads && sudo tar -xf Inspiration*.tar.xz && \nsudo rm Inspiration*.tar.xz && \nsudo mv Inspiration /usr/share/icons/"
     },
     _flatRemix: {
@@ -283,7 +283,7 @@ const debian = {
 // elementary
 const elementary = {
     _appImageLauncher: {
-        instructions: "go to <a href=\"https://github.com/TheAssassin/AppImageLauncher/releases\">https://github.com/TheAssassin/AppImageLauncher/releases</a> and download the appropriate .deb file. Then execute the below in terminal.",
+        instructions: "go to <a href=\"https://github.com/TheAssassin/AppImageLauncher/releases\" target=\"_blank\">https://github.com/TheAssassin/AppImageLauncher/releases</a> and download the appropriate .deb file. Then execute the below in terminal.",
         code: "sudo dpkg -i appimagelauncher_*.deb"
     },
     _atom: {
@@ -307,7 +307,7 @@ const elementary = {
         code: "sudo apt install -y kdeconnect"
     },
     _mcMojave: {
-        instructions: "go to <a href='#' class='instructionLink'>here</a> and and download the desired version.",
+        instructions: "go to <a href='https://www.gnome-look.org/p/1275087/' class='instructionLink' target=\"_blank\">https://www.gnome-look.org/p/1275087/</a> and and download the desired version.",
         code: "sudo apt-get install gtk2-engines-murrine gtk2-engines-pixbuf -y && \ncd Downloads && tar xvf Mojave-*.tar.xz && \nsudo mv Mojave-* /usr/share/themes/"
     },
     _numlockAtLogin: {
@@ -358,11 +358,11 @@ const elementary = {
         code: "sudo add-apt-repository ppa:papirus/papirus && \nsudo apt update && \nsudo apt install papirus-icon-theme"
     },
     _inverse: {
-        instructions: "go to <a href=\"https://www.gnome-look.org/p/1344791/\">https://www.gnome-look.org/p/1344791/</a> and download the desired version to your Downloads folder. Then execute the below in terminal.",
+        instructions: "go to <a href=\"https://www.gnome-look.org/p/1344791/\" target=\"_blank\">https://www.gnome-look.org/p/1344791/</a> and download the desired version to your Downloads folder. Then execute the below in terminal.",
         code: "cd /Downloads && \nsudo tar -xf Inverse*.tar.xz && \nsudo rm Inverse*.tar.xz &&\nsudo mv Inverse* /usr/share/icons/"
     },
     _inspiration: {
-        instructions: "go to <a href=\"https://www.gnome-look.org/s/Gnome/p/1348081\">https://www.gnome-look.org/s/Gnome/p/1348081</a> and download the desired version to your Downloads folder. Then execute the below in terminal.",
+        instructions: "go to <a href=\"https://www.gnome-look.org/s/Gnome/p/1348081\" target=\"_blank\">https://www.gnome-look.org/s/Gnome/p/1348081</a> and download the desired version to your Downloads folder. Then execute the below in terminal.",
         code: "cd Downloads && sudo tar -xf Inspiration*.tar.xz && \nsudo rm Inspiration*.tar.xz && \nsudo mv Inspiration /usr/share/icons/"
     },
     _flatRemix: {
@@ -526,7 +526,7 @@ const solus = {
 // ubuntu
 const ubuntu = {
     _appImageLauncher: {
-        instructions: "go to <a href=\"https://github.com/TheAssassin/AppImageLauncher/releases\">https://github.com/TheAssassin/AppImageLauncher/releases</a> and download the appropriate .deb file. Then execute the below in terminal.",
+        instructions: "go to <a href=\"https://github.com/TheAssassin/AppImageLauncher/releases\" target=\"_blank\">https://github.com/TheAssassin/AppImageLauncher/releases</a> and download the appropriate .deb file. Then execute the below in terminal.",
         code: "sudo dpkg -i appimagelauncher_*.deb"
     },
     _atom: {
@@ -576,11 +576,11 @@ const ubuntu = {
         code: "sudo add-apt-repository ppa:papirus/papirus && \nsudo apt update && \nsudo apt install -y papirus-icon-theme"
     },
     _inverse: {
-        instructions: "go to <a href=\"https://www.gnome-look.org/p/1344791/\">https://www.gnome-look.org/p/1344791/</a> and download the desired version to your Downloads folder. Then execute the below in terminal.",
+        instructions: "go to <a href=\"https://www.gnome-look.org/p/1344791/\" target=\"_blank\">https://www.gnome-look.org/p/1344791/</a> and download the desired version to your Downloads folder. Then execute the below in terminal.",
         code: "cd Downloads && sudo tar -xf Inverse*.tar.xz && \nsudo rm Inverse*.tar.xz && \nsudo mv Inverse* /usr/share/icons/"
     },
     _inspiration: {
-        instructions: "go to <a href=\"https://www.gnome-look.org/s/Gnome/p/1348081\">https://www.gnome-look.org/s/Gnome/p/1348081</a> and download the desired version to your Downloads folder. Then execute the below in terminal.",
+        instructions: "go to <a href=\"https://www.gnome-look.org/s/Gnome/p/1348081\" target=\"_blank\">https://www.gnome-look.org/s/Gnome/p/1348081</a> and download the desired version to your Downloads folder. Then execute the below in terminal.",
         code: "cd Downloads && sudo tar -xf Inspiration*.tar.xz && \nsudo rm Inspiration*.tar.xz && \nsudo mv Inspiration /usr/share/icons/"
     },
     _flatRemix: {

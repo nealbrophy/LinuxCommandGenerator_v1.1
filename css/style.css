@@ -1,7 +1,8 @@
 /* ========
     GLOBAL
    ======== */
-/* html {
+/* disable smooth scroll as it intereferes with Cypress tests */
+   /* html {
     scroll-behavior: smooth;
 } */
 
@@ -25,22 +26,10 @@ h1 {
     letter-spacing: 5.1px;
 }
 
-li  {
+li {
     display: inline;
     padding: 0 50px 0 50px;
 }
-
-/* a:link {
-    color: antiquewhite;
-}
-
-a:hover {
-    color: #f54e00;
-}
-
-a:visited {
-    color: blue;
-} */
 
 /* =========
     STYLES
@@ -112,7 +101,8 @@ a:visited {
 
 /* tab section */
 #matTabs {
-    margin-top: 3rem;;
+    margin-top: 3rem;
+    ;
 }
 
 #appSelect .btn:disabled a,
@@ -170,7 +160,7 @@ a:visited {
 }
 
 #saveOutput:active {
-    background-color:  #ff854d;
+    background-color: #ff854d;
 }
 
 #downloadOutput {
@@ -186,7 +176,8 @@ a:visited {
 }
 
 .outputInner {
-    min-height: 150px;;
+    min-height: 150px;
+    ;
     border: 2px solid rgba(0, 0, 0, 0.685);
     background-color: black;
     border-radius: 1.5em;
@@ -231,7 +222,7 @@ a:visited {
 
 #sideTrigger {
     background-color: #a4680e;
-    
+
 }
 
 #sideHeading {
@@ -249,11 +240,11 @@ a:visited {
 }
 
 #sidebarDownload:hover {
-    background-color:  #a4680e;
+    background-color: #a4680e;
 }
 
 #sidebarDownload:active {
-    background-color:  #f3bf72;
+    background-color: #f3bf72;
 }
 
 #sidebarClear {
@@ -261,11 +252,11 @@ a:visited {
 }
 
 #sidebarClear:hover {
-    background-color:  #ff2d1a;
+    background-color: #ff2d1a;
 }
 
 #sidebarClear:active {
-    background-color:  #ff8a80;
+    background-color: #ff8a80;
 }
 
 #sidebarClear .fa-recycle,
@@ -297,7 +288,8 @@ a:visited {
 
     #distroHeading {
         margin-top: 5rem;
-        margin-bottom: 4rem;;
+        margin-bottom: 4rem;
+        ;
     }
 
     #appSelect,
@@ -316,4 +308,3 @@ a:visited {
         margin-top: 3rem;
     }
 }
-   

@@ -6,27 +6,18 @@
     <!-- filesaver -->
     <script src="scripts/FileSaver.js">
     </script>
-
     <!-- import google fonts -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Monofett|Montserrat&display=swap"
         rel="stylesheet">
-
     <!--import materialize.css -->
     <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
-
     <!--import font-logos -->
     <link href="//cdn.jsdelivr.net/gh/Lukas-W/font-logos@v0.11/assets/font-logos.css" rel="stylesheet">
-
     <!-- import font awesome -->
     <script src="https://kit.fontawesome.com/624307dae0.js" crossorigin="anonymous"></script>
-    <!-- 
-    import fork awesome
-    <link rel="stylesheet" href="css/Fork-Awesome-1.1.7/css/fork-awesome.min.css"> -->
-
     <!-- import IcoFont -->
     <link rel="stylesheet" href="css/icofont/icofont.min.css">
-
     <!-- import favicon -->
     <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
 
@@ -180,42 +171,41 @@
 
             <div class="divider"></div>
             <!-- sidebar -->
-                <ul id="slide-out" cy-data="sidebar" class="sidenav">
-                    <span id="sideHeading">My List</span>
-                    <li>
-                        <div id="sideOutput" cy-data="sideOutput-area">
-                        </div>
-                        <div class="divider"></div>
-                    </li>
-                    <li>
-                        <a class="btn waves-effect waves-light" cy-data="sidebarDownload-button" id="sidebarDownload"
-                            href="#!"><i class="fas fa-file-download"></i> Download as file</a>
-                        <a class="btn" id="sidebarClear" cy-data="clear-button" href="#!"><i class="fas fa-recycle"></i>
-                            Clear
-                            List</a>
-                    </li>
-                </ul>
-                <!-- sidebar trigger -->
-                <div class="fixed-action-btn sidenav-trigger" data-target="slide-out">
-                    <a id="sideTrigger" cy-data="sidenav-button" class="btn-floating btn-large"><i
-                            class="fas fa-folder-open"></i></a>
-                </div>
-
-                <!-- output -->
-                <div id="output" class="container outputDiv">
-                    <div class="row">
-                        <h2 id="outputHeading" class="center-align">Output:</h2>
-                        <p id="outputIntro"></p>
-                        <div id="outputInstructions" cy-data="outputInstructions-area"></div>
-                        <div class="outputInner">
-                            <div id="outputContent" cy-data="output-area"></div>
-                        </div>
-                        <button id="copyOutput" class="btn" cy-data="copy-button"><i class="far fa-copy"></i> <span
-                                class="buttonText">Copy Code</span></button>
-                        <button id="saveOutput" cy-data="addToList-button" class="btn"><i
-                                class="fas fa-folder-plus"></i>
-                            <span class="buttonText">Add to List</span></button>
+            <ul id="slide-out" cy-data="sidebar" class="sidenav">
+                <span id="sideHeading">My List</span>
+                <li>
+                    <div id="sideOutput" cy-data="sideOutput-area">
                     </div>
+                    <div class="divider"></div>
+                </li>
+                <li>
+                    <a class="btn waves-effect waves-light" cy-data="sidebarDownload-button" id="sidebarDownload"
+                        href="#!"><i class="fas fa-file-download"></i> Download as file</a>
+                    <a class="btn" id="sidebarClear" cy-data="clear-button" href="#!"><i class="fas fa-recycle"></i>
+                        Clear
+                        List</a>
+                </li>
+            </ul>
+            <!-- sidebar trigger -->
+            <div class="fixed-action-btn sidenav-trigger" data-target="slide-out">
+                <a id="sideTrigger" cy-data="sidenav-button" class="btn-floating btn-large"><i
+                        class="fas fa-folder-open"></i></a>
+            </div>
+
+            <!-- output -->
+            <div id="output" class="container outputDiv">
+                <div class="row">
+                    <h2 id="outputHeading" class="center-align">Output:</h2>
+                    <p id="outputIntro"></p>
+                    <div id="outputInstructions" cy-data="outputInstructions-area"></div>
+                    <div class="outputInner">
+                        <div id="outputContent" cy-data="output-area"></div>
+                    </div>
+                    <button id="copyOutput" class="btn" cy-data="copy-button"><i class="far fa-copy"></i> <span
+                            class="buttonText">Copy Code</span></button>
+                    <button id="saveOutput" cy-data="addToList-button" class="btn"><i class="fas fa-folder-plus"></i>
+                        <span class="buttonText">Add to List</span></button>
+                </div>
             </div>
         </div>
     </div>
