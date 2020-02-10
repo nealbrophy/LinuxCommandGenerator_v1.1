@@ -16,7 +16,7 @@ You can view the GitHub pages deployment [here](https://nealbrophy.github.io/Lin
 ---
 
 ### UX
-The site is intended to be above all else, clean and simple. It was developed mobile first and should be easy & pleasant to use regardless of user device. The colour scheme is and fonts should suggest a 1950s retro style.
+The site is intended to be above all else, clean and simple. It was developed mobile first and should be easy & pleasant to use regardless of user device. I deliberately wanted to avoid navbars and multi-page linking to keep the site as simple to use and navigate as possible. The colour scheme is and fonts should suggest a 1950s retro style as I wanted bold, bright, and vibrant (bordering on gaudy) look.
 
 #### User Stories
 - As a Linux user I would like a simple repository of useful commands which is easy to navigate and understand.
@@ -73,7 +73,7 @@ To run the site locally you can clone it using the following instructions:
 - [Google Fonts](https://fonts.google.com/)
 
 ---
-### Testomg
+### Testing
 
 #### Automated End-to-End
 The project was NOT developed using TDD practices as I was not yet comfortable enough with my JS knowledge to do so. Instead I opted for end-to-end testing using Cypress.io. The tests were written to validate:
@@ -104,7 +104,7 @@ In addition to the automated end-to-end tests described above the site was also 
 
 #### Validation
 - HTML was validated using [W3C Markup Validation Service](https://validator.w3.org/)
-    - NOTE: The Markup Validator presents multiple errors due to the "cy-data" property, however, this has no effect on the code and is considered best practice for testing with Cypress.
+    - **NOTE**: The Markup Validator presents multiple errors for the "cy-data" property, however, this has no effect on the code and is considered best practice for testing with Cypress.
 - CSS was validated using [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 - JS was validated using [JSHint](https://jshint.com/)
 

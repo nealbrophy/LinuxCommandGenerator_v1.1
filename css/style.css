@@ -1,11 +1,6 @@
 /* ========
     GLOBAL
    ======== */
-/* disable smooth scroll as it intereferes with Cypress tests */
-   /* html {
-    scroll-behavior: smooth;
-} */
-
 body {
     padding: 0;
     margin: 0;
