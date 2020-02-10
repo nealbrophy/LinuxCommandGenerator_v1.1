@@ -157,8 +157,8 @@ const debian = {
         code: "wget https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US && \ncd ~/Downloads/ && \ntar xjf firefox-*.tar.bz2 && \nsudo rm -r /opt/firefox && \nsudo mv firefox /opt/firefox72"
     },
     _git: {
-        instruction: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "sudo apt install git"
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo apt-get install git"
     },
     _gitKraken: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
@@ -166,19 +166,19 @@ const debian = {
     },
     _kdeConnect: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "sudo apt install kdeconnect"
+        code: "sudo apt-get install kdeconnect"
     },
     _mkusb: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "sudo add-apt-repository ppa:mkusb/ppa && \nsudo apt-get update && \nsudo apt install -y mkusb mkusb-nox usb-pack-efi"
+        code: "sudo add-apt-repository ppa:mkusb/ppa && \nsudo apt-get update && \nsudo apt-get install -y mkusb mkusb-nox usb-pack-efi"
     },
     _qBittorrent: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "sudo apt install -y qbittorrent"
+        code: "sudo apt-get install -y qbittorrent"
     },
     _slack: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: ""
+        code: "wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.3.2-amd64.deb && \nsudo dpkg -i slack-desktop-4.3.2-amd64.deb"
     },
     _standardNotes: {
         instructions: "install <em>App Image Launcher</em> first, then execute the below code in terminal and select \"Integrate and Run\" on the pop-up.",
@@ -202,15 +202,19 @@ const debian = {
     },
     _flatRemix: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "sudo add-apt-repository ppa:daniruiz/flat-remix && \nsudo apt-get update && \nsudo apt install -y flat-remix"
+        code: "sudo add-apt-repository ppa:daniruiz/flat-remix && \nsudo apt-get update && \nsudo apt-get install -y flat-remix"
     },
     _vimix: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "wget https://github.com/vinceliuice/vimix-gtk-themes/archive/Gtk3.22-12.25.tar.gz && \ntar -xvf Gtk3.22-12.25.tar.gz && \ncd vimix* && \nsudo apt install -y gtk2-engines-murrine gtk2-engines-pixbuf && \n ./Vimix-installer.sh"
     },
+    _vimixTheme: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "wget https://github.com/vinceliuice/vimix-gtk-themes/archive/Gtk3.22-12.25.tar.gz && \ntar-xvf Gtk3.22-12.25.tar.gz && cd vimix* && sudo ./Vimix-installer.sh"
+    },
     _uniform: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "sudo add-apt-repository ppa:noobslab/icons2 && \nsudo apt-get update && \nsudo apt install -y uniform-icons"
+        code: "sudo add-apt-repository ppa:noobslab/icons2 && \nsudo apt-get update && \nsudo apt-get install -y uniform-icons"
     },
     _distSummary: "<p>Debian, also known as Debian GNU/Linux, is a Linux distribution composed of free and open-source software, developed by the community-supported Debian Project, which was established by Ian Murdock on August 16, 1993. Debian is one of the oldest operating systems based on the Linux kernel. The project is coordinated over the Internet by a team of volunteers guided by the Debian Project Leader and three foundational documents: the Debian Social Contract, the Debian Constitution, and the Debian Free Software Guidelines. New distributions are updated continually, and the next candidate is released after a time-based freeze.</p>",
     _logo: `<i class="fl-debian sideLogo" aria-hidden="true"></i>`,
@@ -235,9 +239,6 @@ const debian = {
     get kdeConnect() {
         return this._kdeConnect;
     },
-    get mcMojave() {
-        return this._mcMojave;
-    },
     get mkusb() {
         return this._mkusb;
     },
@@ -257,13 +258,16 @@ const debian = {
         return this._papirus;
     },
     get inverse() {
-        return this._flatery;
+        return this._inverse;
     },
     get flatRemix() {
-        return this._inverse;
+        return this._flatRemix;
     },
     get vimix() {
         return this._vimix;
+    },
+    get vimixTheme() {
+        return this._vimixTheme;
     },
     get uniform() {
         return this._uniform;
@@ -653,6 +657,10 @@ const ubuntu = {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "wget https://github.com/vinceliuice/vimix-gtk-themes/archive/Gtk3.22-12.25.tar.gz && \ntar -xvf Gtk3.22-12.25.tar.gz && \ncd vimix* && \n sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf && \n ./Vimix-installer.sh"
     },
+    _vimixTheme: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo add-apt-repository ppa:noobslab/themes && \nsudo apt-get update && sudo apt-get install vimix-gtk-themes"
+    },
     _uniform: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "sudo add-apt-repository ppa:noobslab/icons2 && \nsudo apt-get update && \nsudo apt install -y uniform-icons"
@@ -715,6 +723,9 @@ const ubuntu = {
     },
     get vimix() {
         return this._vimix;
+    },
+    get vimixTheme() {
+        return this._vimixTheme;
     },
     get uniform() {
         return this._uniform;

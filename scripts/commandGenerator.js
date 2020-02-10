@@ -263,6 +263,7 @@ for (i = 0; i < toInstall.length; i++) {
 
         } else {
             selection = (this.id);
+            console.log(selection);
 
             // check the os object to see if app selection has custom instructions, if so populate instructions element
             if (osObj[selection].instructions && choice !== "notSure") {
