@@ -8,32 +8,32 @@ const arch = {
         code: "sudo pacman -S appimagelauncher-git"
     },
     _atom: {
-        instructions: "",
-        code: ""
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "atom"
     },
     _chrome: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "sudo pacman -S git && \ncd Downloads && \ngit clone https://aur.archlinux.org/google-chrome.git && \ncd google-chrome/ && \nmakepkg -s -y && \nsudo pacman -U google-chrome-63.0.3239.108-1-x86_64.pkg.tar.xz"
     },
     _firefox: {
-        instructions: "",
-        code: ""
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "firefox"
     },
     _git: {
-        instructions: "",
-        code: ""
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "git"
     },
     _gitKraken: {
-        instructions: "",
-        code: ""
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "gitKraken"
     },
     _kdeConnect: {
-        instructions: "",
-        code: ""
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "kdeConnect"
     },
     _slack: {
-        instructions: "",
-        code: ""
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "slack"
     },
     _standardNotes: {
         instructions: "install <em>App Image Launcher</em> first, then execute the below code in terminal and select \"Integrate and Run\" on the pop-up.",
@@ -48,21 +48,21 @@ const arch = {
         code: "sudo pacman -S papirus-icon-theme"
     },
     _inverse: {
-        instructions: "",
-        code: ""
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "inverse"
     },
     _flatRemix: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "git clone https://github.com/daniruiz/flat-remix && \nmkdir -p ~/.icons && \ncp -r flat-remix/Flat-Remix* ~/.icons/ && \ngsettings set org.gnome.desktop.interface icon-theme \"Flat-Remix\"",
         code2: "sudo pacman -S flat-remix"
     },
-    _inspire: {
-        instructions: "",
-        code: ""
+    _inspiration: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "inspiration"
     },
     _vimix: {
-        instructions: "",
-        code: ""
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "vimix"
     },
     _uniform: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
@@ -119,7 +119,7 @@ const arch = {
         return this._uniform;
     },
     get inspire() {
-        return this._inspire;
+        return this._inspiration;
     },
     get logo() {
         return this._logo;
@@ -157,6 +157,14 @@ const debian = {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "sudo apt install kdeconnect"
     },
+    _mkusb: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo add-apt-repository ppa:mkusb/ppa && \nsudo apt-get update && \nsudo apt install -y mkusb mkusb-nox usb-pack-efi"
+    },
+    _qbittorrent: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo apt install -y qbittorrent"
+    },
     _slack: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: ""
@@ -174,24 +182,24 @@ const debian = {
         code: "sudo sh -c \"echo 'deb http://ppa.launchpad.net/papirus/papirus/ubuntu xenial main' > /etc/apt/sources.list.d/papirus-ppa.list\" && \nsudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F && \nsudo apt-get update && \nsudo apt-get install papirus-icon-theme"
     },
     _inverse: {
-        instructions: "",
-        code: ""
+        instructions: "go to <a href=\"https://www.gnome-look.org/p/1344791/\">https://www.gnome-look.org/p/1344791/</a> and download the desired version to your Downloads folder. Then execute the below in terminal.",
+        code: "cd /Downloads && \nsudo tar -xf Inverse*.tar.xz && \nsudo rm Inverse*.tar.xz &&\nsudo mv Inverse* /usr/share/icons/"
     },
-    _inspire: {
-        instructions: "go to <a href=\"https://www.gnome-look.org/p/1344791/\">https://www.gnome-look.org/p/1344791/</a> and download the desired version to your Downloads folder",
-        code: "cd /Downloads && sudo tar -xf Inverse*.tar.xz mv /usr/share/icons/"
+    _inspiration: {
+        instructions: "go to <a href=\"https://www.gnome-look.org/s/Gnome/p/1348081\">https://www.gnome-look.org/s/Gnome/p/1348081</a> and download the desired version to your Downloads folder. Then execute the below in terminal.",
+        code: "cd Downloads && sudo tar -xf Inspiration*.tar.xz && \nsudo rm Inspiration*.tar.xz && \nsudo mv Inspiration /usr/share/icons/"
     },
     _flatRemix: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "sudo add-apt-repository ppa:daniruiz/flat-remix && \nsudo apt-get update && \nsudo apt-get install flat-remix"
+        code: "sudo add-apt-repository ppa:daniruiz/flat-remix && \nsudo apt-get update && \nsudo apt install -y flat-remix"
     },
     _vimix: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "wget https://github.com/vinceliuice/vimix-gtk-themes/archive/Gtk3.22-12.25.tar.gz && \ntar -xvf Gtk3.22-12.25.tar.gz && \ncd vimix* && \n sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf && \n ./Vimix-installer.sh"
+        code: "wget https://github.com/vinceliuice/vimix-gtk-themes/archive/Gtk3.22-12.25.tar.gz && \ntar -xvf Gtk3.22-12.25.tar.gz && \ncd vimix* && \nsudo apt install -y gtk2-engines-murrine gtk2-engines-pixbuf && \n ./Vimix-installer.sh"
     },
     _uniform: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "sudo add-apt-repository ppa:noobslab/icons2 && \nsudo apt-get update && \nsudo apt-get install uniform-icons"
+        code: "sudo add-apt-repository ppa:noobslab/icons2 && \nsudo apt-get update && \nsudo apt install -y uniform-icons"
     },
     _distSummary: "<p>Debian, also known as Debian GNU/Linux, is a Linux distribution composed of free and open-source software, developed by the community-supported Debian Project, which was established by Ian Murdock on August 16, 1993. Debian is one of the oldest operating systems based on the Linux kernel. The project is coordinated over the Internet by a team of volunteers guided by the Debian Project Leader and three foundational documents: the Debian Social Contract, the Debian Constitution, and the Debian Free Software Guidelines. New distributions are updated continually, and the next candidate is released after a time-based freeze.</p>",
     _logo: `<i class="fl-debian sideLogo" aria-hidden="true"></i>`,
@@ -219,6 +227,12 @@ const debian = {
     get mcMojave() {
         return this._mcMojave;
     },
+    get mkusb() {
+        return this._mkusb;
+    },
+    get qbittorrent() {
+        return this._qbittorrent;
+    },
     get standardNotes() {
         return this._standardNotes;
     },
@@ -243,8 +257,8 @@ const debian = {
     get uniform() {
         return this._uniform;
     },
-    get inspire() {
-        return this._inspire;
+    get inspiration() {
+        return this._inspiration;
     },
     get logo() {
         return this._logo;
@@ -259,7 +273,7 @@ const elementary = {
     },
     _atom: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "sudo add-apt-repository ppa:webupd8team/atom && \nsudo apt-get update && \nsudo apt-get install -y atom"
+        code: "sudo add-apt-repository ppa:webupd8team/atom && \nsudo apt-get update && \nsudo apt install -y atom"
     },
     _chrome: {
         instructions:"execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
@@ -275,7 +289,7 @@ const elementary = {
     },
     _kdeConnect: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "sudo apt install kdeconnect"
+        code: "sudo apt install -y kdeconnect"
     },
     _mcMojave: {
         instructions: "go to <a href='#' class='instructionLink'>here</a> and and download the desired version.",
@@ -288,6 +302,14 @@ const elementary = {
     _nodeJS: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code:"sudo apt-get install curl && \ncurl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && \nsudo apt-get install -y nodejs"
+    },
+    _mkusb: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo add-apt-repository ppa:mkusb/ppa && \nsudo apt-get update && \nsudo apt install -y mkusb mkusb-nox usb-pack-efi"
+    },
+    _qbittorrent: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo apt install -y qbittorrent"
     },
     _opera: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
@@ -321,12 +343,12 @@ const elementary = {
         code: "sudo add-apt-repository ppa:papirus/papirus && \nsudo apt update && \nsudo apt install papirus-icon-theme"
     },
     _inverse: {
-        instructions: "go to <a href=\"https://www.gnome-look.org/p/1344791/\">https://www.gnome-look.org/p/1344791/</a> and download the desired version to your Downloads folder",
-        code: "cd /Downloads && sudo tar -xf Inverse*.tar.xz mv /usr/share/icons/"
+        instructions: "go to <a href=\"https://www.gnome-look.org/p/1344791/\">https://www.gnome-look.org/p/1344791/</a> and download the desired version to your Downloads folder. Then execute the below in terminal.",
+        code: "cd /Downloads && \nsudo tar -xf Inverse*.tar.xz && \nsudo rm Inverse*.tar.xz &&\nsudo mv Inverse* /usr/share/icons/"
     },
-    _inspire: {
-        instructions: "",
-        code: ""
+    _inspiration: {
+        instructions: "go to <a href=\"https://www.gnome-look.org/s/Gnome/p/1348081\">https://www.gnome-look.org/s/Gnome/p/1348081</a> and download the desired version to your Downloads folder. Then execute the below in terminal.",
+        code: "cd Downloads && sudo tar -xf Inspiration*.tar.xz && \nsudo rm Inspiration*.tar.xz && \nsudo mv Inspiration /usr/share/icons/"
     },
     _flatRemix: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
@@ -369,6 +391,12 @@ const elementary = {
     get nodeJS() {
         return this._nodeJS;
     },
+    get mkusb() {
+        return this._mkusb;
+    },
+    get qbittorrent() {
+        return this._qbittorrent;
+    },
     get openAsRoot() {
         return this._openAsRoot;
     },
@@ -396,8 +424,8 @@ const elementary = {
     get inverse() {
         return this._inverse;
     },
-    get inspire() {
-        return this._inspire;
+    get inspiration() {
+        return this._inspiration;
     },
     get flatRemix() {
         return this._flatRemix;
@@ -472,7 +500,7 @@ const solus = {
         instructions: "",
         code: ""
     },
-    _inspire: {
+    _inspiration: {
         instructions: "",
         code: ""
     },
@@ -482,7 +510,7 @@ const solus = {
     },
     _vimix: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "wget https://github.com/vinceliuice/vimix-gtk-themes/archive/Gtk3.22-12.25.tar.gz && \ntar -xvf Gtk3.22-12.25.tar.gz && \ncd vimix* && \n sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf && \n ./Vimix-installer.sh"
+        code: "wget https://github.com/vinceliuice/vimix-gtk-themes/archive/Gtk3.22-12.25.tar.gz && \ntar -xvf Gtk3.22-12.25.tar.gz && \ncd vimix* && \nsudo apt install gtk2-engines-murrine gtk2-engines-pixbuf && \n ./Vimix-installer.sh"
     },
     _uniform: {},
     _distSummary: "<p>Solus is an independently developed desktop operating system based on the Linux kernel and using its own desktop environment derived from GNOME. Starting with the Debian branch of Linux it migrated to a unique approach including Pisi and Evolve OS. It is offered as a curated rolling release model under the slogan \"Install Today. Updates Forever\". Solus contains a wide variety of desktop environments depending on release chosen, options include Solus' own Budgie Desktop, GNOME, MATE and KDE Plasma.</p>",
@@ -530,7 +558,7 @@ const solus = {
         return this._inverse;
     },
     get inspire() {
-        return this._inspire;
+        return this._inspiration;
     },
     get flatRemix() {
         return this._flatRemix;
@@ -561,18 +589,26 @@ const ubuntu = {
         code: "sudo apt-get install libxss1 libappindicator1 libindicator7 -y && \nwget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \nsudo dpkg -i google-chrome*.deb && \nsudo apt-get install -f && \nsudo apt autoremove -y"},
     _firefox: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "wget https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US && cd ~/Downloads/ && tar xjf firefox-*.tar.bz2 && sudo rm -r /opt/firefox && sudo mv firefox /opt/firefox72"},
+        code: "wget https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US && cd ~/Downloads/ && tar xjf firefox-*.tar.bz2 && \nsudo rm -r /opt/firefox && \nsudo mv firefox /opt/firefox72"},
     _git: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "sudo apt install git"
+        code: "sudo apt install -y git"
     },
     _gitKraken: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "wget https://release.gitkraken.com/linux/gitkraken-amd64.deb && \n sudo dpkg -i gitkraken*.deb"
+        code: "wget https://release.gitkraken.com/linux/gitkraken-amd64.deb && \nsudo dpkg -i gitkraken*.deb"
     },
     _kdeConnect: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "sudo apt install kdeconnect"
+        code: "sudo apt install -y kdeconnect"
+    },
+    _mkusb: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo add-apt-repository universe && \nsudo apt-get update && \nsudo apt install -y mkusb mkusb-nox usb-pack-efi"
+    },
+    _qbittorrent: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo apt install -y qbittorrent"
     },
     _slack: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
@@ -588,19 +624,19 @@ const ubuntu = {
     },
     _papirus: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "sudo add-apt-repository ppa:papirus/papirus && \nsudo apt update && \nsudo apt install papirus-icon-theme"
+        code: "sudo add-apt-repository ppa:papirus/papirus && \nsudo apt update && \nsudo apt install -y papirus-icon-theme"
     },
     _inverse: {
-        instructions: "go to <a href=\"https://www.gnome-look.org/p/1344791/\">https://www.gnome-look.org/p/1344791/</a> and download the desired version to your Downloads folder",
-        code: "cd /Downloads && sudo tar -xf Inverse*.tar.xz mv /usr/share/icons/"
+        instructions: "go to <a href=\"https://www.gnome-look.org/p/1344791/\">https://www.gnome-look.org/p/1344791/</a> and download the desired version to your Downloads folder. Then execute the below in terminal.",
+        code: "cd Downloads && sudo tar -xf Inverse*.tar.xz && \nsudo rm Inverse*.tar.xz && \nsudo mv Inverse* /usr/share/icons/"
     },
-    _inspire: {
-        instructions: "",
-        code: ""
+    _inspiration: {
+        instructions: "go to <a href=\"https://www.gnome-look.org/s/Gnome/p/1348081\">https://www.gnome-look.org/s/Gnome/p/1348081</a> and download the desired version to your Downloads folder. Then execute the below in terminal.",
+        code: "cd Downloads && sudo tar -xf Inspiration*.tar.xz && \nsudo rm Inspiration*.tar.xz && \nsudo mv Inspiration /usr/share/icons/"
     },
     _flatRemix: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "sudo add-apt-repository ppa:daniruiz/flat-remix && \nsudo apt-get update && \nsudo apt-get install flat-remix"
+        code: "sudo add-apt-repository ppa:daniruiz/flat-remix && \nsudo apt-get update && \nsudo apt install -y flat-remix"
     },
     _vimix: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
@@ -608,7 +644,7 @@ const ubuntu = {
     },
     _uniform: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "sudo add-apt-repository ppa:noobslab/icons2 && \nsudo apt-get update && \nsudo apt-get install uniform-icons"
+        code: "sudo add-apt-repository ppa:noobslab/icons2 && \nsudo apt-get update && \nsudo apt install -y uniform-icons"
     },
     _distSummary: "<p>Ubuntu is a free and open-source Linux distribution based on Debian. Ubuntu is released every six months, with long-term support (LTS) releases every two years. Ubuntu is developed by Canonical, and a community of other developers, under a meritocratic governance model. Canonical provides security updates and support for each Ubuntu release, starting from the release date and until the release reaches its designated end-of-life (EOL) date. Canonical generates revenue through the sale of premium services related to Ubuntu.</p>",
     _logo: `<i class="fl-ubuntu sideLogo" aria-hidden="true"></i>`,
@@ -639,6 +675,12 @@ const ubuntu = {
     get mcMojave() {
         return this._mcMojave;
     },
+    get mkusb() {
+        return this._mkusb;
+    },
+    get qbittorrent() {
+        return this._qbittorrent;
+    },
     get standardNotes() {
         return this._standardNotes;
     },
@@ -654,8 +696,8 @@ const ubuntu = {
     get inverse() {
         return this._inverse;
     },
-    get inspire() {
-        return this._inspire;
+    get inspiration() {
+        return this._inspiration;
     },
     get flatRemix() {
         return this._flatRemix;

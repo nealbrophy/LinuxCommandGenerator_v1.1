@@ -92,22 +92,22 @@ Bugs squashed:
 [Balsamiq](https://balsamiq.com/)
 
 #### Frameworks
-This site uses the [Materialize.CSS](https://materializecss.com/) framework.
-[This video](https://www.youtube.com/watch?v=4kN5lW4PNEs) from [TheNetNinja](https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg) was helpful in implementing the Materialize Tabs functionality.
+- This site uses the [Materialize.CSS](https://materializecss.com/) framework.
+- [This video](https://www.youtube.com/watch?v=4kN5lW4PNEs) from [TheNetNinja](https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg) was helpful in implementing the Materialize Tabs functionality.
 
 #### Installation instructions written/compiled with help from:
-[All Techs Tricks](https://alltechstricks.blogspot.com/)
-[LinuxBabe](https://www.linuxbabe.com/)
-[FOSSLinux](https://www.fosslinux.com/)
-[TecRobust](https://www.tecrobust.com/)
-[ItsUbuntu](https://itsubuntu.com/)
-[DraSite](https://drasite.com/)
-[AddictiveTips](https://www.addictivetips.com/)
-[OSRadar](https://www.osradar.com/)
-[ArchLinux Wiki](https://wiki.archlinux.org/)
-[Elementary OS]() forums
-[Solus]() forums
-[ScottLinux](https://scottlinux.com/)
+- [All Techs Tricks](https://alltechstricks.blogspot.com/)
+- [LinuxBabe](https://www.linuxbabe.com/)
+- [FOSSLinux](https://www.fosslinux.com/)
+- [TecRobust](https://www.tecrobust.com/)
+- [ItsUbuntu](https://itsubuntu.com/)
+- [DraSite](https://drasite.com/)
+- [AddictiveTips](https://www.addictivetips.com/)
+- [OSRadar](https://www.osradar.com/)
+- [ArchLinux Wiki](https://wiki.archlinux.org/)
+- [Elementary OS]() forums
+- [Solus]() forums
+- [ScottLinux](https://scottlinux.com/)
 
 
 #### Copy to Clipboard implementation from:
@@ -135,7 +135,7 @@ Cake Bar Exercise by [Codecademy](https://www.codecademy.com/courses/learn-javas
 - [This Pinterest image](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F227431849906259188%2F&psig=AOvVaw2vvsbXesw2jbiMwVrKCNCO&ust=1581267436155000&source=images&cd=vfe&ved=2ahUKEwj7qPGvtsLnAhVjQEEAHYKiCGoQr4kDegUIARD0AQ) was used for reference.
 
 ### Testing accomplished with help from:
-[Cypress in a Nutshell](https://www.youtube.com/watch?v=LcGHiFnBh3Y)
-[Cypress End-to-End Testing](https://www.youtube.com/watch?v=7N63cMKosIE) by [Fireship](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA)
-[Introduction to automation testing with Cypress.io](https://www.youtube.com/watch?v=l_Q7cbmYjDY) by [Execute Automation](https://www.youtube.com/channel/UCO1aucBAJgFR8odzfXOZ5uw)
-[PicFlip](https://github.com/AJGreaves/picflip/blob/master/testing.md) testing write-up by AJ Greaves
+- [Cypress in a Nutshell](https://www.youtube.com/watch?v=LcGHiFnBh3Y)
+- [Cypress End-to-End Testing](https://www.youtube.com/watch?v=7N63cMKosIE) by [Fireship](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA)
+- [Introduction to automation testing with Cypress.io](https://www.youtube.com/watch?v=l_Q7cbmYjDY) by [Execute Automation](https://www.youtube.com/channel/UCO1aucBAJgFR8odzfXOZ5uw)
+- [PicFlip](https://github.com/AJGreaves/picflip/blob/master/testing.md) testing write-up by AJ Greaves

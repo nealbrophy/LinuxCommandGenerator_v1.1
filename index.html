@@ -6,6 +6,11 @@
     <!-- filesaver -->
     <script src="scripts/FileSaver.js">
     </script>
+
+    <!-- smtpjs -->
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+
     <!-- import google fonts -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Monofett|Montserrat&display=swap"
@@ -36,7 +41,7 @@
 </head>
 
 <body>
-    
+
     <!-- <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
     <div class="container">
 
@@ -48,23 +53,29 @@
             <h2 id="distroHeading" class="center-align">Pick Your Distro:</h2>
             <div class="bgCreme"></div>
             <p class="distroWrapper center-align">
-                <a class="distroLogo arch-linux left s1 distro hoverable center-align tooltipped" cy-data="arch-button" data-position="bottom" data-tooltip="Arch Linux" id="arch" href="#matTabs">
+                <a class="distroLogo arch-linux left s1 distro hoverable center-align tooltipped" cy-data="arch-button"
+                    data-position="bottom" data-tooltip="Arch Linux" id="arch" href="#matTabs">
                     <span id="arch-logo" class="fl-archlinux center-align"></span>
                 </a>
-                <a class="distroLogo debian-linux left s1 distro hoverable center-align tooltipped" cy-data="debian-button" data-position="bottom" data-tooltip="Debian" id="debian" href="#matTabs">
+                <a class="distroLogo debian-linux left s1 distro hoverable center-align tooltipped"
+                    cy-data="debian-button" data-position="bottom" data-tooltip="Debian" id="debian" href="#matTabs">
                     <span id="debian-logo" class="fl-debian center-align"></span>
                 </a>
-                <a class="distroLogo elementary-linux left s1 distro hoverable center-align tooltipped" cy-data="elementary-button" data-position="bottom" data-tooltip="Elementary OS" id="elementary"
+                <a class="distroLogo elementary-linux left s1 distro hoverable center-align tooltipped"
+                    cy-data="elementary-button" data-position="bottom" data-tooltip="Elementary OS" id="elementary"
                     href="#matTabs">
                     <span id="elementary-logo" class="fl-elementary center-align"></span>
                 </a>
-                <a class="distroLogo solus-linux left s1 distro hoverable center-align tooltipped" cy-data="solus-button" data-position="bottom" data-tooltip="Solus" id="solus" href="#matTabs">
+                <a class="distroLogo solus-linux left s1 distro hoverable center-align tooltipped"
+                    cy-data="solus-button" data-position="bottom" data-tooltip="Solus" id="solus" href="#matTabs">
                     <span id="solus-logo" class="icofont-sail-boat center-align"></span>
                 </a>
-                <a class="distroLogo ubuntu-linux left s1 distro hoverable center-align tooltipped" cy-data="ubuntu-button" data-position="bottom" data-tooltip="Ubuntu" id="ubuntu" href="#matTabs">
+                <a class="distroLogo ubuntu-linux left s1 distro hoverable center-align tooltipped"
+                    cy-data="ubuntu-button" data-position="bottom" data-tooltip="Ubuntu" id="ubuntu" href="#matTabs">
                     <span id="ubuntu-logo" class="fl-ubuntu center-align"></span>
                 </a>
-                <a class="distroLogo not-sure left s1 distro hoverable center-align tooltipped" cy-data="notSure-button" data-position="bottom" data-tooltip="Not sure" id="notSure" href="#matTabs">
+                <a class="distroLogo not-sure left s1 distro hoverable center-align tooltipped" cy-data="notSure-button"
+                    data-position="bottom" data-tooltip="Not sure" id="notSure" href="#matTabs">
                     <span id="not-sure-logo" class="fa fa-question center-align"></span>
                 </a>
             </p>
@@ -74,92 +85,111 @@
             <div id="matTabs" class="col s12">
                 <h2 id="tabHeading" class="center-align">Pick an App:</h2>
                 <ul class="tabs tabs-fixed-width">
-                    <li class="tab col s2"><a id="appTab" cy-data="apps-tab" class="tabLink" href="#appSelect">Apps</a></li>
-                    <li class="tab col s2"><a id="iconTab" cy-data="icons-tab" class="tabLink" href="#iconSelect">Icons</a></li>
-                    <li class="tab col s2"><a id="themeTab" cy-data="themes-tab" class="tabLink" href="#themeSelect">Themes</a></li>
-                    <li class="tab col s2"><a id="miscTab" cy-data="misc-tab" class="tabLink" href="#miscSelect">Misc</a></li>
+                    <li class="tab col s2"><a id="appTab" cy-data="apps-tab" class="tabLink" href="#appSelect">Apps</a>
+                    </li>
+                    <li class="tab col s2"><a id="iconTab" cy-data="icons-tab" class="tabLink"
+                            href="#iconSelect">Icons</a></li>
+                    <li class="tab col s2"><a id="themeTab" cy-data="themes-tab" class="tabLink"
+                            href="#themeSelect">Themes</a></li>
+                    <li class="tab col s2"><a id="miscTab" cy-data="misc-tab" class="tabLink"
+                            href="#miscSelect">Misc</a></li>
                 </ul>
             </div>
             <!-- applications -->
             <div id="appSelect" class="col s12">
-                <button id="appImageLauncher" cy-data="appImage-button" class="select btn waves-effect waves-light"><a href="#output"><i
-                            class="fas fa-rocket"></i>
+                <button id="appImageLauncher" cy-data="appImage-button" class="select btn waves-effect waves-light"><a
+                        href="#output"><i class="fas fa-rocket"></i>
                         AppImageLauncher</a></button>
                 <button id="atom" cy-data="atom-button" class="select btn waves-effect waves-light"><a href="#output"><i
                             class="fas fa-atom"></i>
                         Atom</a></button>
-                <button id="chrome" cy-data="chrome-button" class="select btn waves-effect waves-light"><a href="#output"><i
-                            class="fab fa-chrome"></i>
+                <button id="chrome" cy-data="chrome-button" class="select btn waves-effect waves-light"><a
+                        href="#output"><i class="fab fa-chrome"></i>
                         Chrome</a></button>
-                <button id="tweaks" cy-data="tweaks-button" class="select btn waves-effect waves-light"><a href="#output"><i
-                            class="fas fa-sliders-h"></i>
+                <button id="tweaks" cy-data="tweaks-button" class="select btn waves-effect waves-light"><a
+                        href="#output"><i class="fas fa-sliders-h"></i>
                         Elementary-Tweaks</a></button>
-                <button id="firefox" cy-data="firefox-button" class="select btn waves-effect waves-light"><a href="#output"><i
-                            class="fab fa-firefox-browser"></i>
+                <button id="firefox" cy-data="firefox-button" class="select btn waves-effect waves-light"><a
+                        href="#output"><i class="fab fa-firefox-browser"></i>
                         Firefox</a></button>
                 <button id="git" cy-data="git-button" class="select btn waves-effect waves-light"><a href="#output"><i
                             class="fab fa-github-alt"></i>
                         Git</a></button>
-                <button id="gitKraken" cy-data="gitkraken-button" class="select btn waves-effect waves-light"><a href="#output"><i
-                            class="fab fa-gitkraken"></i>
+                <button id="gitKraken" cy-data="gitKraken-button" class="select btn waves-effect waves-light"><a
+                        href="#output"><i class="fab fa-gitkraken"></i>
                         GitKraken</a></button>
-                <button id="kdeConnect" cy-data="kde-button" class="select btn waves-effect waves-light"><a href="#output"><i
-                            class="fas fa-mobile-alt"></i> KDE
+                <button id="kdeConnect" cy-data="kde-button" class="select btn waves-effect waves-light"><a
+                        href="#output"><i class="fas fa-mobile-alt"></i> KDE
                         Connect</a></button>
-                <button id="slack" cy-data="slack-button" class="select btn waves-effect waves-light"><a href="#output"><i
-                            class="fab fa-slack"></i>
+                <button id="mkusb" cy-data="mkusb-button" class="select btn waves-effect waves-light"><a
+                        href="#output"><i class="fab fa-usb"></i> mkusb</a></button>
+                <button id="qbittorrent" cy-data="qbittorrent-button" class="select btn waves-effect waves-light"><a
+                        href="#output"><i class="fas fa-cloud-download-alt"></i> qBittorrent</a></button>
+                <button id="slack" cy-data="slack-button" class="select btn waves-effect waves-light"><a
+                        href="#output"><i class="fab fa-slack"></i>
                         Slack</a></button>
-                <button id="standardNotes" cy-data="standardNotes-button" class="select btn waves-effect waves-light"><a href="#output"><i
-                            class="fas fa-sticky-note"></i> Standard Notes</a></button>
-                <button id="visualStudioCode" cy-data="vsc-button" class="select btn waves-effect waves-light"><a href="#output"><i
-                            class="fas fa-code"></i> VSCode</a></button>
+                <button id="standardNotes" cy-data="standardNotes-button" class="select btn waves-effect waves-light"><a
+                        href="#output"><i class="fas fa-sticky-note"></i> Standard Notes</a></button>
+                <button id="visualStudioCode" cy-data="vsc-button" class="select btn waves-effect waves-light"><a
+                        href="#output"><i class="fas fa-code"></i> VSCode</a></button>
             </div>
 
             <!-- icons -->
             <div id="iconSelect" class="col s12">
-                <button id="papirus" cy-data="papirus-button" class="select btn waves-effect waves-light" href="#output">Papirus
+                <button id="papirus" cy-data="papirus-button" class="select btn waves-effect waves-light"
+                    href="#output">Papirus
                     Icon Pack</button>
-                <button id="inverse" cy-data="inverse-button" class="select btn waves-effect waves-light" href="#output">Inverse
+                <button id="inverse" cy-data="inverse-button" class="select btn waves-effect waves-light"
+                    href="#output">Inverse
                     Icon Pack</button>
-                <button id="inspire" cy-data="inspire-button" class="select btn waves-effect waves-light" href="#output">Inspire
+                <button id="inspiration" cy-data="inspiration-button" class="select btn waves-effect waves-light"
+                    href="#output">Inspiration
                     Icon Pack</button>
-                <button id="flatRemix" cy-data="flatRemix-button" class="select btn waves-effect waves-light" href="#output">Flat
+                <button id="flatRemix" cy-data="flatRemix-button" class="select btn waves-effect waves-light"
+                    href="#output">Flat
                     Remix Icon Pack</button>
-                <button id="vimix" cy-data="vimix-button" class="select btn waves-effect waves-light" href="#output">Vimix
+                <button id="vimix" cy-data="vimix-button" class="select btn waves-effect waves-light"
+                    href="#output">Vimix
                     Icon
                     Pack</button>
-                <button id="uniform" cy-data="uniform-button" class="select btn waves-effect waves-light" href="#output">Uniform
+                <button id="uniform" cy-data="uniform-button" class="select btn waves-effect waves-light"
+                    href="#output">Uniform
                     Icon Pack</button>
             </div>
 
             <!-- themes -->
             <div id="themeSelect" class="col s12">
-                <button id="mcMojave" cy-data="mcMojave-button" class="select btn waves-effect waves-light" href="#output">McMojave Theme</button>
+                <button id="mcMojave" cy-data="mcMojave-button" class="select btn waves-effect waves-light"
+                    href="#output">McMojave Theme</button>
                 <button id="nordic" class="select btn waves-effect waves-light" href="#output">Nordic Theme</button>
-                <button id="macterial" class="select btn waves-effect waves-light" href="#output">Macterial Theme</button>
+                <button id="macterial" class="select btn waves-effect waves-light" href="#output">Macterial
+                    Theme</button>
                 <button id="ant" class="select btn waves-effect waves-light" href="#output">Ant Theme</button>
-                <button id="ultimatePlataDark" class="select btn waves-effect waves-light" href="#output">Ultimate-Plata-Dark Theme</button>
+                <button id="ultimatePlataDark" class="select btn waves-effect waves-light"
+                    href="#output">Ultimate-Plata-Dark Theme</button>
             </div>
 
             <!-- miscellaneous -->
             <div id="miscSelect" class="col s12">
-                <button id="openAsRoot" cy-data="openAsRoot-button" class="select elementaryOnly btn btn-primary" href="#output">Open
+                <button id="openAsRoot" cy-data="openAsRoot-button" class="select btn btn-primary"
+                    href="#output">Open
                     As Root (Elementary)</button>
-                <button id="terminalShortcut" cy-data="openAsRoot-button" class="select elementaryOnly btn btn-primary" href="#output">Terminal Shortcut (Solus)</button>
+                <button id="terminalShortcut" cy-data="terminalShortcut-button" class="select btn btn-primary"
+                    href="#output">Terminal Shortcut (Solus)</button>
             </div>
         </div>
 
         <!-- sidebar -->
-        <ul id="slide-out" class="sidenav">
+        <ul id="slide-out" cy-data="sidebar" class="sidenav">
             <h3 id="sideHeading">My List</h3>
             <li>
-                <div id="sideOutput" cy-data="sideOutput-area" >
+                <div id="sideOutput" cy-data="sideOutput-area">
                 </div>
                 <div class="divider"></div>
             </li>
             <li>
-                <a class="btn waves-effect waves-light" cy-data="sidebarDownload-button" id="sidebarDownload" href="#!"><i
-                        class="fas fa-cart-arrow-down"></i> Download</a>
+                <a class="btn waves-effect waves-light" cy-data="sidebarDownload-button" id="sidebarDownload"
+                    href="#!"><i class="fas fa-cart-arrow-down"></i> Download</a>
                 <!-- <ul class="collapsible">
                     <li>
                         <div class="collapsible-header">Send via Email</div>
@@ -172,30 +202,32 @@
                         </div>
                     </li>
                 </ul> -->
-                <a class="btn" id="sidebarClear" cy-data="clear-button" href="#!"><i class="fas fa-recycle"></i> Clear List</a>
+                <a class="btn" id="sidebarClear" cy-data="clear-button" href="#!"><i class="fas fa-recycle"></i> Clear
+                    List</a>
             </li>
         </ul>
         <div class="divider"></div>
         <!-- sidebar trigger -->
-    <div class="fixed-action-btn sidenav-trigger" cy-data="sidenav-button" data-target="slide-out">
-        <a id="sideTrigger" class="btn-floating btn-large"><i class="fas fa-shopping-cart"></i></a>
-    </div>
+        <div class="fixed-action-btn sidenav-trigger" data-target="slide-out">
+            <a id="sideTrigger" cy-data="sidenav-button" class="btn-floating btn-large"><i class="fas fa-shopping-cart"></i></a>
+        </div>
 
         <!-- output -->
         <div id="output" class="outputDiv">
             <h2 id="outputHeading" class="center-align">Output:</h2>
             <p id="outputIntro"></p>
-            <div id="outputInstructions"></div>
+            <div id="outputInstructions" cy-data="outputInstructions-area"></div>
             <div class="outputInner">
-                <div id="outputContent" cy-data="output-area" ></div>
+                <div id="outputContent" cy-data="output-area"></div>
             </div>
-            <button id="copyOutput" cy-data="copy-button" class="btn"><i class="far fa-copy"></i> <span class="buttonText">Copy
+            <button id="copyOutput" cy-data="copy-button" class="btn"><i class="far fa-copy"></i> <span
+                    class="buttonText">Copy
                     Code</span></button>
-            <button id="saveOutput" cy-data="addToList-button" class="btn"><i class="fas fa-cart-plus"></i> <span class="buttonText">Add to
+            <button id="saveOutput" cy-data="addToList-button" class="btn"><i class="fas fa-cart-plus"></i> <span
+                    class="buttonText">Add to
                     List</span></button>
             <button id="downloadOutput" cy-data="download-button" class="btn"><i class="fas fa-file-download"></i> <span
                     class="buttonText">Download File</span></button>
-            <!-- <button id="emailOutput" class="btn">Send via email</button> -->
         </div>
     </div>
 
