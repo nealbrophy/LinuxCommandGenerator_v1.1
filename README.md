@@ -9,7 +9,7 @@ A web app where users can get app, theme, and icon-pack installation commands fo
 ### Demo
 You can view the GitHub pages deployment [here](https://nealbrophy.github.io/LinuxCommandGenerator/)
 
-<img src="https://github.com/nealbrophy/LinuxCommandGenerator/blob/master/images/desktop-use.gif" alt="site demo on desktop" width="500px" align="left">
+<img src="https://github.com/nealbrophy/LinuxCommandGenerator/blob/master/images/desktop-use.gif" alt="site demo on desktop" width="800px" align="left">
 
 <img src="https://github.com/nealbrophy/LinuxCommandGenerator/blob/master/images/mobile-use.gif" alt="site demo on iphone" width="200px" align="center">
 
