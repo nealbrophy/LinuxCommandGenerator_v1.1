@@ -6,10 +6,12 @@
 A web app where users can get app, theme, and icon-pack installation commands for a variety of Linux distributions. The current selection is limited to distros I personally use regularly but I would like to expand in the future.
 
 ---
-### Where is it?
+### Demo
 #### TBC
 
-+++ add GitHub pages link
+<!-- <img src="https://github.com/nealbrophy/GetHubby/blob/master/images/ipad.gif" alt="site demo on ipad" width="300px" align="left">
+
+<img src="https://github.com/nealbrophy/GetHubby/blob/master/images/iphone.gif" alt="site demo on iphone" width="200px" align="center"> -->
 
 ---
 ### How do I get it?
@@ -32,8 +34,8 @@ To run the site locally you can clone it using the following instructions:
 - 2.) Select the name of the app, theme, or icon-pack you want to install.
 - 3.) See the CLI commands in the output section.
 - 4.) Copy to clipboard and paste into your terminal (all of these commands require super user permissions, please make sure you have this before proceeding).
-<!-- - 5.) If you would like to collect multiple app/theme/icon commands, simply click the "add to list/save for later" button then continue collecting more commands as needed.
-- 6.) When you have collected all the commands you need (see Step 5 above) you can either download them as a .txt file or email the list of commands to yourself. -->
+- 5.) If you would like to collect multiple app/theme/icon commands, simply click the "add to list/save for later" button then continue collecting more commands as needed.
+- 6.) When you have collected all the commands you need (see Step 5 above) you can either download them as a .txt file or email the list of commands to yourself.
 
 ---
 ### How did you do it?
@@ -55,15 +57,31 @@ To run the site locally you can clone it using the following instructions:
 ### How did you test it?
 
 #### Automated End-to-End
-Automated end-to-end testing was accomplished using Cypress.io.
+The project was NOT developed using TDD practices as I was not yet comfortable enough with JS knowledge to do so. Instead I opted for end-to-end testing using Cypress.io. The tests were written to validate:
+- That the page loaded ok
+- That the default/start state blank and the output & list areas were empty
+- That each distro behaved as expected such that the ouput and instructions elements populated expected contents
+- That the sidebar element was hidden until it's trigger-button was clicked
+- That the download as file button successfully downloaded a file with the name "linux-commands.html"
+
+##### How to run Cypress tests
+- First clone the repo as discribed [above](#deployment).
+- Next make sure you have nodeJS installed (if not [install it](https://nodejs.org/en/))
+- Open Visual Studio Code and open a terminal (Ctrl+Shift+)
+- Make sure you're in the root directory of the repo (if not use the `cd` command in terminal to navigate there)
+- In terminal type `npm init` and fill out the fields as desired
+- In terminal type `npm install cypress --save-dev`
+- Once the install process finishes, launch Cypress by typing `npx cypress run` (if you run into problems [check the documentation](https://docs.cypress.io/guides/guides/command-line.html#Installation))
+- When the Cypress GUI launches simply click on the name of the test script `commandGeneratorTests.spec.js`
 
 #### Manual testing
+In addition to the automated end-to-end tests described above the site was also rigourously tested via simple user interaction. These tests were carried out using Firefox and Chrome on a variety of Linux distributions (Elementary, Endeavour, Ubuntu, Solus) and using the in-browser developer tools
 
-
-Bugs unsquashed:
+#### Open Bugs:
 - Copy text button presents "Copy unsuccessful" toast during cypress test but present "Copy successful" in manual testing.
+- Having `scroll-behavior: smooth` enabled in the stylesheet causes some Cypress tests to fail.
 
-Bugs squashed: 
+#### Bugs Squashed: 
 - If "Add To List" button was clicked after an OS had been selected but before an app had been selected the addToList function would run and add an "undefined" item to the list which would in turn be added to the sidebar and output to file.
     - __FIX__: Add if statment to prevent addToList from running unless both distro and app/icon/theme selections had been populated and present warning msg to user if not.
 - Clicking "Copy Code" button before anything had been selected would present confirmation that copy was successful but there was nothing to copy.

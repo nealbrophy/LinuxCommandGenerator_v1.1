@@ -394,6 +394,23 @@ describe('Linux Command Generator Initial Tests', () => {
         // clicking sidebar trigger should reveal sidebar
         cy.get('a[cy-data="sidenav-button"]').click();
         cy.get('ul[cy-data="sidebar"]').should('be.visible');
+        cy.get('a[cy-data="sidebarDownload-button"').click();
+        cy.get('.toast').contains('List is empty');
+        cy.get('a[cy-data="clear-button"]').click();
+        cy.get('.toast').contains('List already empty');
+    })
+
+    it('downloads a file successfully', () => {
+        cy.get('a[cy-data="arch-button"]').click();
+        cy.get('a[cy-data="appImage-button"]').click();
+        cy.get('button[cy-data="addToList-button"]').click();
+        cy.get('a[cy-data="sidenav-button"]').should('have.class', 'pulse');
+        cy.get('div[cy-data="sideOutput-area"]').contains('appimage');
+        cy.get('a[cy-data="sidenav-button"]').click();
+        cy.get('a[cy-data="sidebarDownload-button"').click();
+        cy.readFile('../../../../Downloads/linux-commands.html');
+
+
     })
 
 });
