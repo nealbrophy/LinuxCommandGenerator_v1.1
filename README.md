@@ -102,6 +102,7 @@ Bugs squashed:
 - [TecRobust](https://www.tecrobust.com/)
 - [ItsUbuntu](https://itsubuntu.com/)
 - [DraSite](https://drasite.com/)
+- [LinuxHint](https://linuxhint.com)
 - [AddictiveTips](https://www.addictivetips.com/)
 - [OSRadar](https://www.osradar.com/)
 - [ArchLinux Wiki](https://wiki.archlinux.org/)

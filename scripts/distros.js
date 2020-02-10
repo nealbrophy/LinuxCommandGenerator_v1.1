@@ -4,40 +4,40 @@
 // arch
 const arch = {
     _appImageLauncher: {
-        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "sudo pacman -S appimagelauncher-git"
+        instructions: "first, install yay. Then, execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "yay -S appimagelauncher-git"
     },
     _atom: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "atom"
+        code: "sudo pacman -S atom"
     },
     _chrome: {
-        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "sudo pacman -S git && \ncd Downloads && \ngit clone https://aur.archlinux.org/google-chrome.git && \ncd google-chrome/ && \nmakepkg -s -y && \nsudo pacman -U google-chrome-63.0.3239.108-1-x86_64.pkg.tar.xz"
+        instructions: "first, install yay. Then, execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "yay -S google-chrome"
     },
     _firefox: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "firefox"
-    },
-    _git: {
-        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "git"
+        code: "sudo pacman -S firefox"
     },
     _gitKraken: {
-        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "gitKraken"
+        instructions: "first, install yay. Then, execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "yay -S gitkraken"
     },
     _kdeConnect: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "kdeConnect"
+        code: "sudo pacman -S kdeconnect"
+    },
+    _qBittorrent: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo pacman -S qbittorrent"
     },
     _slack: {
-        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "slack"
+        instructions: "first, install yay. Then, execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "yay -S slack-desktop"
     },
     _standardNotes: {
-        instructions: "install <em>App Image Launcher</em> first, then execute the below code in terminal and select \"Integrate and Run\" on the pop-up.",
-        code: "wget https://github.com/standardnotes/desktop/releases/download/v3.0.25/Standard-Notes-3.0.25.AppImage && \nchmod a+x Standard-Notes-3.0.25.AppImage && \n./Standard-Notes-3.0.25.AppImage"
+        instructions: "install <em>App Image Launcher</em> first, then execute the below code in terminal and select \"OK\"/\"Yes\", then select \"Integrate and Run\" on the pop-up.",
+        code: "wget https://github.com/standardnotes/desktop/releases/download/v3.0.25/Standard-Notes-3.0.25.AppImage && \n./Standard-Notes-3.0.25.AppImage"
     },
     _visualStudioCode: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
@@ -47,27 +47,35 @@ const arch = {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "sudo pacman -S papirus-icon-theme"
     },
-    _inverse: {
+    _arc: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "inverse"
+        code: "sudo pacman -S arc-icon-theme"
     },
     _flatRemix: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "git clone https://github.com/daniruiz/flat-remix && \nmkdir -p ~/.icons && \ncp -r flat-remix/Flat-Remix* ~/.icons/ && \ngsettings set org.gnome.desktop.interface icon-theme \"Flat-Remix\"",
-        code2: "sudo pacman -S flat-remix"
+        code: "git clone https://github.com/daniruiz/flat-remix && \nmkdir -p ~/.icons && \ncp -r flat-remix/Flat-Remix* ~/.icons/ && \ngsettings set org.gnome.desktop.interface icon-theme \"Flat-Remix\""
     },
-    _inspiration: {
+    _moka: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "inspiration"
+        code: "sudo pacman -S moka-icone-theme"
+    },
+    _faba: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo pacman -S faba-icon-theme"
     },
     _vimix: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "vimix"
+        code: "yay -S vimix-icon-theme"
     },
-    _uniform: {
+    _ant: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "yaourt -S uniform-icon-theme"
+        code: "yay -S ant-gtk-theme"
     },
+    _yay: {
+        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "sudo pacman -S yay"
+    },
+
     _distSummary: "<p>Arch Linux  is a Linux distribution for computers based on x86-64 architectures. Arch adheres to five principles: simplicity, modernity, pragmatism, user centrality and versatility. In general, the principles maintain minimal distribution-specific changes, minimal breakage with updates, pragmatic over ideological design choices, user-friendliness, and minimal bloat.</p>",
     _logo: `<i class="fl-archlinux sideLogo-solus" aria-hidden="true"></i>`,
     get appImageLauncher() {
@@ -82,17 +90,14 @@ const arch = {
     get firefox() {
         return this._firefox;
     },
-    get git() {
-        return this._git;
-    },
     get gitKraken() {
         return this._gitKraken;
     },
     get kdeConnect() {
         return this._kdeConnect;
     },
-    get mcMojave() {
-        return this._mcMojave;
+    get qBittorrent() {
+        return this._qBittorrent;
     },
     get standardNotes() {
         return this._standardNotes;
@@ -106,20 +111,26 @@ const arch = {
     get papirus() {
         return this._papirus;
     },
-    get inverse() {
-        return this._inverse;
+    get arc() {
+        return this._arc;
     },
     get flatRemix() {
         return this._flatRemix;
     },
+    get faba() {
+        return this._faba;
+    },
+    get ant() {
+        return this._ant;
+    },
+    get moka() {
+        return this._moka;
+    },
     get vimix() {
         return this._vimix;
     },
-    get uniform() {
-        return this._uniform;
-    },
-    get inspire() {
-        return this._inspiration;
+    get yay() {
+        return this._yay;
     },
     get logo() {
         return this._logo;
@@ -161,7 +172,7 @@ const debian = {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "sudo add-apt-repository ppa:mkusb/ppa && \nsudo apt-get update && \nsudo apt install -y mkusb mkusb-nox usb-pack-efi"
     },
-    _qbittorrent: {
+    _qBittorrent: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "sudo apt install -y qbittorrent"
     },
@@ -230,8 +241,8 @@ const debian = {
     get mkusb() {
         return this._mkusb;
     },
-    get qbittorrent() {
-        return this._qbittorrent;
+    get qBittorrent() {
+        return this._qBittorrent;
     },
     get standardNotes() {
         return this._standardNotes;
@@ -307,7 +318,7 @@ const elementary = {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "sudo add-apt-repository ppa:mkusb/ppa && \nsudo apt-get update && \nsudo apt install -y mkusb mkusb-nox usb-pack-efi"
     },
-    _qbittorrent: {
+    _qBittorrent: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "sudo apt install -y qbittorrent"
     },
@@ -394,8 +405,8 @@ const elementary = {
     get mkusb() {
         return this._mkusb;
     },
-    get qbittorrent() {
-        return this._qbittorrent;
+    get qBittorrent() {
+        return this._qBittorrent;
     },
     get openAsRoot() {
         return this._openAsRoot;
@@ -606,7 +617,7 @@ const ubuntu = {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "sudo add-apt-repository universe && \nsudo apt-get update && \nsudo apt install -y mkusb mkusb-nox usb-pack-efi"
     },
-    _qbittorrent: {
+    _qBittorrent: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "sudo apt install -y qbittorrent"
     },
@@ -678,8 +689,8 @@ const ubuntu = {
     get mkusb() {
         return this._mkusb;
     },
-    get qbittorrent() {
-        return this._qbittorrent;
+    get qBittorrent() {
+        return this._qBittorrent;
     },
     get standardNotes() {
         return this._standardNotes;

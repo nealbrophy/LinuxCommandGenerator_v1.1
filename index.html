@@ -123,7 +123,7 @@
                         Connect</a></button>
                 <button id="mkusb" cy-data="mkusb-button" class="select btn waves-effect waves-light"><a
                         href="#output"><i class="fab fa-usb"></i> mkusb</a></button>
-                <button id="qbittorrent" cy-data="qbittorrent-button" class="select btn waves-effect waves-light"><a
+                <button id="qBittorrent" cy-data="qBittorrent-button" class="select btn waves-effect waves-light"><a
                         href="#output"><i class="fas fa-cloud-download-alt"></i> qBittorrent</a></button>
                 <button id="slack" cy-data="slack-button" class="select btn waves-effect waves-light"><a
                         href="#output"><i class="fab fa-slack"></i>
@@ -132,50 +132,47 @@
                         href="#output"><i class="fas fa-sticky-note"></i> Standard Notes</a></button>
                 <button id="visualStudioCode" cy-data="vsc-button" class="select btn waves-effect waves-light"><a
                         href="#output"><i class="fas fa-code"></i> VSCode</a></button>
+                <button id="yay" cy-data="yay-button" class="select btn waves-effect waves-light" href="#output"><a hre="#output"><i class="fas fa-terminal"></i> Yay (Arch)</a></button>
             </div>
 
             <!-- icons -->
             <div id="iconSelect" class="col s12">
-                <button id="papirus" cy-data="papirus-button" class="select btn waves-effect waves-light"
-                    href="#output">Papirus
-                    Icon Pack</button>
-                <button id="inverse" cy-data="inverse-button" class="select btn waves-effect waves-light"
-                    href="#output">Inverse
-                    Icon Pack</button>
-                <button id="inspiration" cy-data="inspiration-button" class="select btn waves-effect waves-light"
-                    href="#output">Inspiration
-                    Icon Pack</button>
-                <button id="flatRemix" cy-data="flatRemix-button" class="select btn waves-effect waves-light"
-                    href="#output">Flat
-                    Remix Icon Pack</button>
-                <button id="vimix" cy-data="vimix-button" class="select btn waves-effect waves-light"
-                    href="#output">Vimix
+                <button id="papirus" cy-data="papirus-button" class="select btn waves-effect waves-light"><a href="#output">Papirus
+                    Icon Pack</a></button>
+                <button id="inverse" cy-data="inverse-button" class="select btn waves-effect waves-light"><a href="#output">Inverse
+                    Icon Pack</a></button>
+                <button id="inspiration" cy-data="inspiration-button" class="select btn waves-effect waves-light"><a href="#output">Inspiration
+                    Icon Pack</a></button>
+                <button id="flatRemix" cy-data="flatRemix-button" class="select btn waves-effect waves-light"><a href="#output">Flat
+                    Remix Icon Pack</a></button>
+                <button id="vimix" cy-data="vimix-button" class="select btn waves-effect waves-light"><a href="#output">Vimix
                     Icon
-                    Pack</button>
-                <button id="uniform" cy-data="uniform-button" class="select btn waves-effect waves-light"
-                    href="#output">Uniform
-                    Icon Pack</button>
+                    Pack</a></button>
+                <button id="uniform" cy-data="uniform-button" class="select btn waves-effect waves-light"><a href="#output">Uniform
+                    Icon Pack</a></button>
+                <button id="arc" cy-data="arc-button" class="select btn waves-effect waves-light"><a href="#output">Arc
+                    Icon Pack</a></button>
+                <button id="moka" cy-data="moka-button" class="select btn waves-effect waves-light"><a href="#output">Moka
+                    Icon Pack</a></button>
+                <button id="faba" cy-data="faba-button" class="select btn waves-effect waves-light"><a href="#output">Faba
+                    Icon Pack</a></button>
             </div>
 
             <!-- themes -->
             <div id="themeSelect" class="col s12">
-                <button id="mcMojave" cy-data="mcMojave-button" class="select btn waves-effect waves-light"
-                    href="#output">McMojave Theme</button>
-                <button id="nordic" class="select btn waves-effect waves-light" href="#output">Nordic Theme</button>
-                <button id="macterial" class="select btn waves-effect waves-light" href="#output">Macterial
-                    Theme</button>
-                <button id="ant" class="select btn waves-effect waves-light" href="#output">Ant Theme</button>
-                <button id="ultimatePlataDark" class="select btn waves-effect waves-light"
-                    href="#output">Ultimate-Plata-Dark Theme</button>
+                <button id="mcMojave" cy-data="mcMojave-button" class="select btn waves-effect waves-light"><a href="#output">McMojave Theme</a></button>
+                <button id="nordic" class="select btn waves-effect waves-light"><a href="#output">Nordic Theme</a></button>
+                <button id="macterial" class="select btn waves-effect waves-light"><a href="#output">Macterial
+                    Theme</a></button>
+                <button id="ant" class="select btn waves-effect waves-light"><a href="#output">Ant Theme</a></button>
+                <button id="ultimatePlataDark" class="select btn waves-effect waves-light"><a href="#output">Ultimate-Plata-Dark Theme</a></button>
             </div>
 
             <!-- miscellaneous -->
             <div id="miscSelect" class="col s12">
-                <button id="openAsRoot" cy-data="openAsRoot-button" class="select btn btn-primary"
-                    href="#output">Open
-                    As Root (Elementary)</button>
-                <button id="terminalShortcut" cy-data="terminalShortcut-button" class="select btn btn-primary"
-                    href="#output">Terminal Shortcut (Solus)</button>
+                <button id="openAsRoot" cy-data="openAsRoot-button" class="select btn btn-primary"><a href="#output">Open
+                    As Root (Elementary)</a></button>
+                <button id="terminalShortcut" cy-data="terminalShortcut-button" class="select btn btn-primary"><a href="#output">Terminal Shortcut (Solus)</a></button>
             </div>
         </div>
 
@@ -209,7 +206,8 @@
         <div class="divider"></div>
         <!-- sidebar trigger -->
         <div class="fixed-action-btn sidenav-trigger" data-target="slide-out">
-            <a id="sideTrigger" cy-data="sidenav-button" class="btn-floating btn-large"><i class="fas fa-shopping-cart"></i></a>
+            <a id="sideTrigger" cy-data="sidenav-button" class="btn-floating btn-large"><i
+                    class="fas fa-shopping-cart"></i></a>
         </div>
 
         <!-- output -->
@@ -220,7 +218,7 @@
             <div class="outputInner">
                 <div id="outputContent" cy-data="output-area"></div>
             </div>
-            <button id="copyOutput" cy-data="copy-button" class="btn"><i class="far fa-copy"></i> <span
+            <button id="copyOutput" class="btn" cy-data="copy-button"><i class="far fa-copy"></i> <span
                     class="buttonText">Copy
                     Code</span></button>
             <button id="saveOutput" cy-data="addToList-button" class="btn"><i class="fas fa-cart-plus"></i> <span

@@ -1,6 +1,10 @@
 /* ========
     GLOBAL
    ======== */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -116,7 +120,10 @@ a:visited {
     margin-top: 3rem;;
 }
 
-#appSelect .btn:disabled a {
+#appSelect .btn:disabled a,
+#iconSelect .btn:disabled a,
+#themeSelect .btn:disabled a,
+#miscSelect .btn:disabled a {
     color: rgba(2, 2, 2, 0.589) !important;
 }
 
