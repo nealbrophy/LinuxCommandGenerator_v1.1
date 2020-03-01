@@ -487,6 +487,10 @@ const solus = {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "sudo snap install code"
     },
+    _numlockx: {
+        instructions: "download the numlockx file from <a href=\"https://www.archlinux.org/packages/community/x86_64/numlockx/\">https://www.archlinux.org/packages/community/x86_64/numlockx/</a> then execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros) and finally when editing the .conf file add <code><mark>greeter-setup-script=/usr/bin/numlockx on</mark></code> in the <code><strong>[Seat:*]</strong></code> section",
+        code: "tar -I zstd -xvf numlockx && \ncd usr/bin && \nsudo mv numlockx /usr/bin && \nsudo nano /usr/share/lightdm/lightdm.conf.d/10_solus_default.conf"
+    },
     _flatRemix: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
         code: "git clone https://github.com/daniruiz/flat-remix && \nmkdir -p ~/.icons && \ncp -r flat-remix/Flat-Remix* ~/.icons/ && \ngsettings set org.gnome.desktop.interface icon-theme \"Flat-Remix\""
@@ -511,6 +515,9 @@ const solus = {
     },
     get visualStudioCode() {
         return this._visualStudioCode;
+    },
+    get numlockx() {
+        return this._numlockx;
     },
     get flatRemix() {
         return this._flatRemix;

@@ -60,7 +60,7 @@ To run the site locally you can clone it using the following instructions:
 - 3.) See the CLI commands in the output section.
 - 4.) Copy to clipboard and paste into your terminal (all of these commands require super user permissions, please make sure you have this before proceeding).
 - 5.) If you would like to collect multiple app/theme/icon commands, simply click the "add to list/save for later" button then continue collecting more commands as needed.
-- 6.) When you have collected all the commands you need (see Step 5 above) you can either download them as a .txt file or email the list of commands to yourself.
+- 6.) When you have collected all the commands you need (see Step 5 above) you can download them as a nicely formatted .html file.
 
 ---
 #### Technologies used
