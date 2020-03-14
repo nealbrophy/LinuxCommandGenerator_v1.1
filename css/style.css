@@ -31,11 +31,14 @@ li {
    ========= */
 .btn {
     margin: 1rem;
-    background-color: #000ecc;
+    /* background-color: #000ecc; */
+    background-color: #0A41AE;
 }
 
+
 .btn:hover {
-    background-color: #000766;
+    /* background-color: #000766; */
+    background-color: #083285;
 }
 
 .select a {
@@ -46,10 +49,19 @@ li {
 .distro {
     margin-left: 2rem;
     margin-bottom: 1rem;
-    background-color: #ff5443;
+    background-color: #FD323C;
+    /* background-color: #000ecc; */
     width: 100px;
     height: 100px;
     border-radius: 50%;
+}
+
+.distro:hover {
+    background-color: #FB000D;
+}
+
+.distro:active {
+    background-color: #ff8a80;
 }
 
 .distroWrapper {
@@ -147,15 +159,15 @@ li {
 }
 
 #saveOutput {
-    background-color: #f54e00;
+    background-color: #FD323C;
 }
 
 #saveOutput:hover {
-    background-color: #b33900;
+    background-color: #FB000D;
 }
 
 #saveOutput:active {
-    background-color: #ff854d;
+    background-color: #ff8a80;
 }
 
 #downloadOutput {
@@ -196,7 +208,7 @@ li {
 
 /* sidebar */
 .sidenav {
-    background-color: #79a0a5;
+    background-color: rgb(1, 161, 151);
     max-height: 100vh;
 }
 
@@ -215,9 +227,12 @@ li {
     font-size: 1.5rem !important;
 }
 
-#sideTrigger {
-    background-color: #a4680e;
+.alertColour {
+    background-color: #FD323C !important;
+}
 
+#sideTrigger {
+    background-color: #007A71;
 }
 
 #sideHeading {
@@ -231,27 +246,27 @@ li {
 }
 
 #sidebarDownload {
-    background-color: #eb9514;
+    background-color: #0A41AE;
 }
 
 #sidebarDownload:hover {
-    background-color: #a4680e;
+    background-color: #083285;
 }
 
 #sidebarDownload:active {
-    background-color: #f3bf72;
+    background-color: #2f58a8;
 }
 
 #sidebarClear {
-    background-color: #ff5443;
+    background-color: #FD323C;
 }
 
 #sidebarClear:hover {
-    background-color: #ff2d1a;
+    background-color: #FB000D;
 }
 
 #sidebarClear:active {
-    background-color: #ff8a80;
+    background-color: #f8676e;
 }
 
 #sidebarClear .fa-recycle,

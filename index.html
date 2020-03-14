@@ -33,12 +33,12 @@
         <div class="divider"></div>
         <br>
         <br>
-        <div class="container distroContainer">
-            <h2 id="distroHeading" class="center-align">Pick Your Distro:</h2>
+        <div class="container distroContainer center-align">
+            <h2 id="distroHeading">Pick Your Distro:</h2>
             <div class="bgCreme"></div>
             <p class="distroWrapper center-align">
-                <a class="distroLogo arch-linux left s1 distro hoverable center-align tooltipped"
-                    data-position="bottom" data-tooltip="Arch Linux" id="arch" href="#matTabs">
+                <a class="distroLogo arch-linux left s1 distro hoverable center-align tooltipped" data-position="bottom"
+                    data-tooltip="Arch Linux" id="arch" href="#matTabs">
                     <span id="arch-logo" class="fl-archlinux center-align"></span>
                 </a>
                 <a class="distroLogo debian-linux left s1 distro hoverable center-align tooltipped"
@@ -46,8 +46,7 @@
                     <span id="debian-logo" class="fl-debian center-align"></span>
                 </a>
                 <a class="distroLogo elementary-linux left s1 distro hoverable center-align tooltipped"
-                    data-position="bottom" data-tooltip="Elementary OS" id="elementary"
-                    href="#matTabs">
+                    data-position="bottom" data-tooltip="Elementary OS" id="elementary" href="#matTabs">
                     <span id="elementary-logo" class="fl-elementary center-align"></span>
                 </a>
                 <a class="distroLogo solus-linux left s1 distro hoverable center-align tooltipped"
@@ -58,8 +57,8 @@
                     data-position="bottom" data-tooltip="Ubuntu" id="ubuntu" href="#matTabs">
                     <span id="ubuntu-logo" class="fl-ubuntu center-align"></span>
                 </a>
-                <a class="distroLogo not-sure left s1 distro hoverable center-align tooltipped"
-                    data-position="bottom" data-tooltip="Not sure" id="notSure" href="#matTabs">
+                <a class="distroLogo not-sure left s1 distro hoverable center-align tooltipped" data-position="bottom"
+                    data-tooltip="Not sure" id="notSure" href="#matTabs">
                     <span id="not-sure-logo" class="fa fa-question center-align"></span>
                 </a>
             </p>
@@ -70,103 +69,92 @@
                 <div id="matTabs" class=" col s12">
                     <h2 id="tabHeading" class="center-align">Pick an App:</h2>
                     <ul class="tabs tabs-fixed-width">
-                        <li class="tab col s2"><a id="appTab" class="tabLink"
-                                href="#appSelect">Apps</a>
+                        <li class="tab col s2"><a id="appTab" class="tabLink" href="#appSelect">Apps</a>
                         </li>
-                        <li class="tab col s2"><a id="iconTab" class="tabLink"
-                                href="#iconSelect">Icons</a></li>
-                        <li class="tab col s2"><a id="themeTab" class="tabLink"
-                                href="#themeSelect">Themes</a></li>
-                        <li class="tab col s2"><a id="miscTab" class="tabLink"
-                                href="#miscSelect">Misc</a></li>
+                        <li class="tab col s2"><a id="iconTab" class="tabLink" href="#iconSelect">Icons</a></li>
+                        <li class="tab col s2"><a id="themeTab" class="tabLink" href="#themeSelect">Themes</a></li>
+                        <li class="tab col s2"><a id="miscTab" class="tabLink" href="#miscSelect">Misc</a></li>
                     </ul>
                 </div>
                 <!-- applications -->
                 <div id="appSelect" class="col s12">
-                    <a href="#output" id="appImageLauncher"
-                        class="select btn waves-effect waves-light"><i class="fas fa-rocket"></i>
+                    <a href="#output" id="appImageLauncher" class="select btn waves-effect waves-light hoverable"><i
+                            class="fas fa-rocket"></i>
                         AppImageLauncher</a>
-                    <a href="#output" id="atom" class="select btn waves-effect waves-light"><i
+                    <a href="#output" id="atom" class="select btn waves-effect waves-light hoverable"><i
                             class="fas fa-atom"></i>
                         Atom</a>
-                    <a href="#output" id="chrome" class="select btn waves-effect waves-light"><i
+                    <a href="#output" id="chrome" class="select btn waves-effect waves-light hoverable"><i
                             class="fab fa-chrome"></i>
                         Chrome</a>
-                    <a href="#output" id="tweaks" class="select btn waves-effect waves-light"><i
+                    <a href="#output" id="tweaks" class="select btn waves-effect waves-light hoverable"><i
                             class="fas fa-sliders-h"></i>
                         Elementary-Tweaks</a>
-                    <a href="#output" id="firefox"
-                        class="select btn waves-effect waves-light"><i class="fab fa-firefox-browser"></i>
+                    <a href="#output" id="firefox" class="select btn waves-effect waves-light"><i
+                            class="fab fa-firefox-browser hoverable"></i>
                         Firefox</a>
-                    <a href="#output" id="git" class="select btn waves-effect waves-light"><i
+                    <a href="#output" id="git" class="select btn waves-effect waves-light hoverable"><i
                             class="fab fa-github"></i>
                         Git</a>
-                    <a href="#output" id="gitKraken"
-                        class="select btn waves-effect waves-light"><i class="fab fa-gitkraken"></i>
+                    <a href="#output" id="gitKraken" class="select btn waves-effect waves-light hoverable"><i
+                            class="fab fa-gitkraken"></i>
                         GitKraken</a>
-                    <a href="#output" id="kdeConnect"
-                        class="select btn waves-effect waves-light"><i class="fas fa-mobile-alt"></i> KDE
+                    <a href="#output" id="kdeConnect" class="select btn waves-effect waves-light hoverable"><i
+                            class="fas fa-mobile-alt"></i> KDE
                         Connect</a>
-                    <a href="#output" id="mkusb" class="select btn waves-effect waves-light"><i
+                    <a href="#output" id="mkusb" class="select btn waves-effect waves-light hoverable"><i
                             class="fab fa-usb"></i> mkusb</a>
-                    <a href="#output" id="qBittorrent"
-                        class="select btn waves-effect waves-light"><i class="fas fa-cloud-download-alt"></i>
+                    <a href="#output" id="qBittorrent" class="select btn waves-effect waves-light hoverable"><i
+                            class="fas fa-cloud-download-alt"></i>
                         qBittorrent</a>
-                    <a href="#output" id="slack" class="select btn waves-effect waves-light"><i
+                    <a href="#output" id="slack" class="select btn waves-effect waves-light hoverable"><i
                             class="fab fa-slack"></i>
                         Slack</a>
-                    <a href="#output" id="standardNotes"
-                        class="select btn waves-effect waves-light"><i class="fas fa-sticky-note"></i> Standard
+                    <a href="#output" id="standardNotes" class="select btn waves-effect waves-light hoverable"><i
+                            class="fas fa-sticky-note"></i> Standard
                         Notes</a>
-                    <a href="#output" id="visualStudioCode"
-                        class="select btn waves-effect waves-light"><i class="fas fa-code"></i> VSCode</a>
+                    <a href="#output" id="visualStudioCode" class="select btn waves-effect waves-light hoverable"><i
+                            class="fas fa-code"></i> VSCode</a>
                     <a id="yay" class="select btn waves-effect waves-light" href="#output"><i
                             class="fas fa-terminal"></i> Yay</a>
                 </div>
                 <!-- icons -->
                 <div id="iconSelect" class="col s12">
-                    <a href="#output" id="papirus"
-                        class="select btn waves-effect waves-light">Papirus
+                    <a href="#output" id="papirus" class="select btn waves-effect waves-light hoverable">Papirus
                         Icon Pack</a>
-                    <a href="#output" id="inverse"
-                        class="select btn waves-effect waves-light">Inverse
+                    <a href="#output" id="inverse" class="select btn waves-effect waves-light hoverable">Inverse
                         Icon Pack</a>
-                    <a href="#output" id="inspiration"
-                        class="select btn waves-effect waves-light">Inspiration
+                    <a href="#output" id="inspiration" class="select btn waves-effect waves-light hoverable">Inspiration
                         Icon Pack</a>
-                    <a href="#output" id="flatRemix"
-                        class="select btn waves-effect waves-light">Flat
+                    <a href="#output" id="flatRemix" class="select btn waves-effect waves-light hoverable">Flat
                         Remix Icon Pack</a>
-                    <a href="#output" id="vimix"
-                        class="select btn waves-effect waves-light">Vimix
+                    <a href="#output" id="vimix" class="select btn waves-effect waves-light hoverable">Vimix
                         Icon
                         Pack</a>
-                    <a href="#output" id="uniform"
-                        class="select btn waves-effect waves-light">Uniform
+                    <a href="#output" id="uniform" class="select btn waves-effect waves-light hoverable">Uniform
                         Icon Pack</a>
-                    <a href="#output" id="arc" class="select btn waves-effect waves-light">Arc
+                    <a href="#output" id="arc" class="select btn waves-effect waves-light hoverable">Arc
                         Icon Pack</a>
-                    <a href="#output" id="moka" class="select btn waves-effect waves-light">Moka
+                    <a href="#output" id="moka" class="select btn waves-effect waves-light hoverable">Moka
                         Icon Pack</a>
-                    <a href="#output" id="faba" class="select btn waves-effect waves-light">Faba
+                    <a href="#output" id="faba" class="select btn waves-effect waves-light hoverable">Faba
                         Icon Pack</a>
                 </div>
                 <!-- themes -->
                 <div id="themeSelect" class="col s12">
-                    <a href="#output" id="mcMojave"
-                        class="select btn waves-effect waves-light">McMojave Theme</a>
-                    <a href="#output" id="vimixTheme"
-                        class="select btn waves-effect waves-light">Vimix
+                    <a href="#output" id="mcMojave" class="select btn waves-effect waves-light hoverable">McMojave
                         Theme</a>
-                    <a href="#output" id="ant" class="select btn waves-effect waves-light">Ant
+                    <a href="#output" id="vimixTheme" class="select btn waves-effect waves-light hoverable">Vimix
+                        Theme</a>
+                    <a href="#output" id="ant" class="select btn waves-effect waves-light hoverable">Ant
                         Theme</a>
                 </div>
 
                 <!-- miscellaneous -->
                 <div id="miscSelect" class="col s12">
-                    <a href="#output" id="openAsRoot" class="select btn btn-primary">Open
+                    <a href="#output" id="openAsRoot" class="select btn btn-primary hoverable">Open
                         As Root (Elementary)</a>
-                    <a href="#output" id="numlockx" class="select btn btn-primary">numlockx (Solus)</a>
+                    <a href="#output" id="numlockx" class="select btn btn-primary hoverable">numlockx (Solus)</a>
                 </div>
             </div>
 
@@ -180,8 +168,8 @@
                     <div class="divider"></div>
                 </li>
                 <li>
-                    <a class="btn waves-effect waves-light" id="sidebarDownload"
-                        href="#!"><i class="fas fa-file-download"></i> Download as file</a>
+                    <a class="btn waves-effect waves-light" id="sidebarDownload" href="#!"><i
+                            class="fas fa-file-download"></i> Download as file</a>
                     <a class="btn" id="sidebarClear" href="#!"><i class="fas fa-recycle"></i>
                         Clear
                         List</a>
@@ -189,7 +177,7 @@
             </ul>
             <!-- sidebar trigger -->
             <div class="fixed-action-btn sidenav-trigger" data-target="slide-out">
-                <a id="sideTrigger" class="btn-floating btn-large"><i
+                <a id="sideTrigger" class="btn-floating btn-large"><i id="triggerEnvelope"
                         class="fas fa-folder-open"></i></a>
             </div>
 
@@ -202,10 +190,12 @@
                     <div class="outputInner">
                         <div id="outputContent"></div>
                     </div>
-                    <button id="copyOutput" class="btn"><i class="far fa-copy"></i> <span
-                            class="buttonText">Copy Code</span></button>
-                    <button id="saveOutput" class="btn"><i class="fas fa-folder-plus"></i>
-                        <span class="buttonText">Add to List</span></button>
+                    <div class="outputControls center">
+                        <button id="copyOutput" class="btn"><i class="far fa-copy"></i> <span class="buttonText"> Copy
+                                Code</span></button>
+                        <button id="saveOutput" class="btn"><i class="fas fa-plus-square"></i>
+                            <span class="buttonText"> Add to List</span></button>
+                    </div>
                 </div>
             </div>
         </div>

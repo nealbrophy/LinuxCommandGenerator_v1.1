@@ -8,6 +8,7 @@ let selection; // to hold user app/icon/theme selection.
 let choice; // to hold text name of user's OS
 let userList = {}; // object to hold list of users chosen commands
 let dataOutput = '';
+let sideCount = 0;
 
 /*  ==========
     FUNCTIONS
@@ -86,13 +87,15 @@ const addToList = (distname, selectionname) => {
         // if so, check if app has already been added
         if (userList[distname][selectionname]) {
             // if so, present toast-message
+            M.Toast.dismissAll();
             M.toast({
-                html: 'Item already on list!'
+                html: 'Item already on list!',
             });
         } else {
             // if not add app to existing OS
             userList[distname][selectionname] = osObj[selection];
             // confirm item added with toast msg
+            M.Toast.dismissAll();
             M.toast({
                 html: 'Added to list!'
             });
@@ -102,7 +105,9 @@ const addToList = (distname, selectionname) => {
         // if OS hasnt' been added, add it then add app/theme/icon to it
         userList[distname] = {};
         userList[distname][selectionname] = osObj[selection];
+        sideCount++;
         // confirm item added with toast msg
+        M.Toast.dismissAll();
         M.toast({
             html: 'Added to list!'
         });
@@ -143,10 +148,12 @@ const addToSidebar = (osinfo, selectioninfo) => {
             document.getElementById(`${osinfo}_side`).appendChild(sideElementContent);
         }
     } else {
-        // if distro not already in sidebar create element to hold it, populate it, and add ID
+        // if distro not already in sidebar create element to hold it, populate it, and add ID. Increase sideCount var by 1.
         let sideElement = document.createElement("p");
         sideElement.innerHTML = `${osObj.logo}:`;
         sideElement.setAttribute("id", `${osinfo}_side`);
+        sideCount++;
+        console.log(sideCount);
 
 
         // create element to hold app selection, populate it, add ID, and append to distro element
@@ -159,25 +166,30 @@ const addToSidebar = (osinfo, selectioninfo) => {
 
         // add to DOM
         document.getElementById("sideOutput").appendChild(sideElement);
-        // M.toast({
-        //     html: 'Added to list!'
-        // });
+        M.Toast.dismissAll();
+        M.toast({
+            html: 'Added to list!'
+        });
     }
 };
 
 // clear list
 const clearSidebar = () => {
-    let listChildren = document.getElementById("sideOutput").childNodes;
-    if (listChildren.length > 1) {
-        for (let i = 0; i < listChildren.length; i++) {
+    if (sideCount > 0) {
+        // for (let i = 0; i < sideCount; i++) {
+        //     console.log("Called!");
             document.getElementById("sideOutput").innerHTML = "";
             document.getElementById("sideTrigger").setAttribute("class", "btn-floating btn-large");
-            userList = {};
-            M.toast({
-                html: "List cleared"
-            });
-        }
+            document.getElementById("triggerEnvelope").setAttribute("class", "fas fa-folder-open");
+            userList = {}; 
+        // }
+        M.Toast.dismissAll();
+        M.toast({
+            html: "List cleared"
+        });
+        sideCount = 0;
     } else {
+        M.Toast.dismissAll();
         M.toast({
             html: "List already empty"
         });
@@ -197,6 +209,7 @@ function copyToClipboard(inputText) {
         try {
             let successful = document.execCommand("copy");
             let msg = successful ? "successful" : "unsuccessful";
+            M.Toast.dismissAll();
             M.toast({
                 html: 'Copy ' + msg + '!'
             });
@@ -208,6 +221,7 @@ function copyToClipboard(inputText) {
         }
         document.body.removeChild(textArea);
     } else {
+        M.Toast.dismissAll();
         M.toast({
             html: "Nothing to copy yet"
         });
@@ -234,6 +248,7 @@ for (let i = 0; i < distros.length; i++) {
         document.getElementById("outputIntro").innerText = "";
         document.getElementById("outputContent").innerText = "";
         document.getElementById("outputInstructions").innerHTML = "";
+        selection = undefined;
 
         // store the text from the clicked id
         choice = document.getElementById(this.id).innerText;
@@ -284,8 +299,10 @@ document.getElementById("saveOutput").addEventListener("click", function () {
     if (osName && selection && choice !== "notSure") {
         addToSidebar(osName, selection);
         addToList(osName, selection);
-        document.getElementById("sideTrigger").setAttribute("class", "btn-floating btn-large pulse");
+        document.getElementById("sideTrigger").setAttribute("class", "btn-floating btn-large pulse alertColour");
+        document.getElementById("triggerEnvelope").setAttribute("class", "fas fa-folder-plus");
     } else {
+        M.Toast.dismissAll();
         M.toast({
             html: 'Nothing to add yet'
         });
@@ -294,6 +311,7 @@ document.getElementById("saveOutput").addEventListener("click", function () {
 
 // add click listener to sidebar clear list button
 document.getElementById("sidebarClear").addEventListener("click", function () {
+    console.log("Clicked!!")
     clearSidebar();
 });
 
@@ -303,6 +321,7 @@ document.getElementById("sidebarDownload").addEventListener("click", function ()
         let dataForFile = `<html><head><title>Linux Command Generator - Output</title></head><body><h1>Your Linux Commands</h1><p>Below are the commands you saved.</p>${dataOutput}</body></html>`;
         downloadFile(dataForFile);
     } else {
+        M.Toast.dismissAll();
         M.toast({
             html: 'List is empty'
         });

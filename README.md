@@ -115,6 +115,8 @@ In addition to the automated end-to-end tests described above the site was also 
 #### Squashed Bugs: 
 - If "Add To List" button was clicked after an OS had been selected but before an app had been selected the addToList function would run and add an "undefined" item to the list which would in turn be added to the sidebar and output to file.
     - __FIX__: Add if statment to prevent addToList from running unless both distro and app/icon/theme selections had been populated and present warning msg to user if not.
+- If "Add To List" button was clicked after after an app had previously been added and after a new distro had been selected bbut before a an app for the newly selected distro has been selected the previously added app would populate even though user hadn't selected it for the new distro choice.
+    - __FIX__: Reset "selection" variable to undefined every time a distro choice button is clicked.    
 - Clicking "Copy Code" button before anything had been selected would present confirmation that copy was successful but there was nothing to copy.
     - __FIX__: Add if statement to check that distro and app/icon/theme selection had both been made. If not, present msg saying nothing to copy.
 - Clicking "Download File" button would execute as expected but if user then opened sidebar and clicked "Download" button the same file would download even though no items were present in the saved list.
