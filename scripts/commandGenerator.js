@@ -89,7 +89,7 @@ const addToList = (distname, selectionname) => {
             // if so, present toast-message
             M.Toast.dismissAll();
             M.toast({
-                html: 'Item already on list!',
+                html: 'Item already on list!', classes: 'toastColour'
             });
         } else {
             // if not add app to existing OS
@@ -97,7 +97,7 @@ const addToList = (distname, selectionname) => {
             // confirm item added with toast msg
             M.Toast.dismissAll();
             M.toast({
-                html: 'Added to list!'
+                html: 'Added to list!', classes: 'toastColour'
             });
             addToDataForFileOutput(choice, selectionname);
         }
@@ -109,7 +109,7 @@ const addToList = (distname, selectionname) => {
         // confirm item added with toast msg
         M.Toast.dismissAll();
         M.toast({
-            html: 'Added to list!'
+            html: 'Added to list!', classes: 'toastColour'
         });
         addToDataForFileOutput(choice, selectionname);
     }
@@ -168,7 +168,7 @@ const addToSidebar = (osinfo, selectioninfo) => {
         document.getElementById("sideOutput").appendChild(sideElement);
         M.Toast.dismissAll();
         M.toast({
-            html: 'Added to list!'
+            html: 'Added to list!', classes: 'toastColour'
         });
     }
 };
@@ -185,13 +185,13 @@ const clearSidebar = () => {
         // }
         M.Toast.dismissAll();
         M.toast({
-            html: "List cleared"
+            html: "List cleared", classes: 'toastColour'
         });
         sideCount = 0;
     } else {
         M.Toast.dismissAll();
         M.toast({
-            html: "List already empty"
+            html: "List already empty", classes: 'toastColour'
         });
     }
 };
@@ -211,11 +211,11 @@ function copyToClipboard(inputText) {
             let msg = successful ? "successful" : "unsuccessful";
             M.Toast.dismissAll();
             M.toast({
-                html: 'Copy ' + msg + '!'
+                html: 'Copy ' + msg + '!', classes: 'toastColour'
             });
         } catch (err) {
             M.toast({
-                html: "Copy failed"
+                html: "Copy failed", classes: 'toastColour'
             });
             console.log("Copy failed", err);
         }
@@ -223,7 +223,7 @@ function copyToClipboard(inputText) {
     } else {
         M.Toast.dismissAll();
         M.toast({
-            html: "Nothing to copy yet"
+            html: "Nothing to copy yet", classes: 'toastColour'
         });
     }
 }
@@ -273,6 +273,10 @@ for (i = 0; i < toInstall.length; i++) {
         }
         // check if valid OS has been selected, if not print message
         if (!osObj) {
+            M.Toast.dismissAll();
+            M.toast({
+                html: "Please select distro", classes: 'toastColour'
+            });
             document.getElementById("outputIntro").innerText = "Please select an Operating System above.";
             document.getElementById("outputContent").innerText = "";
         } else {
@@ -304,7 +308,7 @@ document.getElementById("saveOutput").addEventListener("click", function () {
     } else {
         M.Toast.dismissAll();
         M.toast({
-            html: 'Nothing to add yet'
+            html: 'Nothing to add yet', classes: 'toastColour'
         });
     }
 });
@@ -323,7 +327,7 @@ document.getElementById("sidebarDownload").addEventListener("click", function ()
     } else {
         M.Toast.dismissAll();
         M.toast({
-            html: 'List is empty'
+            html: 'List is empty', classes: 'toastColour'
         });
     }
 });

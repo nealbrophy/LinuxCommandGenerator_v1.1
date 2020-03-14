@@ -209,7 +209,6 @@ li {
 /* sidebar */
 .sidenav {
     background-color: rgb(1, 161, 151);
-    max-height: 100vh;
 }
 
 .sideLogo {
@@ -278,6 +277,13 @@ li {
 
 #sideOutput p span:nth-child(2) {
     margin-left: .5rem;
+}
+
+/* toasts */
+.toastColour {
+    background-color: #8137d6;
+    font-weight: 700;
+    width: 13.5rem;
 }
 
 /* ===============
