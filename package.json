@@ -1,13 +1,13 @@
 {
   "name": "linux-command-generator",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A web app for retrieving terminal commands to install a selection of apps on a selection of distros",
   "main": "commandGenerator.js",
   "dependencies": {
     "file-saver": "^2.0.2"
   },
   "devDependencies": {
-    "cypress": "^4.0.1"
+    "cypress": "^4.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -21,7 +21,7 @@
     "linux"
   ],
   "author": "Neal Brophy",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nealbrophy/LinuxCommandGenerator/issues"
   },
