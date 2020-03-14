@@ -31,13 +31,11 @@ li {
    ========= */
 .btn {
     margin: 1rem;
-    /* background-color: #000ecc; */
     background-color: #0A41AE;
 }
 
 
 .btn:hover {
-    /* background-color: #000766; */
     background-color: #083285;
 }
 
@@ -50,7 +48,6 @@ li {
     margin-left: 2rem;
     margin-bottom: 1rem;
     background-color: #FD323C;
-    /* background-color: #000ecc; */
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -86,7 +83,6 @@ li {
 #arch,
 #debian,
 #elementary,
-#solus,
 #ubuntu,
 #notSure {
     font-size: 3.5rem !important;
@@ -94,8 +90,12 @@ li {
     color: white;
 }
 
-#solus-logo {
-    font-size: 3.5rem !important;
+#suse {
+    color: white;
+}
+
+#suse-logo {
+    font-size: 4rem !important;
 }
 
 #distroHeading,
@@ -283,7 +283,6 @@ li {
 .toastColour {
     background-color: #8137d6;
     font-weight: 700;
-    width: 13.5rem;
 }
 
 /* ===============
@@ -300,6 +299,12 @@ li {
 
     .buttonText {
         display: initial;
+    }
+
+    .toastColour {
+        background-color: #8137d6;
+        font-weight: 700;
+        width: 13.5rem;
     }
 
     #distroHeading {

@@ -8,10 +8,10 @@
     </script>
     <!-- import google fonts -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Monofett|Montserrat&display=swap"
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display%7CMonofett%7CMontserrat&display=swap"
         rel="stylesheet">
     <!--import materialize.css -->
-    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen" />
     <!--import font-logos -->
     <link href="//cdn.jsdelivr.net/gh/Lukas-W/font-logos@v0.11/assets/font-logos.css" rel="stylesheet">
     <!-- import font awesome -->
@@ -49,9 +49,9 @@
                     data-position="bottom" data-tooltip="Elementary OS" id="elementary" href="#matTabs">
                     <span id="elementary-logo" class="fl-elementary center-align"></span>
                 </a>
-                <a class="distroLogo solus-linux left s1 distro hoverable center-align tooltipped"
-                    data-position="bottom" data-tooltip="Solus" id="solus" href="#matTabs">
-                    <span id="solus-logo" class="icofont-sail-boat center-align"></span>
+                <a class="distroLogo suse-linux left s1 distro hoverable center-align tooltipped"
+                    data-position="bottom" data-tooltip="SUSE Leap" id="suse" href="#matTabs">
+                    <span id="suse-logo" class="fl-opensuse center-align"></span>
                 </a>
                 <a class="distroLogo ubuntu-linux left s1 distro hoverable center-align tooltipped"
                     data-position="bottom" data-tooltip="Ubuntu" id="ubuntu" href="#matTabs">
@@ -161,11 +161,11 @@
             <div class="divider"></div>
             <!-- sidebar -->
             <ul id="slide-out" class="sidenav">
-                <span id="sideHeading">My List</span>
+                <li id="sideHeading">My List</li>
+                <div class="divider"></div>
                 <li>
-                    <div id="sideOutput">
+                    <div id="sideOutput" class="left-align">
                     </div>
-                    <div class="divider"></div>
                 </li>
                 <li>
                     <a class="btn waves-effect waves-light" id="sidebarDownload" href="#!"><i
@@ -213,6 +213,7 @@
             });
         });
     </script>
+    <!-- custom scripts -->
     <script src="scripts/arch.js"></script>
     <script src="scripts/debian.js"></script>
     <script src="scripts/elementary.js"></script>

@@ -44,14 +44,16 @@ The site is intentionally easy to navigate to avoid needing a navbar or page lin
 #### Deployment
 LinuxCommandGenerator is hosted on GitHub pages and deployed from the master branch. Any changes committed to the master branch will automatically update on the GitHub deployment.
 
-To run the site locally you can clone it using the following instructions:
+To make a local copy of the repo on your machine:
 - Create a folder in the desired location on your computer.
 - Open a terminal ([Mac instructions](https://macpaw.com/how-to/use-terminal-on-mac)|[Windows instructions](https://www.quora.com/How-do-I-open-terminal-in-windows)|[Linux instructions](https://www.howtogeek.com/howto/22283/four-ways-to-get-instant-access-to-a-terminal-in-linux/))
-- Navigate to the folder you created using `cd` command (e.g. `cd ~/Documents/LinuxCommandGenerator`)
+- Navigate to the folder you created using `cd` command in terminal (e.g. `cd ~/Documents/LinuxCommandGenerator`)
 - Type `git init`
 - Next type `git clone https://github.com/nealbrophy/LinuxCommandGenerator`
 - To break the link between your local copy and the repo at https://github.com/nealbrophy/LinuxCommandGenerator type `git remote rm origin`
 
+To run the app:
+- Double click 
 
 ---
 ### How do I use it?
@@ -77,7 +79,7 @@ To run the site locally you can clone it using the following instructions:
 
 #### Automated End-to-End
 The project was NOT developed using TDD practices as I was not yet comfortable enough with my JS knowledge to do so. Instead I opted for end-to-end testing using Cypress.io. The tests were written to validate:
-- That the page loads ok
+- That the page loads correctly
 - That the default/start state is blank and the output & list areas were empty
 - That each distro behaves as expected such that the `ouput` and `instructions` elements populate expected contents
 - That the `sidebar` element was hidden until it's trigger-button is clicked
@@ -85,8 +87,9 @@ The project was NOT developed using TDD practices as I was not yet comfortable e
 
 ##### How to run Cypress tests
 - First clone the repo as discribed [above](#deployment).
-- Next make sure you have nodeJS installed (if not [install it](https://nodejs.org/en/))
-- Open Visual Studio Code and open a terminal (`Ctrl+Shift+`)
+- Next make sure you have nodeJS installed (to check you can enter `node -v` in a terminal window, if you get a version number then it's already installed)
+- if not [install it](https://nodejs.org/en/)
+- Open Visual Studio Code and open a terminal (`Ctrl+Shift+[backtick]`)
 - Make sure you're in the root directory of the repo (if not use the `cd` command in terminal to navigate there)
 - In terminal type `npm init` and fill out the fields as desired
 - In terminal type `npm install cypress --save-dev`
@@ -100,12 +103,13 @@ In addition to the automated end-to-end tests described above the site was also 
 - Apps/Icons/Themes which are not available for selected distro should appear as disabled/inactive
 - Clicking "Copy" and "Add to list" buttons before making a valid selection should present the user with a warning message of same
 - Sidebar trigger should only pulse when items are in the list and stop when the list is cleared
-- Clicking clicking "Download as file" after user has cleared the list should notify user that the list is empty.
+- Clicking "Add to List" button after selecting a NEW distro (i.e. having previously selected a distro & app) but BEFORE selecting an app for the new distro. 
+- Clicking "Download as file" after user has cleared the list should notify user that the list is empty.
 
 #### Validation
 - HTML was validated using [W3C Markup Validation Service](https://validator.w3.org/)
-    - **NOTE**: The Markup Validator presents multiple errors for the "cy-data" property, however, this has no effect on the code and is considered best practice for testing with Cypress.
 - CSS was validated using [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+- Colours checked for WCAG validity using [Contrast Checker](https://contrastchecker.com/)
 - JS was validated using [JSHint](https://jshint.com/)
 
 #### Open Bugs:
