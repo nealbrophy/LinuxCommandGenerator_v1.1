@@ -135,7 +135,7 @@ In addition to the automated end-to-end tests described above the site was also 
 - HTML was validated using [W3C Markup Validation Service](https://validator.w3.org/)
 - CSS was validated using [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 - Colours checked for WCAG validity using [Contrast Checker](https://contrastchecker.com/)
-- JS was validated using [JSHint](https://jshint.com/)
+- JS was validated using the [Dirk Baeumer's JShint for VSC](https://marketplace.visualstudio.com/items?itemName=dbaeumer.jshint)
 
 #### Open Bugs:
 - Copy text button presents "Copy unsuccessful" toast during cypress test but present "Copy successful" in manual testing.

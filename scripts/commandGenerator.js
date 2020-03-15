@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 /*  ===========
     GLOBAL VARs & OBJs
     =========== */
@@ -235,8 +236,8 @@ const downloadFile = (input) => {
         type: "text/plain;charset=utf-8"
     });
 
-    saveAs(blob, "linux-commands.html")
-}
+    saveAs(blob, "linux-commands.html");
+};
 
 /*  ===============
     EVENT LISTENERS
@@ -316,7 +317,7 @@ document.getElementById("saveOutput").addEventListener("click", function () {
 
 // add click listener to sidebar clear list button
 document.getElementById("sidebarClear").addEventListener("click", function () {
-    console.log("Clicked!!")
+    console.log("Clicked!!");
     clearSidebar();
 });
 
