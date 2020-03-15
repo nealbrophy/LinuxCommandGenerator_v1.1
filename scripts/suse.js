@@ -42,7 +42,7 @@ const suse = {
     },
     _papirus: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: ""
+        code: "sudo zypper in papirus-icon-theme"
     },
     _distSummary: "<p>openSUSE, formerly SUSE Linux and SuSE Linux Professional, is a Linux distribution sponsored by SUSE Linux GmbH and other companies. It is widely used throughout the world. The focus of its development is creating usable open-source tools for software developers and system administrators, while providing a user-friendly desktop and feature-rich server environment.</p>",
     _logo: `<i class="fl-opensuse" aria-hidden="true"></i>`,

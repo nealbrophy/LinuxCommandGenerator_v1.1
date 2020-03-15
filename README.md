@@ -16,7 +16,7 @@ You can view the GitHub pages deployment [here](https://nealbrophy.github.io/Lin
 ---
 
 ### UX
-The site is intended to be above all else, clean and simple. It was developed mobile first and should be easy & pleasant to use regardless of user device. I deliberately wanted to avoid navbars and multi-page linking to keep the site as simple to use and navigate as possible. The colour scheme is and fonts should suggest a 1950s retro style as I wanted bold, bright, and vibrant (bordering on gaudy) look.
+The site is intended to be above all else, clean and simple. It was developed mobile first and should be easy & pleasant to use regardless of user device. I deliberately wanted to avoid navbars and multi-page linking to keep the site as simple to use and navigate as possible. The colour scheme and fonts should suggest a 1950s retro style as I wanted a bold, bright, and vibrant (bordering on gaudy) look.
 
 #### User Stories
 - As a Linux user I would like a simple repository of useful commands which is easy to navigate and understand.
@@ -26,7 +26,7 @@ The site is intended to be above all else, clean and simple. It was developed mo
 #### Strategy
 The command generator concept occurred to me when I was trying to think of a project which I personally would find useful and which got me excited. As someone who frequently "distro hops" to try out different Linux distros I often have to spend time googling commands to install apps/icons/themes I regularly use because there are too many to memorize. I wanted a site that could be quickly & easily used to retrieve such commands and which I could expand in the future to include more Linux distros and obviously more apps/icons/themes.
 
-Eventually I would like to update the site so that rather than downloading a HTML file of the commands, users can download a install script to run on the specified distro. My knowledge of bash & shell scripts is not yet good enough to achieve this so the HTML download was a middle-ground. I would also like to impliment an "Email Commands" functionality so that users can email themselves the list of individual commands they need.
+Eventually I would like to update the site so that rather than downloading a HTML file of the commands, users can download a script to run on the specified distro which will install the selected apps/icons/themes. My knowledge of bash & shell scripts is not yet good enough to achieve this so the HTML download was a middle-ground. I would also like to impliment an "Email Commands" functionality so that users can email themselves the list of individual commands they need.
 
 #### Scope
 The goal of the app is to deliver specific linux commands quickly and simply, and to present them in a manner which is easy to copy & paste or download. To that end, features which may require an additional page, for example a "contact" page or "bug-report" page, were determined to be outside of the scope of this project. Likewise, a section containing summary/biographical type information about each distro was initially considered but as the intended audience would be existing linux users this was determined to be unnecessary info and thus out of scope.
@@ -38,9 +38,9 @@ The goal of the app is to deliver specific linux commands quickly and simply, an
 <img src="images/Mobile.png" alt="mobile-wireframe" width="200px">
 
 #### Surface
-The colour scheme and fonts are intended to suggest a retro 1950s style with the main title an eye catching "diner-name-at-top-of-menu" style. The two stylized fonts I chose for the page,([Major Mono Display](https://fonts.google.com/specimen/Major+Mono+Display) and [Monofett](https://fonts.google.com/specimen/Monofett)), had the desired feel but were too "busy" for use in the smaller text of the buttons/instructions. So I instead used them for the section titles. Monofett deliberately chosen for the output section as the thick black outline paired nicely with the black of the code-output area suggesting a relationship and the font harks back to old keyboard keys or screen output on a classic PC.
+The colour scheme and fonts are intended to suggest a retro 1950s style with the main title an eye catching "diner-name-at-top-of-a-menu" style. The two stylized fonts I chose for the page, ([Major Mono Display](https://fonts.google.com/specimen/Major+Mono+Display) and [Monofett](https://fonts.google.com/specimen/Monofett)), had the desired feel but were too "busy" for use as the smaller text of the buttons/instructions. I instead used them for the section titles. Monofett was deliberately chosen for the output section as the thick black outline paired nicely with the black of the code-output area suggesting a relationship and the font harks back to old keyboard keys or screen output on a classic PC.
 
-I wanted the distro buttons to have a bright colour so they would really stand-out and suggest that they're the main point of interest. Likewise I wanted the same effect for the sidebar-trigger button once items had been added to the list. Matching that colour again on the "Add to List" button was intended to suggest a relationship between those two functions (i.e. the bright Add to List button transmits it's colour to the trigger button when clicked and then the Clear List button removes that colour when clicked).
+I wanted the distro buttons to have a bright colour so they would really stand-out and suggest that they're the main/initial point of interest. Likewise I wanted the same effect for the sidebar-trigger button once items have been added to the list. Matching that colour again on the "Add to List" button was intended to suggest a relationship between those two functions (i.e. the bright "Add to List" button transmits it's colour to the trigger button when clicked and then the Clear List button removes that colour when clicked).
 
 ### Features
 The site is intentionally easy to navigate to avoid needing a navbar or page links. Clicking on a button should immediately take the user to the next step in the process. Materialize.CSS was used to make the site responsive and to enable the pleasant "flat" style design elements to keep things easy on the eyes.
@@ -61,8 +61,10 @@ The project was deployed to GitHub pages by:
 - Scrolling down to the "GitHub Pages" section
 <img src="images/step-3.png" alt="image of github pages section of settings tab" width="450px">
 
-- Clicking on the dropdown under "Source" and select "master branch"
+- Clicking on the dropdown under "Source" and selecting "master branch"
 <img src="images/step-4.png" alt="image of source dropdown" width="350px">
+
+- The link to your github pages deployment will be available once the pages refreshes (it may take a few mins before the deployment itself loads correctly when you click the link)
 
 To make a local copy of the repo on your machine:
 - Create a folder in the desired location on your computer.
