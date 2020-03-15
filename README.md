@@ -56,11 +56,11 @@ LinuxCommandGenerator was developed using [Visual Studio Code](https://code.visu
 The project was deployed to GitHub pages by:
 - Navigating to the repo page [here](https://github.com/nealbrophy/LinuxCommandGenerator_v1.1)
 - Clicking on the [settings tab](https://github.com/nealbrophy/LinuxCommandGenerator_v1.1/settings)
-<img src="images/step-2.png" alt="image of github settings tab location">
+<img src="images/step-2.png" alt="image of github settings tab location" width="150px" style="border: 2px solid black">
 - Scrolling down to the "GitHub Pages" section
-<img src="images/step-3.png" alt="image of github pages section of settings tab">
+<img src="images/step-3.png" alt="image of github pages section of settings tab" width="150px" style="border: 2px solid black">
 - Clicking on the dropdown under "Source" and selecting "master branch"
-<img src="images/step-4.png" alt="image of source dropdown">
+<img src="images/step-4.png" alt="image of source dropdown" width="150px" style="border: 2px solid black">
 
 To make a local copy of the repo on your machine:
 - Create a folder in the desired location on your computer.
