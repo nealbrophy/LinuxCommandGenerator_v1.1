@@ -4,7 +4,8 @@
   "description": "A web app for retrieving terminal commands to install a selection of apps on a selection of distros",
   "main": "commandGenerator.js",
   "dependencies": {
-    "file-saver": "^2.0.2"
+    "file-saver": "^2.0.2",
+    "http-server": "^0.12.1"
   },
   "devDependencies": {
     "cypress": "^4.1.0"

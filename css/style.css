@@ -128,19 +128,19 @@ li {
 }
 
 .outputDiv a {
-    color: #b33900;
+    color: #083285;
 }
 
 .outputDiv a:hover {
-    color: #ff854d;
+    color: #0A41AE;
 }
 
 .outputDiv a:active {
-    color: #ff1500;
+    color: #FB000D;
 }
 
 .outputDiv a:visited {
-    color: #000766;
+    color: #FD323C;
 }
 
 .buttonText {

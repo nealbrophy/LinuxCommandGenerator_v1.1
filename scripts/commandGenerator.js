@@ -32,10 +32,10 @@ const distroPicker = name => {
             osName = name;
             choice = "Elementary OS";
             break;
-        case "solus":
-            osObj = solus;
+        case "suse":
+            osObj = suse;
             osName = name;
-            choice = "Solus";
+            choice = "Suse";
             break;
         case "ubuntu":
             osObj = ubuntu;

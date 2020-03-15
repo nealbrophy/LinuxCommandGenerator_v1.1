@@ -9,9 +9,9 @@ A web app where users can get app, theme, and icon-pack installation commands fo
 ### Demo
 You can view the GitHub pages deployment [here](https://nealbrophy.github.io/LinuxCommandGenerator/)
 
-<img src="https://github.com/nealbrophy/LinuxCommandGenerator/blob/master/images/desktop-use.gif" alt="site demo on desktop" width="650px" align="left">
+<img src="https://github.com/nealbrophy/LinuxCommandGenerator/blob/master/images/lcg_desktop_demo.gif" alt="site demo on desktop" width="650px" align="left">
 
-<img src="https://github.com/nealbrophy/LinuxCommandGenerator/blob/master/images/mobile-use.gif" alt="site demo on iphone" width="200px" align="center">
+<img src="https://github.com/nealbrophy/LinuxCommandGenerator/blob/master/images/lcg_mobile_demo.gif" alt="site demo on iphone" width="200px" align="center">
 
 ---
 
@@ -28,10 +28,19 @@ The command generator concept occurred to me when I was trying to think of a pro
 
 Eventually I would like to update the site so that rather than downloading a HTML file of the commands, users can download a install script to run on the specified distro. My knowledge of bash & shell scripts is not yet good enough to achieve this so the HTML download was a middle-ground. I would also like to impliment an "Email Commands" functionality so that users can email themselves the list of individual commands they need.
 
-#### Wireframes
+#### Scope
+The goal of the app is to deliver specific linux commands quickly and simply, and to present them in a manner which is easy to copy & paste or download. To that end, features which may require an additional page, for example a "contact" page or "bug-report" page, were determined to be outside of the scope of this project. Likewise, a section containing summary/biographical type information about each distro was initially considered but as the intended audience would be existing linux users this was determined to be unnecessary info and thus out of scope.
+
+#### Skeleton
+##### Wireframes
 <img src="images/Desktop-1.png" alt="desktop-wireframe-1" width="500px">
 <img src="images/Desktop-2.png" alt="desktop-wireframe-2" width="500px">
 <img src="images/Mobile.png" alt="mobile-wireframe" width="200px">
+
+#### Surface
+The colour scheme and fonts are intended to suggest a retro 1950s style with the main title an eye catching "diner-name-at-top-of-menu" style. The two stylized fonts I chose for the page,([Major Mono Display](https://fonts.google.com/specimen/Major+Mono+Display) and [Monofett](https://fonts.google.com/specimen/Monofett)), had the desired feel but were too "busy" for use in the smaller text of the buttons/instructions. So I instead used them for the section titles. Monofett deliberately chosen for the output section as the thick black outline paired nicely with the black of the code-output area suggesting a relationship and the font harks back to old keyboard keys or screen output on a classic PC.
+
+I wanted the distro buttons to have a bright colour so they would really stand-out and suggest that they're the main point of interest. Likewise I wanted the same effect for the sidebar-trigger button once items had been added to the list. Matching that colour again on the "Add to List" button was intended to suggest a relationship between those two functions (i.e. the bright Add to List button transmits it's colour to the trigger button when clicked and then the Clear List button removes that colour when clicked).
 
 ### Features
 The site is intentionally easy to navigate to avoid needing a navbar or page links. Clicking on a button should immediately take the user to the next step in the process. Materialize.CSS was used to make the site responsive and to enable the pleasant "flat" style design elements to keep things easy on the eyes.
@@ -42,7 +51,16 @@ The site is intentionally easy to navigate to avoid needing a navbar or page lin
 - A simple interface for adding more distros/apps/icons/themes which doesn't require manually adding to the distros script
 
 #### Deployment
-LinuxCommandGenerator is hosted on GitHub pages and deployed from the master branch. Any changes committed to the master branch will automatically update on the GitHub deployment.
+LinuxCommandGenerator was developed using [Visual Studio Code](https://code.visualstudio.com/) and [GitKraken](https://www.gitkraken.com/). It is hosted on GitHub pages and deployed from the master branch. Any changes committed to the master branch will automatically update on the GitHub deployment.
+
+The project was deployed to GitHub pages by:
+- Navigating to the repo page [here](https://github.com/nealbrophy/LinuxCommandGenerator_v1.1)
+- Clicking on the [settings tab](https://github.com/nealbrophy/LinuxCommandGenerator_v1.1/settings)
+<img src="images/step-2.png" alt="image of github settings tab location">
+- Scrolling down to the "GitHub Pages" section
+<img src="images/step-3.png" alt="image of github pages section of settings tab">
+- Clicking on the dropdown under "Source" and selecting "master branch"
+<img src="images/step-4.png" alt="image of source dropdown">
 
 To make a local copy of the repo on your machine:
 - Create a folder in the desired location on your computer.
@@ -52,8 +70,10 @@ To make a local copy of the repo on your machine:
 - Next type `git clone https://github.com/nealbrophy/LinuxCommandGenerator`
 - To break the link between your local copy and the repo at https://github.com/nealbrophy/LinuxCommandGenerator type `git remote rm origin`
 
-To run the app:
-- Double click 
+To run the app locally you can:
+- Double click the "index.html" file in the root directory where you cloned the repo
+- Use a Visual Studio Code add-on such as [Ritwick Dey's Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to spin run the app on a local webserver
+- If you have Node.js installed you can navigate to the root folder where you cloned the repo, enter <code>npm install http-server</code> in terminal, then enter <code>npx http-server</code>.
 
 ---
 ### How do I use it?
@@ -124,7 +144,7 @@ In addition to the automated end-to-end tests described above the site was also 
 - Clicking "Copy Code" button before anything had been selected would present confirmation that copy was successful but there was nothing to copy.
     - __FIX__: Add if statement to check that distro and app/icon/theme selection had both been made. If not, present msg saying nothing to copy.
 - Clicking "Download File" button would execute as expected but if user then opened sidebar and clicked "Download" button the same file would download even though no items were present in the saved list.
-    __FIX__: Added final action after Download File listener executes to overwrite the dataOuput variable with an empty string.
+    - __FIX__: Added final action after Download File listener executes to overwrite the dataOuput variable with an empty string.
 - Copy Code functionality didn't work for the code from notSure selection. Having this ability for other code but not the code to determine which OS user is running seemed counterproductive and not great UX.
     - __FIX__: Refactored commandGenerator script to accept notSure as valid choice for the purposes of running the copyToClipBoard and downloadFile functions. Achieved by moving the if statement (to validate distro/app selection) from within the copyToClipboard & downloadFile functions to within the click-listener "Add to List" button listener (that way statement is evaluated prior to calling addToList function and doesn't interfere with copyToClipboard/downloadFile).
 
@@ -155,18 +175,17 @@ In addition to the automated end-to-end tests described above the site was also 
 
 
 #### Copy to Clipboard implementation from:
-[Dean Taylor's](https://stackoverflow.com/users/406712/dean-taylor) excellent answer on [StackOverflow](https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript)
+- [Dean Taylor's](https://stackoverflow.com/users/406712/dean-taylor) excellent answer on [StackOverflow](https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript)
 
 #### Download as file functionality uses:
-[FileSaver.js](https://github.com/eligrey/FileSaver.js/)
+- [FileSaver.js](https://github.com/eligrey/FileSaver.js/)
 
 #### Icons:
 - Arch, Debian, Elementary, and Ubuntu logo icons from [font-logos by lukas-w](https://github.com/lukas-w/font-logos)
-- Solus logo icon from [IcoFont](https://icofont.com/)
 - App icons from [FontAwesome](https://fontawesome.com/)
 
 ### Tux favicon
-Tux icon from [Favicon.cc](https://www.favicon.cc/?action=icon&file_id=899032)
+- Tux icon from [Favicon.cc](https://www.favicon.cc/?action=icon&file_id=899032)
 
 #### Site look/style inspired by:
 Cake Bar Exercise by [Codecademy](https://www.codecademy.com/courses/learn-javascript-unit-testing/projects/cake-clock)
@@ -182,4 +201,4 @@ Cake Bar Exercise by [Codecademy](https://www.codecademy.com/courses/learn-javas
 - [PicFlip](https://github.com/AJGreaves/picflip/blob/master/testing.md) testing write-up by AJ Greaves
 
 ### Screen record GIFs created using
-[Peek](https://github.com/phw/peek)
+- [Peek](https://github.com/phw/peek)

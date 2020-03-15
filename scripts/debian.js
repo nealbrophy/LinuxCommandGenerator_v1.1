@@ -45,8 +45,8 @@ const debian = {
         code: "wget https://github.com/standardnotes/desktop/releases/download/v3.0.25/Standard-Notes-3.0.25.AppImage && \nchmod a+x Standard-Notes-3.0.25.AppImage && \n./Standard-Notes-3.0.25.AppImage"
     },
     _visualStudioCode: {
-        instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
-        code: "wget https://code.visualstudio.com/docs/?dv=linux64_deb && \ncd ~/Downloads && \nsudo dpkg -i code_*.deb \nsudo apt-get install -f"
+        instructions: "download the .deb from <a href=\"https://code.visualstudio.com/docs/?dv=linux64_deb\">https://code.visualstudio.com/docs/?dv=linux64_deb</a>, then execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
+        code: "cd ~/Downloads && \nsudo dpkg -i code_*.deb \nsudo apt-get install -f"
     },
     _papirus: {
         instructions: "execute the below in terminal (<code>cmd+t</code> or <code>ctrl+alt+t</code> on most distros).",
