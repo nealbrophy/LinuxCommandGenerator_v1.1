@@ -9,9 +9,9 @@ A web app where users can get app, theme, and icon-pack installation commands fo
 ### Demo
 You can view the GitHub pages deployment [here](https://nealbrophy.github.io/LinuxCommandGenerator/)
 
-<img src="https://github.com/nealbrophy/LinuxCommandGenerator/blob/master/images/lcg_desktop_demo.gif" alt="site demo on desktop" width="650px" align="left">
+<img src="https://github.com/nealbrophy/LinuxCommandGenerator_v1.1/blob/master/images/lcg_desktop_demo.gif" alt="site demo on desktop" width="650px" align="left">
 
-<img src="https://github.com/nealbrophy/LinuxCommandGenerator/blob/master/images/lcg_mobile_demo.gif" alt="site demo on iphone" width="200px" align="center">
+<img src="https://github.com/nealbrophy/LinuxCommandGenerator_v1.1/blob/master/images/lcg_mobile_demo.gif" alt="site demo on iphone" width="200px" align="center">
 
 ---
 
