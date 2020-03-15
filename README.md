@@ -1,4 +1,4 @@
-# Linux Command Generator
+# Linux Command Generator v1.1
 ## Code Institute Milestone Project 2: Interactive Front End Development
 
 ### What is it?
