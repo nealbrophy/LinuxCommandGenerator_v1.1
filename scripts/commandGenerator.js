@@ -181,6 +181,7 @@ const clearSidebar = () => {
             document.getElementById("sideOutput").innerHTML = "";
             document.getElementById("sideTrigger").setAttribute("class", "btn-floating btn-large");
             document.getElementById("triggerEnvelope").setAttribute("class", "fas fa-folder-open");
+            dataOutput = '';
             userList = {}; 
         // }
         M.Toast.dismissAll();

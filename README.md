@@ -7,7 +7,7 @@ A web app where users can get app, theme, and icon-pack installation commands fo
 
 ---
 ### Demo
-You can view the GitHub pages deployment [here](https://nealbrophy.github.io/LinuxCommandGenerator/)
+You can view the GitHub pages deployment [here](https://nealbrophy.github.io/LinuxCommandGenerator_v1.1/)
 
 <img src="https://github.com/nealbrophy/LinuxCommandGenerator_v1.1/blob/master/images/lcg_desktop_demo.gif" alt="site demo on desktop" width="650px" align="left">
 
@@ -75,7 +75,7 @@ To make a local copy of the repo on your machine:
 To run the app locally you can:
 - Double click the "index.html" file in the root directory where you cloned the repo
 - Use a Visual Studio Code add-on such as [Ritwick Dey's Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to spin run the app on a local webserver
-- If you have Node.js installed you can navigate to the root folder where you cloned the repo, enter <code>npm install http-server</code> in terminal, then enter <code>npx http-server</code>.
+- If you have Node.js installed you can navigate to the root folder where you cloned the repo, enter `npm install http-server` in terminal, then enter `npx http-server`.
 
 ---
 ### How do I use it?
@@ -149,6 +149,8 @@ In addition to the automated end-to-end tests described above the site was also 
     - __FIX__: Added final action after Download File listener executes to overwrite the dataOuput variable with an empty string.
 - Copy Code functionality didn't work for the code from notSure selection. Having this ability for other code but not the code to determine which OS user is running seemed counterproductive and not great UX.
     - __FIX__: Refactored commandGenerator script to accept notSure as valid choice for the purposes of running the copyToClipBoard and downloadFile functions. Achieved by moving the if statement (to validate distro/app selection) from within the copyToClipboard & downloadFile functions to within the click-listener "Add to List" button listener (that way statement is evaluated prior to calling addToList function and doesn't interfere with copyToClipboard/downloadFile).
+- Clicking "Clear List" button would remove selections from the sidebar but NOT from the `dataOutput` variable which resulted in previously cleared entries still being downloaded despite not being in the current sidebar.
+    - __FIX__: added `sideOutput = ''` to `clearSidebar` function
 
 ---
 ### Credits/Acknowledgements
@@ -201,6 +203,9 @@ Cake Bar Exercise by [Codecademy](https://www.codecademy.com/courses/learn-javas
 - [Cypress End-to-End Testing](https://www.youtube.com/watch?v=7N63cMKosIE) by [Fireship](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA)
 - [Introduction to automation testing with Cypress.io](https://www.youtube.com/watch?v=l_Q7cbmYjDY) by [Execute Automation](https://www.youtube.com/channel/UCO1aucBAJgFR8odzfXOZ5uw)
 - [PicFlip](https://github.com/AJGreaves/picflip/blob/master/testing.md) testing write-up by AJ Greaves
+
+### Deployment write up with help from:
+- [boodstrap-grid-demo](https://github.com/AJGreaves/bootstrap-grid-demo) deployment write-up by AJ Greaves
 
 ### Screen record GIFs created using
 - [Peek](https://github.com/phw/peek)
