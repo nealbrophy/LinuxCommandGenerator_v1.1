@@ -226,6 +226,10 @@ li {
     font-size: 1.5rem !important;
 }
 
+.sidenav .fl-opensuse {
+    font-size: 2rem !important;
+}
+
 .alertColour {
     background-color: #FD323C !important;
 }
