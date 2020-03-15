@@ -118,7 +118,7 @@ The project was NOT developed using TDD practices as I was not yet comfortable e
 - In terminal type `npm init` and fill out the fields as desired
 - In terminal type `npm install cypress --save-dev`
 - Once the install process finishes, launch Cypress by typing `npx cypress open` (if you run into problems [check the documentation](https://docs.cypress.io/guides/guides/command-line.html#Installation))
-- Have the tests execute in terminal instead of opening the Cypress GUI enter `npx cypress run`
+- To execute the tests in terminal instead of opening the Cypress GUI enter `npx cypress run`
 - When the Cypress GUI launches simply click on the name of the test script `commandGeneratorTests.spec.js` and the tests will run
 - The test scipt can be found in `Cypress > Integration` folder within the root directory
 
