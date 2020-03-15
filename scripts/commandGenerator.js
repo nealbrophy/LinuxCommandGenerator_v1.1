@@ -154,8 +154,6 @@ const addToSidebar = (osinfo, selectioninfo) => {
         sideElement.innerHTML = `${osObj.logo}:`;
         sideElement.setAttribute("id", `${osinfo}_side`);
         sideCount++;
-        console.log(sideCount);
-
 
         // create element to hold app selection, populate it, add ID, and append to distro element
         let sideElementContent = document.createElement("span");
@@ -177,14 +175,11 @@ const addToSidebar = (osinfo, selectioninfo) => {
 // clear list
 const clearSidebar = () => {
     if (sideCount > 0) {
-        // for (let i = 0; i < sideCount; i++) {
-        //     console.log("Called!");
             document.getElementById("sideOutput").innerHTML = "";
             document.getElementById("sideTrigger").setAttribute("class", "btn-floating btn-large");
             document.getElementById("triggerEnvelope").setAttribute("class", "fas fa-folder-open");
             dataOutput = '';
             userList = {}; 
-        // }
         M.Toast.dismissAll();
         M.toast({
             html: "List cleared", classes: 'toastColour'
@@ -317,7 +312,6 @@ document.getElementById("saveOutput").addEventListener("click", function () {
 
 // add click listener to sidebar clear list button
 document.getElementById("sidebarClear").addEventListener("click", function () {
-    console.log("Clicked!!");
     clearSidebar();
 });
 
