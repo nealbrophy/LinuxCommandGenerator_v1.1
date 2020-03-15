@@ -90,7 +90,8 @@ const addToList = (distname, selectionname) => {
             // if so, present toast-message
             M.Toast.dismissAll();
             M.toast({
-                html: 'Item already on list!', classes: 'toastColour'
+                html: 'Item already on list!',
+                classes: 'toastColour'
             });
         } else {
             // if not add app to existing OS
@@ -98,7 +99,8 @@ const addToList = (distname, selectionname) => {
             // confirm item added with toast msg
             M.Toast.dismissAll();
             M.toast({
-                html: 'Added to list!', classes: 'toastColour'
+                html: 'Added to list!',
+                classes: 'toastColour'
             });
             addToDataForFileOutput(choice, selectionname);
         }
@@ -110,7 +112,8 @@ const addToList = (distname, selectionname) => {
         // confirm item added with toast msg
         M.Toast.dismissAll();
         M.toast({
-            html: 'Added to list!', classes: 'toastColour'
+            html: 'Added to list!',
+            classes: 'toastColour'
         });
         addToDataForFileOutput(choice, selectionname);
     }
@@ -167,7 +170,8 @@ const addToSidebar = (osinfo, selectioninfo) => {
         document.getElementById("sideOutput").appendChild(sideElement);
         M.Toast.dismissAll();
         M.toast({
-            html: 'Added to list!', classes: 'toastColour'
+            html: 'Added to list!',
+            classes: 'toastColour'
         });
     }
 };
@@ -175,20 +179,22 @@ const addToSidebar = (osinfo, selectioninfo) => {
 // clear list
 const clearSidebar = () => {
     if (sideCount > 0) {
-            document.getElementById("sideOutput").innerHTML = "";
-            document.getElementById("sideTrigger").setAttribute("class", "btn-floating btn-large");
-            document.getElementById("triggerEnvelope").setAttribute("class", "fas fa-folder-open");
-            dataOutput = '';
-            userList = {}; 
+        document.getElementById("sideOutput").innerHTML = "";
+        document.getElementById("sideTrigger").setAttribute("class", "btn-floating btn-large");
+        document.getElementById("triggerEnvelope").setAttribute("class", "fas fa-folder-open");
+        dataOutput = '';
+        userList = {};
         M.Toast.dismissAll();
         M.toast({
-            html: "List cleared", classes: 'toastColour'
+            html: "List cleared",
+            classes: 'toastColour'
         });
         sideCount = 0;
     } else {
         M.Toast.dismissAll();
         M.toast({
-            html: "List already empty", classes: 'toastColour'
+            html: "List already empty",
+            classes: 'toastColour'
         });
     }
 };
@@ -208,11 +214,13 @@ function copyToClipboard(inputText) {
             let msg = successful ? "successful" : "unsuccessful";
             M.Toast.dismissAll();
             M.toast({
-                html: 'Copy ' + msg + '!', classes: 'toastColour'
+                html: 'Copy ' + msg + '!',
+                classes: 'toastColour'
             });
         } catch (err) {
             M.toast({
-                html: "Copy failed", classes: 'toastColour'
+                html: "Copy failed",
+                classes: 'toastColour'
             });
             console.log("Copy failed", err);
         }
@@ -220,7 +228,8 @@ function copyToClipboard(inputText) {
     } else {
         M.Toast.dismissAll();
         M.toast({
-            html: "Nothing to copy yet", classes: 'toastColour'
+            html: "Nothing to copy yet",
+            classes: 'toastColour'
         });
     }
 }
@@ -272,7 +281,8 @@ for (i = 0; i < toInstall.length; i++) {
         if (!osObj) {
             M.Toast.dismissAll();
             M.toast({
-                html: "Please select distro", classes: 'toastColour'
+                html: "Please select distro",
+                classes: 'toastColour'
             });
             document.getElementById("outputIntro").innerText = "Please select an Operating System above.";
             document.getElementById("outputContent").innerText = "";
@@ -305,7 +315,8 @@ document.getElementById("saveOutput").addEventListener("click", function () {
     } else {
         M.Toast.dismissAll();
         M.toast({
-            html: 'Nothing to add yet', classes: 'toastColour'
+            html: 'Nothing to add yet',
+            classes: 'toastColour'
         });
     }
 });
@@ -323,7 +334,8 @@ document.getElementById("sidebarDownload").addEventListener("click", function ()
     } else {
         M.Toast.dismissAll();
         M.toast({
-            html: 'List is empty', classes: 'toastColour'
+            html: 'List is empty',
+            classes: 'toastColour'
         });
     }
 });

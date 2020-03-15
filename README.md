@@ -176,8 +176,9 @@ In addition to the automated end-to-end tests described above the site was also 
 - [AddictiveTips](https://www.addictivetips.com/)
 - [OSRadar](https://www.osradar.com/)
 - [ArchLinux Wiki](https://wiki.archlinux.org/)
-- [Elementary OS]() forums
-- [Solus]() forums
+- [suse.com](https://www.suse.com/c/working-command-line-basic-linux-commands/)
+- [opensuse-guide](https://opensuse-guide.org/command.php)
+- [opensuse.org](https://en.opensuse.org/)
 - [ScottLinux](https://scottlinux.com/)
 
 
